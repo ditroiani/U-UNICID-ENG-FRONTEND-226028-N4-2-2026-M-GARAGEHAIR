@@ -1,0 +1,301 @@
+/* =========================================================
+   1. HERO - SOBRE
+   ========================================================= */
+.sobre-hero {
+    position: relative;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg,
+            rgba(23, 26, 23, 0.92) 0%,
+            rgba(23, 26, 23, 0.76) 50%,
+            rgba(23, 26, 23, 0.42) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--garage-white);
+}
+
+.sobre-hero-content {
+    max-width: 700px;
+}
+
+.sobre-hero-subtitle {
+    color: var(--garage-beige);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.sobre-hero h1 {
+    color: var(--garage-white);
+    margin-bottom: 1rem;
+}
+
+.sobre-hero-text {
+    color: #e5e5e5;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   2. HISTÓRIA
+   ========================================================= */
+.historia {
+    background-color: var(--garage-light);
+}
+
+.historia h2 {
+    color: var(--garage-dark);
+    margin-bottom: 1.5rem;
+}
+
+.historia p:not(.section-subtitle) {
+    color: #555;
+    max-width: 620px;
+}
+
+.sobre-image {
+    width: 100%;
+    min-height: 450px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Destaque do ano */
+.historia-destaque {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.historia-ano {
+    color: var(--garage-olive);
+    font-family: "Oswald", Arial, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.historia-local {
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-left: 1rem;
+    border-left: 1px solid var(--garage-beige);
+}
+
+/* =========================================================
+   3. PROPÓSITO
+   ========================================================= */
+.proposito {
+    background-color: var(--garage-green);
+
+    color: var(--garage-white);
+}
+
+.proposito .section-subtitle {
+    color: var(--garage-beige);
+}
+
+.proposito h2 {
+    color: var(--garage-white);
+
+    max-width: 800px;
+
+    margin: 0 auto 1.5rem;
+}
+
+.proposito-text {
+    max-width: 780px;
+
+    margin: 0 auto;
+
+    color: #dddddd;
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+}
+
+/* =========================================================
+   4. MISSÃO, VISÃO E VALORES
+   ========================================================= */
+.identidade {
+    background-color: var(--garage-white);
+}
+
+.identidade-header {
+    max-width: 750px;
+    margin-bottom: 4rem;
+}
+
+.identidade-header h2 {
+    color: var(--garage-dark);
+
+    margin-bottom: 0;
+}
+
+/* Item */
+.identidade-item {
+    padding: 2.5rem 0;
+
+    border-top: 1px solid #dddddd;
+}
+
+.identidade-item:last-child {
+    border-bottom: 1px solid #dddddd;
+}
+
+
+/* Número */
+.identidade-numero {
+    display: inline-block;
+    color: var(--garage-beige);
+    font-family: "Oswald", Arial, sans-serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* Título */
+.identidade-item h3 {
+    color: var(--garage-dark);
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+/* Texto */
+.identidade-item p {
+    color: #555;
+    max-width: 650px;
+    margin-bottom: 0;
+    line-height: 1.8;
+}
+
+/* Valores */
+.valores-lista {
+    font-weight: 500;
+}
+
+.valores-lista span {
+    color: var(--garage-olive);
+    margin: 0 0.35rem;
+}
+
+/* =========================================================
+   5. CTA
+   ========================================================= */
+/*
+ * A classe .cta já possui seus principais estilos
+ * no style.css.
+ *
+ * Aqui fazemos somente pequenos ajustes
+ * específicos da página Sobre.
+ */
+.cta h2 {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta p {
+    line-height: 1.8;
+}
+
+/* =========================================================
+   6. RESPONSIVIDADE
+   ========================================================= */
+/* Tablets */
+@media (max-width: 991px) {
+    .sobre-hero {
+        min-height: 350px;
+        /*
+         * Background fixed pode apresentar problemas
+         * em alguns dispositivos móveis.
+         */
+        background-attachment: scroll;
+    }
+
+    .sobre-image {
+        min-height: 380px;
+    }
+
+    .historia-destaque {
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* Celulares */
+@media (max-width: 767px) {
+    .sobre-hero {
+        min-height: 320px;
+
+        background-position: center;
+    }
+
+    .sobre-hero-text {
+        font-size: 1rem;
+    }
+
+    .sobre-image {
+        min-height: 300px;
+    }
+
+    .historia-destaque {
+        margin-top: 1.5rem;
+    }
+
+    .historia-ano {
+        font-size: 2.3rem;
+    }
+
+    .identidade-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .identidade-item {
+        padding: 2rem 0;
+    }
+
+    .identidade-numero {
+        font-size: 1.8rem;
+
+        margin-bottom: 1rem;
+    }
+
+    .identidade-item h3 {
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* Celulares menores */
+@media (max-width: 480px) {
+    .sobre-hero {
+        min-height: 280px;
+    }
+
+    .sobre-image {
+        min-height: 250px;
+    }
+
+    .historia-destaque {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .historia-local {
+        padding-left: 0;
+        border-left: none;
+    }
+}

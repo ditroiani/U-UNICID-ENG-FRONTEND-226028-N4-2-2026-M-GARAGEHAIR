@@ -1,0 +1,541 @@
+/* =========================================================
+   GARAGE HAIR
+   Página: Impacto
+   ========================================================= */
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.impacto-hero {
+    position: relative;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(rgba(23, 26, 23, 0.72),
+            rgba(23, 26, 23, 0.78)),
+        url("../images/impacto/hero_impacto.png") center / cover no-repeat;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* Leve efeito de profundidade no desktop */
+@media (min-width: 992px) {
+    .impacto-hero {
+        background-attachment: fixed;
+    }
+}
+
+.impacto-hero-content {
+    max-width: 720px;
+    padding: 5rem 0;
+}
+
+.impacto-eyebrow,
+.section-eyebrow {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18rem;
+    color: #667a5b;
+}
+
+.impacto-hero .impacto-eyebrow {
+    color: #d6c7a8;
+}
+
+.impacto-hero h1 {
+    max-width: 650px;
+    margin-bottom: 1.2rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.7rem, 6vw, 5rem);
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.impacto-hero p {
+    max-width: 600px;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+/* =========================================================
+   INTRODUÇÃO
+   ========================================================= */
+.impacto-intro {
+    padding: 6rem 0 4rem;
+    background-color: #f4f1e8;
+}
+
+.impacto-intro h2 {
+    margin-bottom: 1.3rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 600;
+    color: #171a17;
+}
+
+.impacto-intro p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.8;
+    color: #555b55;
+}
+
+.impacto-aviso {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.5rem 0.85rem;
+    border: 1px solid rgba(102, 122, 91, 0.3);
+    border-radius: 30px;
+    background-color: rgba(102, 122, 91, 0.08);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #667a5b;
+}
+
+
+/* =========================================================
+   INDICADORES / KPIs
+   ========================================================= */
+.impacto-indicadores {
+    padding: 0 0 6rem;
+    background-color: #f4f1e8;
+}
+
+.indicador-card {
+    position: relative;
+    height: 100%;
+    padding: 2.2rem 1.7rem;
+    border: 1px solid rgba(38, 56, 44, 0.08);
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow:
+        0 10px 35px rgba(23, 26, 23, 0.06);
+    overflow: hidden;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.indicador-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #667a5b;
+}
+
+.indicador-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(102, 122, 91, 0.22);
+    box-shadow:
+        0 18px 45px rgba(23, 26, 23, 0.1);
+}
+
+.indicador-card>i {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #667a5b;
+}
+
+.indicador-numero {
+    display: inline-block;
+    font-family: "Oswald", sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #26382c;
+}
+
+.indicador-unidade {
+    margin-left: 0.2rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #667a5b;
+}
+
+.indicador-card h3 {
+    margin-top: 1.1rem;
+    margin-bottom: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #555b55;
+}
+
+/* =========================================================
+   ÁREA DOS GRÁFICOS
+   ========================================================= */
+.impacto-graficos {
+    padding: 6rem 0;
+    background:
+        linear-gradient(45deg,
+            rgba(23, 26, 23, 0.92) 0%,
+            rgba(23, 26, 23, 0.76) 50%,
+            rgba(23, 26, 23, 0.42) 100%);
+}
+
+.impacto-section-header {
+    margin-bottom: 3rem;
+}
+
+.impacto-section-header .section-eyebrow {
+    color: #d6c7a8;
+}
+
+.impacto-section-header h2 {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* =========================================================
+   CARDS DOS GRÁFICOS
+   ========================================================= */
+.grafico-card {
+    height: 100%;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    background:
+        linear-gradient(145deg,
+            rgba(38, 56, 44, 0.85),
+            rgba(23, 26, 23, 0.96));
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.18);
+}
+
+.grafico-card-destaque {
+    padding: 2.3rem;
+}
+
+.grafico-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.grafico-header span {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.13rem;
+    color: #d6c7a8;
+}
+
+.grafico-header h3 {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.grafico-header>i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(214, 199, 168, 0.15);
+    border-radius: 50%;
+    background-color: rgba(214, 199, 168, 0.08);
+    font-size: 1.2rem;
+    color: #d6c7a8;
+}
+
+/* =========================================================
+   CANVAS / CHART.JS
+   ========================================================= */
+.grafico-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.grafico-card-destaque .grafico-container {
+    height: 390px;
+}
+
+.grafico-container-pizza {
+    max-width: 420px;
+    margin: 0 auto;
+    height: 350px;
+}
+
+/* =========================================================
+   PROJETOS / AÇÕES
+   ========================================================= */
+.impacto-projetos {
+    padding: 7rem 0;
+    background-color: #f4f1e8;
+}
+
+.impacto-projetos h2 {
+    max-width: 540px;
+    margin-bottom: 1.5rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: #171a17;
+}
+
+.impacto-projetos>.container>.row>div:first-child p {
+    max-width: 560px;
+    line-height: 1.8;
+    color: #555b55;
+}
+
+/* =========================================================
+   LISTA DE PROJETOS
+   ========================================================= */
+.impacto-projetos-lista {
+    border-top: 1px solid rgba(23, 26, 23, 0.15);
+}
+
+.impacto-projeto-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1.5rem;
+    padding: 1.7rem 0;
+    border-bottom: 1px solid rgba(23, 26, 23, 0.15);
+    transition:
+        padding-left 0.3s ease;
+}
+
+.impacto-projeto-item:hover {
+    padding-left: 0.6rem;
+}
+
+.impacto-projeto-item>span {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #667a5b;
+}
+
+.impacto-projeto-item h3 {
+    margin-bottom: 0.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.45rem;
+    font-weight: 500;
+    color: #26382c;
+}
+
+.impacto-projeto-item p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #666c66;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+.impacto-cta {
+    position: relative;
+    padding: 7rem 0;
+    background-color: #26382c;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* Elemento decorativo */
+.impacto-cta::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    top: -240px;
+    right: -180px;
+    border: 1px solid rgba(214, 199, 168, 0.12);
+    border-radius: 50%;
+}
+
+.impacto-cta span {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16rem;
+    color: #d6c7a8;
+}
+
+.impacto-cta h2 {
+    max-width: 720px;
+    margin: 0 auto 1.2rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
+    font-weight: 600;
+}
+
+.impacto-cta p {
+    max-width: 650px;
+    margin: 0 auto 2rem;
+    color: rgba(255, 255, 255, 0.76);
+    line-height: 1.7;
+}
+
+/* Botão específico caso o global não possua */
+.impacto-cta .btn-garage {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid #d6c7a8;
+    background-color: #d6c7a8;
+    color: #171a17;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.impacto-cta .btn-garage:hover {
+    background-color: transparent;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+@media (max-width: 991px) {
+    .impacto-hero {
+        min-height: 340px;
+        background-attachment: scroll;
+    }
+
+    .impacto-intro {
+        padding-top: 5rem;
+    }
+
+    .grafico-card {
+        padding: 1.5rem;
+    }
+
+    .grafico-container,
+    .grafico-card-destaque .grafico-container {
+        height: 320px;
+    }
+
+    .grafico-container-pizza {
+        height: 330px;
+    }
+
+    .impacto-projetos {
+        padding: 5rem 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .impacto-hero {
+        min-height: 320px;
+    }
+
+    .impacto-hero-content {
+        padding: 4rem 0;
+    }
+
+    .impacto-hero p {
+        font-size: 0.95rem;
+    }
+
+    .impacto-intro {
+        padding: 4rem 0 3rem;
+    }
+
+    .impacto-indicadores {
+        padding-bottom: 4rem;
+    }
+
+    .indicador-card {
+        padding: 1.7rem 1.4rem;
+    }
+
+    .indicador-numero {
+        font-size: 2.6rem;
+    }
+
+    .impacto-graficos {
+        padding: 4rem 0;
+    }
+
+    .grafico-card,
+    .grafico-card-destaque {
+        padding: 1.25rem;
+    }
+
+    .grafico-container,
+    .grafico-card-destaque .grafico-container {
+        height: 290px;
+    }
+
+    .grafico-container-pizza {
+        height: 300px;
+    }
+
+    .grafico-header h3 {
+        font-size: 1.35rem;
+    }
+
+    .grafico-header>i {
+        width: 40px;
+        height: 40px;
+    }
+
+    .impacto-projetos {
+        padding: 4rem 0;
+    }
+
+    .impacto-projeto-item {
+        grid-template-columns: 45px 1fr;
+        gap: 1rem;
+    }
+
+    .impacto-cta {
+        padding: 5rem 0;
+    }
+}
+
+@media (max-width: 575px) {
+
+    .grafico-container,
+    .grafico-card-destaque .grafico-container {
+        height: 260px;
+    }
+
+    .grafico-container-pizza {
+        height: 280px;
+    }
+
+    .grafico-header {
+        margin-bottom: 1.3rem;
+    }
+}

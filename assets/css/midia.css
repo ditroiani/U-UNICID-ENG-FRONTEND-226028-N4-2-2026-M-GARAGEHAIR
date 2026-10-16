@@ -1,0 +1,547 @@
+/* =========================================================
+   GARAGE HAIR
+   Página: Mídia
+   ========================================================= */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.midia-hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg,
+            rgba(23, 26, 23, 0.94) 0%,
+            rgba(23, 26, 23, 0.75) 50%,
+            rgba(23, 26, 23, 0.35) 100%),
+        url("../images/midia/hero_midia.png") center / cover no-repeat;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+@media (min-width: 992px) {
+    .midia-hero {
+        background-attachment: fixed;
+    }
+}
+
+.midia-hero-content {
+    max-width: 720px;
+    padding: 6rem 0;
+}
+
+.midia-eyebrow,
+.section-eyebrow {
+    display: inline-block;
+    margin-bottom: 0.9rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.17rem;
+    color: #667a5b;
+}
+
+.midia-hero .midia-eyebrow {
+    color: #d6c7a8;
+}
+
+.midia-hero h1 {
+    max-width: 760px;
+    margin-bottom: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 600;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.midia-hero p {
+    max-width: 620px;
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+/* =========================================================
+   INTRODUÇÃO
+   ========================================================= */
+.midia-intro {
+    padding: 6rem 0;
+    background-color: #f4f1e8;
+}
+
+.midia-intro h2 {
+    margin-bottom: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 600;
+    color: #171a17;
+}
+
+.midia-intro p {
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #595f58;
+}
+
+/* =========================================================
+   VÍDEO PRINCIPAL
+   ========================================================= */
+.midia-video {
+    padding: 7rem 0;
+    background-color: #ffffff;
+}
+
+.midia-video h2 {
+    margin-bottom: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    color: #171a17;
+}
+
+.midia-video p {
+    max-width: 540px;
+    line-height: 1.8;
+    color: #5c625b;
+}
+
+.midia-nota {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid #667a5b;
+    font-size: 0.86rem;
+    color: #70756f !important;
+}
+
+/* =========================================================
+   PLAYER DE VÍDEO
+   ========================================================= */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #171a17;
+    box-shadow:
+        0 20px 50px rgba(23, 26, 23, 0.15);
+}
+
+.video-container video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background-color: #171a17;
+}
+
+/* Moldura decorativa */
+.video-container::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    z-index: 2;
+    border: 1px solid rgba(214, 199, 168, 0.25);
+    pointer-events: none;
+}
+
+/* =========================================================
+   ÁUDIO
+   ========================================================= */
+.midia-audio {
+    padding: 7rem 0;
+    background-color: #f4f1e8;
+}
+
+.midia-audio h2 {
+    margin-bottom: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    color: #171a17;
+}
+
+.midia-audio p {
+    line-height: 1.8;
+    color: #5b615a;
+}
+
+/* =========================================================
+   IMAGEM ÁUDIO
+   ========================================================= */
+.midia-audio-imagem {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.midia-audio-imagem::before {
+    content: "";
+    position: absolute;
+    inset: 18px -18px -18px 18px;
+    z-index: -1;
+    border: 1px solid rgba(102, 122, 91, 0.35);
+}
+
+.midia-audio-imagem img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    transition:
+        transform 0.6s ease;
+}
+
+.midia-audio-imagem:hover img {
+    transform: scale(1.025);
+}
+
+/* =========================================================
+   PLAYER DE ÁUDIO
+   ========================================================= */
+.audio-player {
+    margin-top: 2rem;
+    padding: 1.8rem;
+    border: 1px solid rgba(38, 56, 44, 0.13);
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow:
+        0 12px 35px rgba(23, 26, 23, 0.06);
+}
+
+.audio-player-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+}
+
+.audio-player-header>i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #26382c;
+    font-size: 1.4rem;
+    color: #d6c7a8;
+}
+
+.audio-player-header span {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12rem;
+    color: #667a5b;
+}
+
+.audio-player-header h3 {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    color: #26382c;
+}
+
+.audio-player audio {
+    display: block;
+
+    width: 100%;
+}
+
+/* =========================================================
+   IFRAME
+   ========================================================= */
+.midia-iframe {
+    padding: 7rem 0;
+    background-color: #171a17;
+    color: #ffffff;
+}
+
+.midia-iframe .section-eyebrow {
+    color: #d6c7a8;
+}
+
+.midia-section-header {
+    max-width: 760px;
+    margin-bottom: 3rem;
+}
+
+.midia-section-header h2 {
+    margin-bottom: 1.2rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600;
+}
+
+.midia-section-header p {
+    max-width: 680px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================================================
+   CONTAINER RESPONSIVO PARA IFRAME
+   ========================================================= */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #000;
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.3);
+}
+
+.iframe-container iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+/* =========================================================
+   BASTIDORES
+   ========================================================= */
+.midia-bastidores {
+    padding: 7rem 0;
+    background-color: #f4f1e8;
+}
+
+.midia-bastidores .midia-section-header h2 {
+    color: #171a17;
+}
+
+.midia-bastidores .midia-section-header p {
+    color: #5b615a;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+.midia-card {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow:
+        0 10px 35px rgba(23, 26, 23, 0.06);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.midia-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 18px 45px rgba(23, 26, 23, 0.1);
+}
+
+.midia-card-imagem {
+    height: 260px;
+    overflow: hidden;
+}
+
+.midia-card-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition:
+        transform 0.5s ease;
+}
+
+.midia-card:hover .midia-card-imagem img {
+    transform: scale(1.045);
+}
+
+.midia-card-conteudo {
+    padding: 1.6rem;
+}
+
+.midia-card-conteudo>span {
+    display: block;
+    margin-bottom: 0.55rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12rem;
+    color: #667a5b;
+}
+
+.midia-card-conteudo h3 {
+    margin-bottom: 0.8rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.55rem;
+    font-weight: 500;
+    color: #26382c;
+}
+
+.midia-card-conteudo p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #626861;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+.midia-cta {
+    position: relative;
+    padding: 7rem 0;
+    background-color: #26382c;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.midia-cta::before {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    top: -230px;
+    right: -190px;
+    border: 1px solid rgba(214, 199, 168, 0.12);
+    border-radius: 50%;
+}
+
+.midia-cta span {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16rem;
+    color: #d6c7a8;
+}
+
+.midia-cta h2 {
+    max-width: 720px;
+    margin: 0 auto 1.2rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600;
+}
+
+.midia-cta p {
+    max-width: 640px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* =========================================================
+   BOTÃO CTA
+   ========================================================= */
+.btn-midia {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.8rem 1.7rem;
+    border: 1px solid #d6c7a8;
+    border-radius: 2px;
+    background-color: #d6c7a8;
+    color: #171a17;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.btn-midia:hover {
+    background-color: transparent;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+@media (max-width: 991px) {
+    .midia-hero {
+        min-height: 380px;
+        background-attachment: scroll;
+    }
+
+    .midia-video,
+    .midia-audio,
+    .midia-iframe,
+    .midia-bastidores {
+        padding: 5rem 0;
+    }
+
+    .midia-audio-imagem::before {
+        display: none;
+    }
+
+    .midia-audio-imagem img {
+        height: 430px;
+    }
+}
+
+@media (max-width: 767px) {
+    .midia-hero {
+        min-height: 340px;
+    }
+
+    .midia-hero-content {
+        padding: 4.5rem 0;
+    }
+
+    .midia-hero p {
+        font-size: 0.95rem;
+    }
+
+    .midia-intro {
+        padding: 4rem 0;
+    }
+
+    .midia-video,
+    .midia-audio,
+    .midia-iframe,
+    .midia-bastidores {
+        padding: 4rem 0;
+    }
+
+    .video-container::before {
+        inset: 8px;
+    }
+
+    .midia-audio-imagem img {
+        height: 370px;
+    }
+
+    .midia-card-imagem {
+        height: 230px;
+    }
+
+    .midia-cta {
+        padding: 5rem 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .midia-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .midia-audio-imagem img {
+        height: 320px;
+    }
+
+    .audio-player {
+        padding: 1.3rem;
+    }
+
+    .audio-player-header>i {
+        width: 46px;
+        height: 46px;
+    }
+}

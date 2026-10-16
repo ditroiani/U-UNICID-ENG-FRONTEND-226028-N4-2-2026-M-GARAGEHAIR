@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "nome": "Shampoo Natural",
+        "categoria": "Cabelo",
+        "descricao": "Shampoo para limpeza suave dos fios, inspirado em ingredientes de origem natural.",
+        "imagem": "../assets/images/produtos/shampoo_natural.png"
+    },
+    {
+        "id": 2,
+        "nome": "Condicionador Natural",
+        "categoria": "Cabelo",
+        "descricao": "Condicionador para hidratação e cuidado diário dos cabelos.",
+        "imagem": "../assets/images/produtos/condicionador_natural.png"
+    },
+    {
+        "id": 3,
+        "nome": "Pomada Modeladora",
+        "categoria": "Cabelo",
+        "descricao": "Pomada para modelagem com acabamento natural e fixação moderada.",
+        "imagem": "../assets/images/produtos/pomada_modeladora.png"
+    },
+    {
+        "id": 4,
+        "nome": "Óleo para Barba",
+        "categoria": "Barba",
+        "descricao": "Óleo desenvolvido para hidratar e suavizar os fios da barba.",
+        "imagem": "../assets/images/produtos/oleo_barba.png"
+    },
+    {
+        "id": 5,
+        "nome": "Balm para Barba",
+        "categoria": "Barba",
+        "descricao": "Balm para cuidado, hidratação e alinhamento da barba.",
+        "imagem": "../assets/images/produtos/balm_barba.png"
+    },
+    {
+        "id": 6,
+        "nome": "Shampoo para Barba",
+        "categoria": "Barba",
+        "descricao": "Shampoo específico para limpeza suave da barba e da pele.",
+        "imagem": "../assets/images/produtos/shampoo_barba.png"
+    },
+    {
+        "id": 7,
+        "nome": "Sabonete Facial",
+        "categoria": "Cuidados",
+        "descricao": "Sabonete facial para limpeza e cuidado diário da pele.",
+        "imagem": "../assets/images/produtos/sabonete_facial.png"
+    },
+    {
+        "id": 8,
+        "nome": "Balm Pós-Barba",
+        "categoria": "Cuidados",
+        "descricao": "Balm pós-barba pensado para proporcionar sensação de conforto após o barbear.",
+        "imagem": "../assets/images/produtos/balm_pos_barba.png"
+    },
+    {
+        "id": 9,
+        "nome": "Esfoliante Facial",
+        "categoria": "Cuidados",
+        "descricao": "Esfoliante facial para complementar a rotina de cuidados com a pele.",
+        "imagem": "../assets/images/produtos/esfoliante_facial.png"
+    },
+    {
+        "id": 10,
+        "nome": "Kit Essencial Garage Hair",
+        "categoria": "Kits",
+        "descricao": "Seleção ilustrativa de produtos Garage Hair para cabelo, barba e cuidados pessoais.",
+        "imagem": "../assets/images/produtos/kit_essencial.png"
+    }
+]

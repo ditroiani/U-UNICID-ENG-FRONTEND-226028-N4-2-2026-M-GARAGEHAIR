@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Acompanhe as principais notícias, novidades, projetos, promoções e ações da Garage Hair.">
+
+    <!-- Bootstrap min -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap icons -->
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/icones/favicon.png">
+
+    <!-- CSS global -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- CSS específico da página -->
+    <link rel="stylesheet" href="../assets/css/noticias.css">
+
+    <!-- Título -->
+    <title>Notícias | Garage Hair</title>
+</head>
+
+<body data-root="..">
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+    <header id="navbar-component"></header>
+
+    <main>
+        <!-- =========================================================
+             HERO
+        ========================================================== -->
+        <section class="noticias-hero">
+            <div class="noticias-hero-overlay"></div>
+            <div class="container position-relative">
+                <div class="noticias-hero-content">
+                    <span class="noticias-eyebrow">
+                        <i class="bi bi-newspaper"></i>
+                        Canal Garage Hair
+                    </span>
+
+                    <h1>
+                        Notícias, novidades<br>
+                        e histórias que <span>transformam.</span>
+                    </h1>
+
+                    <p>
+                        Acompanhe lançamentos, projetos sociais, promoções,
+                        iniciativas sustentáveis e tudo o que acontece
+                        na Garage Hair.
+                    </p>
+
+                    <a href="#ultimas-noticias" class="btn btn-garage mt-3">
+                        Ver últimas notícias
+                        <i class="bi bi-arrow-down ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             BARRA DE COMUNICAÇÃO
+        ========================================================== -->
+        <section class="canal-comunicacao">
+            <div class="container">
+                <div class="canal-comunicacao-wrapper">
+                    <div class="canal-icon">
+                        <i class="bi bi-megaphone"></i>
+                    </div>
+
+                    <div class="canal-texto">
+
+                        <span>Canal oficial de comunicação</span>
+
+                        <p>
+                            Fique por dentro das novidades, ações,
+                            projetos e comunicados da Garage Hair.
+                        </p>
+
+                    </div>
+
+                    <a href="#ultimas-noticias" class="canal-link">
+
+                        Últimas publicações
+
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             ÚLTIMAS NOTÍCIAS
+        ========================================================== -->
+        <section id="ultimas-noticias" class="ultimas-noticias py-5">
+            <div class="container py-lg-5">
+                <!-- Cabeçalho -->
+                <div class="section-heading mb-5">
+                    <span class="section-eyebrow">
+                        Acontece na Garage
+                    </span>
+                    <div class="d-lg-flex justify-content-between align-items-end gap-4">
+                        <div>
+                            <h2>
+                                Últimas notícias
+                            </h2>
+
+                            <p>
+                                Informação, comunidade e transformação
+                                em um só lugar.
+                            </p>
+                        </div>
+
+                        <div class="numero-publicacoes">
+                            <span>05</span>
+
+                            <small>
+                                publicações em destaque
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- =================================================
+                     NOTÍCIA DESTAQUE
+                ================================================== -->
+                <article class="noticia-destaque mb-5">
+                    <div class="row g-0 align-items-stretch">
+                        <!-- Imagem -->
+                        <div class="col-lg-7">
+                            <div class="noticia-destaque-imagem">
+                                <img src="../assets/images/noticias/novo_website.png"
+                                    alt="Novo website da Garage Hair exibido em um notebook">
+
+                                <span class="badge-noticia">
+                                    Destaque
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Conteúdo -->
+                        <div class="col-lg-5">
+                            <div class="noticia-destaque-conteudo">
+                                <div class="noticia-meta">
+                                    <span class="categoria">
+                                        <i class="bi bi-globe2"></i>
+                                        Garage Hair
+                                    </span>
+
+                                    <span>
+                                        15 out. 2026
+                                    </span>
+                                </div>
+
+                                <h3>
+                                    Garage Hair lança seu novo website
+                                </h3>
+
+                                <p>
+                                    O novo portal digital da Garage Hair
+                                    reúne serviços, produtos, projetos,
+                                    sustentabilidade, acessibilidade
+                                    e as principais novidades da barbearia.
+                                </p>
+
+                                <button class="btn-leia-mais" data-bs-toggle="modal" data-bs-target="#modalWebsite">
+                                    Leia a notícia
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- =================================================
+                     GRID DAS OUTRAS NOTÍCIAS
+                ================================================== -->
+                <div class="row g-4">
+                    <!-- NOTÍCIA 02 -->
+                    <div class="col-md-6">
+                        <article class="noticia-card h-100">
+                            <div class="noticia-card-imagem">
+                                <img src="../assets/images/noticias/linha_cacau_2027.png"
+                                    alt="Nova linha de shampoo e condicionador de cacau da Garage Hair">
+
+                                <span class="noticia-categoria">
+                                    Produtos
+                                </span>
+                            </div>
+
+                            <div class="noticia-card-body">
+                                <div class="noticia-data">
+                                    <i class="bi bi-calendar3"></i>
+                                    12 out. 2026
+                                </div>
+
+                                <h3>
+                                    Garage Hair prepara nova linha
+                                    de shampoo e condicionador de cacau para 2027
+                                </h3>
+
+                                <p>
+                                    A nova linha está sendo planejada
+                                    com foco no fortalecimento dos fios,
+                                    cuidado capilar e ingredientes
+                                    de origem mais consciente.
+                                </p>
+
+                                <button class="btn-leia-mais" data-bs-toggle="modal" data-bs-target="#modalCacau">
+                                    Leia a notícia
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- NOTÍCIA 03 -->
+                    <div class="col-md-6">
+                        <article class="noticia-card h-100">
+                            <div class="noticia-card-imagem">
+                                <img src="../assets/images/noticias/promocao_corte_79.png"
+                                    alt="Barbeiro realizando corte durante promoção da Garage Hair">
+
+                                <span class="noticia-categoria">
+                                    Promoção
+                                </span>
+                            </div>
+
+                            <div class="noticia-card-body">
+                                <div class="noticia-data">
+                                    <i class="bi bi-calendar3"></i>
+                                    10 out. 2026
+                                </div>
+
+                                <h3>
+                                    Final de semana especial:
+                                    corte por R$ 79
+                                </h3>
+
+                                <p>
+                                    A Garage Hair prepara uma condição
+                                    especial para quem deseja renovar
+                                    o visual durante o fim de semana.
+                                </p>
+
+                                <button class="btn-leia-mais" data-bs-toggle="modal" data-bs-target="#modalPromocao">
+                                    Leia a notícia
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- NOTÍCIA 04 -->
+                    <div class="col-md-6">
+                        <article class="noticia-card h-100">
+                            <div class="noticia-card-imagem">
+                                <img src="../assets/images/noticias/corte_comunitario_dezembro.png"
+                                    alt="Ação de corte comunitário promovida pela Garage Hair">
+
+                                <span class="noticia-categoria">
+                                    Projetos sociais
+                                </span>
+                            </div>
+
+                            <div class="noticia-card-body">
+                                <div class="noticia-data">
+                                    <i class="bi bi-calendar3"></i>
+                                    08 out. 2026
+                                </div>
+
+                                <h3>
+                                    Dia do Corte Comunitário
+                                    está previsto para dezembro
+                                </h3>
+
+                                <p>
+                                    Uma nova edição da ação social
+                                    está sendo preparada para aproximar
+                                    ainda mais a Garage Hair da comunidade.
+                                </p>
+
+                                <button class="btn-leia-mais" data-bs-toggle="modal" data-bs-target="#modalComunitario">
+
+                                    Leia a notícia
+
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- NOTÍCIA 05 -->
+                    <div class="col-md-6">
+                        <article class="noticia-card h-100">
+                            <div class="noticia-card-imagem">
+                                <img src="../assets/images/noticias/acessibilidade_garage_hair.png"
+                                    alt="Atendimento inclusivo e acessível na Garage Hair">
+                                <span class="noticia-categoria">
+                                    Inclusão
+                                </span>
+                            </div>
+
+                            <div class="noticia-card-body">
+                                <div class="noticia-data">
+                                    <i class="bi bi-calendar3"></i>
+                                    04 out. 2026
+                                </div>
+
+                                <h3>
+                                    Garage Hair amplia ações
+                                    de acessibilidade e atendimento inclusivo
+                                </h3>
+
+                                <p>
+                                    A barbearia reforça seu compromisso
+                                    em proporcionar uma experiência
+                                    mais acolhedora e acessível para todos.
+                                </p>
+
+                                <button class="btn-leia-mais" data-bs-toggle="modal"
+                                    data-bs-target="#modalAcessibilidade">
+
+                                    Leia a notícia
+
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             CTA
+        ========================================================== -->
+        <section class="noticias-cta">
+            <div class="container">
+                <div class="noticias-cta-wrapper">
+                    <div>
+                        <span>
+                            Muito além das notícias
+                        </span>
+
+                        <h2>
+                            Conheça os projetos que transformam
+                            nossas ideias em ações.
+                        </h2>
+                    </div>
+
+                    <a href="projetos.html" class="btn btn-light">
+
+                        Conhecer projetos
+
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =============================================================
+         MODAL — WEBSITE
+    ============================================================== -->
+    <div class="modal fade" id="modalWebsite" tabindex="-1" aria-labelledby="modalWebsiteLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content noticia-modal">
+                <div class="modal-header">
+                    <div>
+                        <span class="modal-categoria">
+                            Garage Hair
+                        </span>
+
+                        <h2 class="modal-title" id="modalWebsiteLabel">
+                            Garage Hair lança seu novo website
+                        </h2>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <img src="../assets/images/noticias/novo_website.png" alt="Novo website da Garage Hair"
+                        class="img-fluid modal-noticia-imagem">
+                    <p class="modal-data">
+                        15 de outubro de 2026
+                    </p>
+
+                    <p>
+                        A Garage Hair acaba de ganhar um novo espaço digital.
+                        O website foi desenvolvido para aproximar ainda mais
+                        a barbearia de clientes, parceiros e da comunidade.
+                    </p>
+
+                    <p>
+                        No portal, os visitantes podem conhecer nossa história,
+                        serviços, produtos, projetos sociais, iniciativas
+                        sustentáveis, indicadores de impacto e ações voltadas
+                        à acessibilidade e inclusão.
+                    </p>
+
+                    <p>
+                        O novo canal também passa a concentrar notícias,
+                        novidades e informações importantes sobre tudo
+                        o que acontece na Garage Hair.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =============================================================
+         MODAL — LINHA CACAU
+    ============================================================== -->
+    <div class="modal fade" id="modalCacau" tabindex="-1" aria-labelledby="modalCacauLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content noticia-modal">
+                <div class="modal-header">
+                    <div>
+                        <span class="modal-categoria">
+                            Produtos & Sustentabilidade
+                        </span>
+
+                        <h2 class="modal-title" id="modalCacauLabel">
+
+                            Nova linha de shampoo e condicionador
+                            de cacau é prevista para 2027
+
+                        </h2>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <img src="../assets/images/noticias/linha_cacau_2027.png"
+                        alt="Linha de shampoo e condicionador de cacau" class="img-fluid modal-noticia-imagem">
+                    <p class="modal-data">
+                        12 de outubro de 2026
+                    </p>
+
+                    <p>
+                        A Garage Hair está planejando para 2027
+                        uma nova linha de shampoo e condicionador
+                        com cacau em sua composição.
+                    </p>
+
+                    <p>
+                        A proposta é desenvolver produtos voltados
+                        ao fortalecimento, hidratação e cuidados
+                        para cabelos com tendência à queda,
+                        combinando desempenho, responsabilidade
+                        ambiental e uma experiência diferenciada.
+                    </p>
+
+                    <p>
+                        O projeto também prevê a utilização
+                        de embalagens mais sustentáveis
+                        e redução de materiais descartáveis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============================================================
+         MODAL — PROMOÇÃO
+    ============================================================== -->
+    <div class="modal fade" id="modalPromocao" tabindex="-1" aria-labelledby="modalPromocaoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content noticia-modal">
+                <div class="modal-header">
+                    <div>
+                        <span class="modal-categoria">
+                            Promoção
+                        </span>
+
+                        <h2 class="modal-title" id="modalPromocaoLabel">
+
+                            Final de semana especial:
+                            corte por R$ 79
+
+                        </h2>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <img src="../assets/images/noticias/promocao_corte_79.png" alt="Promoção de corte da Garage Hair"
+                        class="img-fluid modal-noticia-imagem">
+                    <p class="modal-data">
+                        10 de outubro de 2026
+                    </p>
+
+                    <p>
+                        O próximo fim de semana terá uma condição
+                        especial na Garage Hair.
+                    </p>
+
+                    <p>
+                        Durante a ação promocional, o serviço
+                        de corte será oferecido por
+                        <strong>R$ 79</strong>,
+                        mediante disponibilidade de horários.
+                    </p>
+
+                    <p>
+                        A iniciativa foi criada para convidar
+                        novos clientes a conhecerem o atendimento,
+                        o ambiente e a experiência Garage Hair.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============================================================
+         MODAL — CORTE COMUNITÁRIO
+    ============================================================== -->
+    <div class="modal fade" id="modalComunitario" tabindex="-1" aria-labelledby="modalComunitarioLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content noticia-modal">
+                <div class="modal-header">
+                    <div>
+                        <span class="modal-categoria">
+                            Projetos Sociais
+                        </span>
+
+                        <h2 class="modal-title" id="modalComunitarioLabel">
+                            Dia do Corte Comunitário
+                            está previsto para dezembro
+                        </h2>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <img src="../assets/images/noticias/corte_comunitario_dezembro.png"
+                        alt="Dia do Corte Comunitário da Garage Hair" class="img-fluid modal-noticia-imagem">
+
+                    <p class="modal-data">
+                        08 de outubro de 2026
+                    </p>
+
+                    <p>
+                        A Garage Hair prepara para dezembro
+                        uma nova edição do Dia do Corte Comunitário.
+                    </p>
+
+                    <p>
+                        A ação faz parte do projeto
+                        <strong>Corte Solidário</strong>
+                        e busca utilizar a experiência
+                        dos profissionais da barbearia
+                        para promover cuidado, autoestima
+                        e integração com a comunidade.
+                    </p>
+
+                    <p>
+                        Novas informações sobre horários,
+                        participação e organização da ação
+                        serão divulgadas pelos canais
+                        oficiais da Garage Hair.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============================================================
+         MODAL — ACESSIBILIDADE
+    ============================================================== -->
+    <div class="modal fade" id="modalAcessibilidade" tabindex="-1" aria-labelledby="modalAcessibilidadeLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content noticia-modal">
+                <div class="modal-header">
+                    <div>
+                        <span class="modal-categoria">
+                            Inclusão & Acessibilidade
+                        </span>
+
+                        <h2 class="modal-title" id="modalAcessibilidadeLabel">
+
+                            Garage Hair amplia ações
+                            de acessibilidade e atendimento inclusivo
+                        </h2>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <img src="../assets/images/noticias/acessibilidade_garage_hair.png"
+                        alt="Atendimento inclusivo na Garage Hair" class="img-fluid modal-noticia-imagem">
+                    <p class="modal-data">
+                        04 de outubro de 2026
+                    </p>
+
+                    <p>
+                        A Garage Hair continua ampliando suas iniciativas
+                        voltadas à inclusão e acessibilidade.
+                    </p>
+
+                    <p>
+                        O objetivo é proporcionar um espaço no qual
+                        diferentes pessoas possam receber atendimento
+                        com autonomia, respeito e acolhimento.
+                    </p>
+
+                    <p>
+                        Entre as iniciativas estão melhorias de mobilidade,
+                        atendimento individualizado e práticas que
+                        consideram diferentes necessidades de comunicação
+                        e interação.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer-component"></footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+
+    <!-- Componentes -->
+    <script src="../assets/js/components.js"></script>
+
+    <!-- JS geral -->
+    <script src="../assets/js/script.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,294 @@
+/* =========================================================
+   PROJETOS - GARAGE HAIR
+   ========================================================= */
+
+/* =========================================================
+   1. HERO
+   ========================================================= */
+.projetos-hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(rgba(23, 26, 23, 0.72),
+            rgba(23, 26, 23, 0.72)),
+        url("../images/projetos/hero_projetos.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--garage-white);
+}
+
+.projetos-hero-content {
+    max-width: 760px;
+}
+
+.projetos-hero-subtitle {
+    color: var(--garage-beige);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.projetos-hero h1 {
+    color: var(--garage-white);
+    margin-bottom: 1.5rem;
+}
+
+.projetos-hero-text {
+    max-width: 650px;
+    color: #e2e2e2;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   2. INTRODUÇÃO
+   ========================================================= */
+.projetos-intro {
+    background-color: var(--garage-white);
+}
+
+.projetos-intro h2 {
+    color: var(--garage-dark);
+    margin-bottom: 1.5rem;
+}
+
+.projetos-intro-text {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   3. PROJETOS
+   ========================================================= */
+.projeto-claro {
+    background-color: var(--garage-light);
+}
+
+.projeto-verde {
+    background-color: var(--garage-green);
+    color: var(--garage-white);
+}
+
+/* Títulos */
+.projeto h2 {
+    margin-bottom: 1.5rem;
+}
+
+.projeto-claro h2 {
+    color: var(--garage-dark);
+}
+
+.projeto-verde h2 {
+    color: var(--garage-white);
+}
+
+/* Texto */
+.projeto-claro p:not(.section-subtitle) {
+    color: #555;
+}
+
+.projeto-verde p:not(.section-subtitle) {
+    color: #dddddd;
+}
+
+.projeto-verde .section-subtitle {
+    color: var(--garage-beige);
+}
+
+/* =========================================================
+   4. IMAGENS DOS PROJETOS
+   ========================================================= */
+.projeto-image-wrapper {
+    position: relative;
+}
+
+.projeto-image {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+
+/* Número */
+.projeto-numero {
+    position: absolute;
+    top: -20px;
+    left: -15px;
+    color: var(--garage-beige);
+    font-family: "Oswald", Arial, sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1;
+    z-index: 2;
+}
+
+/* =========================================================
+   5. DESTAQUES
+   ========================================================= */
+.projeto-destaques {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 2rem;
+}
+
+.projeto-destaque {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.projeto-destaque i {
+    color: var(--garage-olive);
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.projeto-verde .projeto-destaque i {
+    color: var(--garage-beige);
+}
+
+.projeto-destaque span {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* =========================================================
+   6. CORTE SOLIDÁRIO
+   ========================================================= */
+.corte-solidario {
+    min-height: 650px;
+    background:
+        url("../images/projetos/corte_solidario.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.corte-solidario-overlay {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+    background:
+        linear-gradient(90deg,
+            rgba(23, 26, 23, 0.93) 0%,
+            rgba(23, 26, 23, 0.82) 45%,
+            rgba(23, 26, 23, 0.25) 100%);
+}
+
+.corte-solidario h2 {
+    color: var(--garage-white);
+    margin-bottom: 1.5rem;
+}
+
+.corte-solidario .section-subtitle {
+    color: var(--garage-beige);
+}
+
+.corte-solidario p {
+    max-width: 650px;
+    color: #e0e0e0;
+    line-height: 1.8;
+}
+
+.corte-solidario .btn {
+    margin-top: 1rem;
+}
+
+/* Número do Corte Solidário */
+.projeto-numero-solidario {
+    position: static;
+    display: block;
+    margin-bottom: 1rem;
+    color: rgba(214, 199, 168, 0.45);
+}
+
+/* =========================================================
+   7. RESPONSIVIDADE
+   ========================================================= */
+@media (max-width: 991px) {
+    .projetos-hero {
+        min-height: 380px;
+        background-attachment: scroll;
+    }
+
+    .projeto-image {
+        height: 400px;
+    }
+
+    .projeto-numero {
+        top: -15px;
+        left: 10px;
+        font-size: 4rem;
+    }
+
+    .corte-solidario {
+        background-attachment: scroll;
+    }
+
+    .corte-solidario,
+    .corte-solidario-overlay {
+        min-height: 560px;
+    }
+
+    .corte-solidario-overlay {
+        background:
+            rgba(23, 26, 23, 0.82);
+    }
+}
+
+/* Celulares */
+@media (max-width: 767px) {
+    .projetos-hero {
+        min-height: 330px;
+    }
+
+    .projetos-hero-text {
+        font-size: 1rem;
+    }
+
+    .projeto-image {
+        height: 320px;
+    }
+
+    .projeto-numero {
+        font-size: 3.4rem;
+    }
+
+    .projeto-destaques {
+        margin-top: 1.5rem;
+    }
+
+    .corte-solidario,
+    .corte-solidario-overlay {
+        min-height: 500px;
+    }
+}
+
+
+/* Celulares menores */
+@media (max-width: 480px) {
+    .projetos-hero {
+        min-height: 290px;
+    }
+
+    .projeto-image {
+        height: 270px;
+    }
+
+    .projeto-numero {
+        font-size: 3rem;
+    }
+}

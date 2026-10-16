@@ -1,0 +1,1015 @@
+/* =========================================================
+   GARAGE HAIR — PÁGINA DE CONTATO
+   Arquivo: assets/css/contato.css
+========================================================= */
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+:root {
+    --contato-dark: #171A17;
+    --contato-green-dark: #26382C;
+    --contato-green: #667A5B;
+    --contato-beige: #D6C7A8;
+    --contato-light: #F4F1E8;
+    --contato-white: #FFFFFF;
+    --contato-text: #252525;
+    --contato-muted: #6C6C6C;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.contato-hero {
+    position: relative;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(90deg,
+            rgba(23, 26, 23, 0.92) 0%,
+            rgba(23, 26, 23, 0.72) 48%,
+            rgba(23, 26, 23, 0.28) 100%),
+        url("../images/contato/hero_contato.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--contato-white);
+    overflow: hidden;
+}
+
+.contato-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 78% 50%,
+            rgba(214, 199, 168, 0.11),
+            transparent 34%);
+    pointer-events: none;
+}
+
+.contato-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.contato-hero-content {
+    max-width: 760px;
+    padding-top: 2rem;
+}
+
+.contato-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+    padding: 0.55rem 1rem;
+    border: 1px solid rgba(214, 199, 168, 0.38);
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
+    color: var(--contato-beige);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.contato-hero h1 {
+    margin-bottom: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(3.6rem, 7vw, 6.6rem);
+    font-weight: 600;
+    line-height: 0.98;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.contato-hero h1 span {
+    display: block;
+    color: var(--contato-beige);
+}
+
+.contato-hero p {
+    max-width: 650px;
+    margin-bottom: 1.8rem;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.contato-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+}
+
+.btn-garage {
+    padding: 0.95rem 1.5rem;
+    border: 1px solid var(--contato-beige);
+    border-radius: 2px;
+    background: var(--contato-beige);
+    color: var(--contato-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.btn-garage:hover {
+    transform: translateY(-3px);
+    background: transparent;
+    color: var(--contato-beige);
+}
+
+.contato-hero .btn-outline-light {
+    padding: 0.95rem 1.5rem;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.contato-hero .btn-outline-light:hover {
+    transform: translateY(-3px);
+    background: var(--contato-white);
+    color: var(--contato-dark);
+}
+
+/* =========================================================
+   CONTATOS RÁPIDOS
+========================================================= */
+.contatos-rapidos {
+    position: relative;
+    z-index: 5;
+    margin-top: 20px;
+    padding-bottom: 4rem;
+}
+
+.contato-card {
+    position: relative;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.4rem;
+    background: var(--contato-white);
+    border: 1px solid rgba(38, 56, 44, 0.09);
+    border-radius: 5px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.09);
+    color: var(--contato-text);
+    text-decoration: none;
+    overflow: hidden;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.contato-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--contato-green);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+}
+
+.contato-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(102, 122, 91, 0.35);
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.13);
+}
+
+.contato-card:hover::before {
+    transform: scaleX(1);
+}
+
+.contato-card-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--contato-green-dark);
+    color: var(--contato-beige);
+    font-size: 1.25rem;
+}
+
+.contato-card div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.contato-card span {
+    margin-bottom: 0.2rem;
+    color: var(--contato-green);
+    font-size: 0.66rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.contato-card strong {
+    margin-bottom: 0.15rem;
+    color: var(--contato-dark);
+    font-family: "Oswald", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+.contato-card small {
+    color: #777;
+    font-size: 0.72rem;
+}
+
+.contato-arrow {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: rgba(38, 56, 44, 0.35);
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.contato-card:hover .contato-arrow {
+    transform: translate(3px, -3px);
+    color: var(--contato-green);
+}
+
+/* =========================================================
+   SEÇÃO PRINCIPAL
+========================================================= */
+.contato-principal {
+    padding: 6rem 0;
+    background:
+        linear-gradient(to bottom,
+            var(--contato-light),
+            #ffffff);
+}
+
+.section-eyebrow {
+    display: block;
+    margin-bottom: 0.7rem;
+    color: var(--contato-green);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   PAINEL DE INFORMAÇÕES
+========================================================= */
+.contato-info-panel {
+    position: relative;
+    padding: 3rem;
+    background:
+        linear-gradient(145deg,
+            #26382C,
+            #1A261E);
+    border-radius: 6px;
+    color: var(--contato-white);
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.13);
+}
+
+.contato-info-panel::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    right: -100px;
+    top: -100px;
+    border: 1px solid rgba(214, 199, 168, 0.13);
+    border-radius: 50%;
+}
+
+.contato-info-panel h2 {
+    margin-bottom: 1rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.contato-info-intro {
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.8;
+}
+
+.info-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.info-item-icon {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(214, 199, 168, 0.28);
+    border-radius: 50%;
+    color: var(--contato-beige);
+    font-size: 1.1rem;
+}
+
+.info-item span {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--contato-beige);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.info-item p {
+    margin-bottom: 0.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+}
+
+.info-item p strong {
+    color: var(--contato-white);
+}
+
+.info-item small {
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 0.76rem;
+}
+
+.contato-compromisso {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1.3rem;
+    border: 1px solid rgba(214, 199, 168, 0.18);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.contato-compromisso>i {
+    color: var(--contato-beige);
+    font-size: 1.4rem;
+}
+
+.contato-compromisso strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.contato-compromisso p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+.formulario-wrapper {
+    height: 100%;
+    padding: 3rem;
+    background: var(--contato-white);
+    border: 1px solid rgba(38, 56, 44, 0.1);
+    border-radius: 6px;
+    box-shadow: 0 24px 65px rgba(0, 0, 0, 0.075);
+}
+
+.formulario-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.formulario-header h2 {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 500;
+    color: var(--contato-dark);
+    text-transform: uppercase;
+}
+
+.formulario-icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--contato-green-dark);
+    color: var(--contato-beige);
+    border-radius: 50%;
+    font-size: 1.25rem;
+}
+
+.formulario-subtitle {
+    margin-bottom: 2rem;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+.form-floating>.form-control,
+.form-floating>.form-select {
+    min-height: 64px;
+    border: 1px solid #D8D8D3;
+    border-radius: 3px;
+    background: #FAFAF7;
+    color: var(--contato-text);
+    box-shadow: none;
+    transition:
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.form-floating>.form-control:hover,
+.form-floating>.form-select:hover {
+    border-color: rgba(102, 122, 91, 0.65);
+}
+
+.form-floating>.form-control:focus,
+.form-floating>.form-select:focus {
+    border-color: var(--contato-green);
+    background: var(--contato-white);
+    box-shadow:
+        0 0 0 0.22rem rgba(102, 122, 91, 0.12);
+}
+
+.form-floating>label {
+    color: #747474;
+    font-size: 0.84rem;
+}
+
+.form-floating>label i {
+    color: var(--contato-green);
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+/* =========================================================
+   VALIDAÇÃO
+========================================================= */
+.was-validated .form-control:valid,
+.form-control.is-valid,
+.was-validated .form-select:valid,
+.form-select.is-valid {
+    border-color: var(--contato-green);
+    background-color: #FAFAF7;
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid,
+.was-validated .form-select:invalid,
+.form-select.is-invalid {
+    border-color: #A95D57;
+}
+
+.invalid-feedback {
+    margin-top: 0.35rem;
+    color: #9E504A;
+    font-size: 0.74rem;
+}
+
+/* =========================================================
+   PREFERÊNCIA DE RETORNO
+========================================================= */
+
+.preferencia-contato {
+    padding: 0;
+    border: 0;
+}
+
+.preferencia-contato legend {
+    margin-bottom: 0.85rem;
+    color: #626262;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.preferencia-opcoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+}
+
+.preferencia-card {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1rem;
+    border: 1px solid #DBDBD6;
+    border-radius: 3px;
+    background: #FAFAF7;
+    color: #626262;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.preferencia-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(102, 122, 91, 0.55);
+    color: var(--contato-green-dark);
+}
+
+.preferencia-card i {
+    font-size: 1.15rem;
+}
+
+.btn-check:checked+.preferencia-card {
+    border-color: var(--contato-green-dark);
+    background: var(--contato-green-dark);
+    color: var(--contato-beige);
+    box-shadow: 0 8px 20px rgba(38, 56, 44, 0.14);
+}
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+.mensagem-textarea {
+    min-height: 190px !important;
+    resize: vertical;
+}
+
+.contador-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.55rem;
+}
+
+.contador-wrapper small {
+    color: #929292;
+    font-size: 0.7rem;
+}
+
+/* =========================================================
+   PRIVACIDADE
+========================================================= */
+.contato-privacidade {
+    padding: 1rem 1rem 1rem 2.5rem;
+    border: 1px solid rgba(38, 56, 44, 0.08);
+    border-radius: 3px;
+    background: #F7F7F3;
+}
+
+.contato-privacidade .form-check-input {
+    margin-top: 0.25rem;
+    border-color: #A6A6A1;
+    box-shadow: none;
+}
+
+.contato-privacidade .form-check-input:checked {
+    background-color: var(--contato-green-dark);
+    border-color: var(--contato-green-dark);
+}
+
+.contato-privacidade .form-check-label {
+    color: #666;
+    font-size: 0.78rem;
+    line-height: 1.55;
+}
+
+/* =========================================================
+   BOTÃO ENVIAR
+========================================================= */
+.form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.btn-enviar {
+    min-width: 215px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    padding: 1rem 1.4rem;
+    border: 1px solid var(--contato-green-dark);
+    border-radius: 2px;
+    background: var(--contato-green-dark);
+    color: var(--contato-white);
+    font-size: 0.77rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-enviar:hover {
+    transform: translateY(-3px);
+    background: var(--contato-green);
+    border-color: var(--contato-green);
+    color: var(--contato-white);
+    box-shadow: 0 14px 26px rgba(38, 56, 44, 0.17);
+}
+
+.btn-enviar i {
+    transition: transform 0.3s ease;
+}
+
+.btn-enviar:hover i {
+    transform: translateX(4px);
+}
+
+.form-footer small {
+    color: #858585;
+    font-size: 0.7rem;
+}
+
+/* =========================================================
+   ALERTA SUCESSO
+========================================================= */
+#mensagemSucesso {
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(102, 122, 91, 0.25);
+    border-radius: 3px;
+    background: rgba(102, 122, 91, 0.11);
+    color: var(--contato-green-dark);
+    font-size: 0.82rem;
+}
+
+/* =========================================================
+   LOCALIZAÇÃO
+========================================================= */
+.localizacao-section {
+    padding: 6rem 0;
+    background: var(--contato-white);
+}
+
+.localizacao-wrapper {
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--contato-green-dark);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.13);
+}
+
+.localizacao-info {
+    height: 100%;
+    padding: 3rem;
+    color: var(--contato-white);
+}
+
+.localizacao-info h2 {
+    margin-bottom: 1.2rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.localizacao-info>p {
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.8;
+}
+
+.localizacao-detalhe {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.localizacao-detalhe>i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(214, 199, 168, 0.08);
+    color: var(--contato-beige);
+}
+
+.localizacao-detalhe strong {
+    display: block;
+    margin-bottom: 0.15rem;
+    color: var(--contato-white);
+    font-size: 0.88rem;
+}
+
+.localizacao-detalhe span {
+    display: block;
+    color: rgba(255, 255, 255, 0.52);
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   MAPA
+========================================================= */
+.mapa-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    background: #DDD;
+}
+
+.mapa-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    border: 0;
+    filter:
+        saturate(0.7) contrast(1.05);
+}
+
+/* =========================================================
+   CTA FINAL
+========================================================= */
+.contato-cta {
+    padding: 5rem 0;
+    background:
+        linear-gradient(120deg,
+            #171A17,
+            #26382C);
+    color: var(--contato-white);
+}
+
+.contato-cta-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.contato-cta-icon {
+    flex-shrink: 0;
+    width: 78px;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(214, 199, 168, 0.25);
+    border-radius: 50%;
+    color: var(--contato-beige);
+    font-size: 1.8rem;
+}
+
+.contato-cta-content {
+    flex: 1;
+}
+
+.contato-cta-content span {
+    display: block;
+    margin-bottom: 0.55rem;
+    color: var(--contato-beige);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.contato-cta-content h2 {
+    max-width: 720px;
+    margin-bottom: 0.55rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 500;
+    line-height: 1.14;
+    text-transform: uppercase;
+}
+
+.contato-cta-content p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.contato-cta .btn {
+    flex-shrink: 0;
+    padding: 0.9rem 1.4rem;
+    border-radius: 2px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+@media (max-width: 1199.98px) {
+    .contato-card {
+        min-height: 140px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .contato-hero {
+        min-height: 570px;
+        background-attachment: scroll;
+    }
+
+    .contatos-rapidos {
+        margin-top: 20px;
+    }
+
+    .contato-info-panel,
+    .formulario-wrapper {
+        padding: 2.5rem;
+    }
+
+    .mapa-wrapper,
+    .mapa-wrapper iframe {
+        min-height: 450px;
+    }
+
+    .contato-cta-wrapper {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .contato-cta .btn {
+        margin-left: 110px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .contato-hero {
+        min-height: 530px;
+        background-image:
+            linear-gradient(rgba(23, 26, 23, 0.76),
+                rgba(23, 26, 23, 0.9)),
+            url("../images/contato/hero_contato.png");
+
+        background-position: center;
+    }
+
+    .contato-hero h1 {
+        font-size: 3.4rem;
+    }
+
+    .contatos-rapidos {
+        margin-top: 20px;
+    }
+
+    .contato-principal,
+    .localizacao-section {
+        padding: 4.5rem 0;
+    }
+
+    .contato-info-panel,
+    .formulario-wrapper,
+    .localizacao-info {
+        padding: 2rem;
+    }
+
+    .preferencia-opcoes {
+        grid-template-columns: 1fr;
+    }
+
+    .preferencia-card {
+        min-height: 64px;
+        justify-content: flex-start;
+        padding-left: 1.3rem;
+    }
+
+    .form-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-enviar {
+        width: 100%;
+    }
+
+
+    .form-footer small {
+        text-align: center;
+    }
+
+    .mapa-wrapper,
+    .mapa-wrapper iframe {
+        min-height: 380px;
+    }
+
+    .contato-cta-wrapper {
+        flex-direction: column;
+    }
+
+    .contato-cta .btn {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .contato-hero {
+        min-height: 500px;
+    }
+
+    .contato-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .contato-hero p {
+        font-size: 0.92rem;
+    }
+
+    .contato-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contato-hero-actions .btn {
+        width: 100%;
+    }
+
+    .contato-card {
+        min-height: 125px;
+    }
+
+    .contato-info-panel,
+    .formulario-wrapper,
+    .localizacao-info {
+        padding: 1.5rem;
+    }
+
+    .formulario-header h2,
+    .contato-info-panel h2 {
+        font-size: 2.3rem;
+    }
+
+    .formulario-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .contador-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .localizacao-info h2 {
+        font-size: 2.3rem;
+    }
+
+    .contato-cta {
+        padding: 4rem 0;
+    }
+
+    .contato-cta-icon {
+        width: 62px;
+        height: 62px;
+        font-size: 1.4rem;
+    }
+}

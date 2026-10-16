@@ -1,0 +1,410 @@
+/* =========================================================
+   PRODUTOS - GARAGE HAIR
+   ========================================================= */
+/* =========================================================
+   1. HERO
+   ========================================================= */
+.produtos-hero {
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(rgba(23, 26, 23, 0.72),
+            rgba(23, 26, 23, 0.72)),
+        url("../images/produtos/hero_produtos.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--garage-white);
+}
+
+.produtos-hero-content {
+    max-width: 700px;
+}
+
+.produtos-hero-subtitle {
+    color: var(--garage-beige);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.produtos-hero h1 {
+    color: var(--garage-white);
+    margin-bottom: 1.5rem;
+}
+
+
+.produtos-hero-text {
+    max-width: 650px;
+    color: #e2e2e2;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   2. ÁREA DA LOJA
+   ========================================================= */
+.produtos-loja {
+    background-color: var(--garage-light);
+}
+
+/* =========================================================
+   3. BANNER / CARROSSEL
+   ========================================================= */
+.produtos-banner {
+    position: sticky;
+    top: 100px;
+}
+
+#carouselProdutos {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.banner-slide {
+    min-height: 620px;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    padding: 3rem 2.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--garage-white);
+}
+
+/* Overlay */
+.banner-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg,
+            rgba(23, 26, 23, 0.12) 0%,
+            rgba(23, 26, 23, 0.85) 100%);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.banner-content>span {
+    display: block;
+    color: var(--garage-beige);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.banner-content h2 {
+    color: var(--garage-white);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.banner-content p {
+    color: #e3e3e3;
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+/* Imagens dos banners */
+.banner-natural {
+    background-image:
+        url("../images/produtos/banner_01.png");
+}
+
+.banner-refil {
+    background-image:
+        url("../images/produtos/banner_02.png");
+}
+
+.banner-social {
+    background-image:
+        url("../images/produtos/banner_03.png");
+}
+
+/* Controles */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 15%;
+}
+
+/* Indicadores */
+.carousel-indicators {
+    justify-content: flex-start;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+
+/* =========================================================
+   4. CABEÇALHO DO CATÁLOGO
+   ========================================================= */
+.produtos-header {
+    margin-bottom: 2rem;
+}
+
+.produtos-header h2 {
+    color: var(--garage-dark);
+    margin-bottom: 1rem;
+}
+
+.produtos-header>p {
+    color: #666;
+    max-width: 650px;
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   5. CONTROLES
+   ========================================================= */
+.produtos-controles {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Busca */
+.produto-busca {
+    position: relative;
+    flex: 1;
+}
+
+.produto-busca i {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: var(--garage-olive);
+    z-index: 2;
+}
+
+.produto-busca .form-control {
+    min-height: 48px;
+    padding-left: 2.8rem;
+    border: 1px solid #d8d8d8;
+    border-radius: 2px;
+    background-color: var(--garage-white);
+}
+
+.produto-busca .form-control:focus {
+    border-color: var(--garage-olive);
+    box-shadow:
+        0 0 0 0.2rem rgba(102, 122, 91, 0.15);
+}
+
+/* Ordenação */
+.produto-ordenacao {
+    width: 190px;
+}
+
+.produto-ordenacao .form-select {
+    min-height: 48px;
+    border: 1px solid #d8d8d8;
+    border-radius: 2px;
+    background-color: var(--garage-white);
+}
+
+.produto-ordenacao .form-select:focus {
+    border-color: var(--garage-olive);
+    box-shadow:
+        0 0 0 0.2rem rgba(102, 122, 91, 0.15);
+}
+
+/* =========================================================
+   6. CATEGORIAS
+   ========================================================= */
+.produtos-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-bottom: 2.5rem;
+}
+
+.categoria-btn {
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--garage-olive);
+    border-radius: 2px;
+    background-color: transparent;
+    color: var(--garage-green);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.categoria-btn:hover,
+.categoria-btn.active {
+    background-color: var(--garage-green);
+    border-color: var(--garage-green);
+    color: var(--garage-white);
+}
+
+/* =========================================================
+   7. CARDS DE PRODUTO
+   ========================================================= */
+/*
+ * Estes estilos serão usados nos elementos
+ * criados dinamicamente pelo produtos.js.
+ */
+.produto-card {
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--garage-white);
+    border-radius: 4px;
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+/* Imagem */
+.produto-card-imagem {
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    padding: 1.5rem;
+    background-color: #ece9df;
+}
+
+/* Conteúdo */
+.produto-card-body {
+    padding: 1.5rem;
+}
+
+.produto-categoria {
+    display: block;
+    color: var(--garage-olive);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+}
+
+.produto-card h3 {
+    color: var(--garage-dark);
+    font-size: 1.45rem;
+    margin-bottom: 0.8rem;
+}
+
+.produto-card p {
+    color: #666;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   8. SEM RESULTADOS
+   ========================================================= */
+.sem-produtos {
+    padding: 4rem 1rem;
+}
+
+.sem-produtos i {
+    display: block;
+    color: var(--garage-olive);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.sem-produtos p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   9. RESPONSIVIDADE
+   ========================================================= */
+@media (max-width: 991px) {
+    .produtos-hero {
+        min-height: 340px;
+        background-attachment: scroll;
+    }
+
+    .produtos-banner {
+        position: static;
+        margin-bottom: 1rem;
+    }
+
+    .banner-slide {
+        min-height: 420px;
+    }
+
+    .produto-card-imagem {
+        height: 280px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .produtos-hero {
+        min-height: 300px;
+    }
+
+    .produtos-hero-text {
+        font-size: 1rem;
+    }
+
+    .produtos-controles {
+        flex-direction: column;
+    }
+
+    .produto-ordenacao {
+        width: 100%;
+    }
+
+    .produtos-categorias {
+        gap: 0.5rem;
+    }
+
+    .categoria-btn {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .banner-slide {
+        min-height: 380px;
+        padding: 2rem;
+    }
+
+    .banner-content h2 {
+        font-size: 2rem;
+    }
+
+    .produto-card-imagem {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .produtos-hero {
+        min-height: 270px;
+    }
+
+    .banner-slide {
+        min-height: 340px;
+    }
+
+    .produto-card-imagem {
+        height: 230px;
+    }
+}

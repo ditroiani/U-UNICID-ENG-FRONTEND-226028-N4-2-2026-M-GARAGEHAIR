@@ -1,0 +1,548 @@
+/* =========================================================
+   GARAGE HAIR
+   Página: Galeria
+   ========================================================= */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.galeria-hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg,
+            rgba(23, 26, 23, 0.92) 0%,
+            rgba(23, 26, 23, 0.76) 50%,
+            rgba(23, 26, 23, 0.42) 100%),
+        url("../images/galeria/hero_galeria.jpg") center / cover no-repeat;
+
+    color: #ffffff;
+    overflow: hidden;
+}
+
+@media (min-width: 992px) {
+    .galeria-hero {
+        background-attachment: fixed;
+    }
+}
+
+.galeria-hero-content {
+    max-width: 720px;
+    padding: 6rem 0;
+}
+
+.galeria-eyebrow,
+.section-eyebrow {
+    display: inline-block;
+    margin-bottom: 0.9rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.17rem;
+    color: #667a5b;
+}
+
+.galeria-hero .galeria-eyebrow {
+    color: #d6c7a8;
+}
+
+.galeria-hero h1 {
+    max-width: 760px;
+    margin-bottom: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 600;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.galeria-hero p {
+    max-width: 620px;
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+/* =========================================================
+   INTRODUÇÃO
+   ========================================================= */
+.galeria-intro {
+    padding: 6rem 0 4rem;
+    background-color: #f4f1e8;
+}
+
+.galeria-intro h2 {
+    margin-bottom: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 600;
+    color: #171a17;
+}
+
+.galeria-intro p {
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #595f58;
+}
+
+/* =========================================================
+   FILTROS
+   ========================================================= */
+.galeria-filtros {
+    padding: 0 0 3rem;
+    background-color: #f4f1e8;
+}
+
+.filtros-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+.filtro-btn {
+    min-height: 42px;
+    padding: 0.65rem 1.15rem;
+    border: 1px solid rgba(38, 56, 44, 0.24);
+    border-radius: 30px;
+    background-color: transparent;
+    color: #26382c;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.filtro-btn:hover,
+.filtro-btn.active {
+    background-color: #26382c;
+    border-color: #26382c;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   ÁREA DA GALERIA
+   ========================================================= */
+.galeria-grid-section {
+    padding: 1rem 0 7rem;
+    background-color: #f4f1e8;
+}
+
+/* =========================================================
+   GRID / MOSAICO
+   ========================================================= */
+.galeria-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 230px;
+    gap: 1rem;
+    grid-auto-flow: dense;
+}
+
+/* =========================================================
+   ITEM PADRÃO
+   ========================================================= */
+.galeria-item {
+    position: relative;
+    margin: 0;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #26382c;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition:
+        transform 0.6s ease,
+        filter 0.4s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.82);
+}
+
+/* =========================================================
+   TAMANHOS DO MOSAICO
+   ========================================================= */
+/*
+ * Item grande:
+ * ocupa 2 colunas e 2 linhas.
+ */
+.galeria-item-grande {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+
+/*
+ * Item largo:
+ * ocupa 2 colunas.
+ */
+.galeria-item-largo {
+    grid-column: span 2;
+}
+
+/*
+ * Item alto:
+ * ocupa 2 linhas.
+ */
+.galeria-item-alto {
+    grid-row: span 2;
+}
+
+
+/* =========================================================
+   OVERLAY / LEGENDA
+   ========================================================= */
+.galeria-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top,
+            rgba(23, 26, 23, 0.82) 0%,
+            rgba(23, 26, 23, 0.28) 48%,
+            rgba(23, 26, 23, 0.02) 75%);
+    pointer-events: none;
+    transition:
+        background 0.35s ease;
+}
+
+.galeria-item:hover::after {
+    background:
+        linear-gradient(to top,
+            rgba(23, 26, 23, 0.9) 0%,
+            rgba(23, 26, 23, 0.38) 55%,
+            rgba(23, 26, 23, 0.08) 100%);
+}
+
+.galeria-item figcaption {
+    position: absolute;
+    left: 1.4rem;
+    right: 1.4rem;
+    bottom: 1.3rem;
+    z-index: 2;
+    color: #ffffff;
+    transform: translateY(5px);
+    transition:
+        transform 0.3s ease;
+}
+
+.galeria-item:hover figcaption {
+    transform: translateY(0);
+}
+
+.galeria-item figcaption span {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+    color: #d6c7a8;
+}
+
+.galeria-item figcaption h3 {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Títulos maiores para destaques */
+.galeria-item-grande figcaption h3,
+.galeria-item-largo figcaption h3 {
+    font-size: 1.65rem;
+}
+
+/* =========================================================
+   FILTRAGEM
+   Será controlada pelo galeria.js
+   ========================================================= */
+.galeria-item.oculto {
+    display: none;
+}
+
+/* =========================================================
+   BLOCO HISTÓRICO
+   ========================================================= */
+.galeria-historia {
+    padding: 7rem 0;
+    background-color: #ffffff;
+}
+
+.galeria-historia h2 {
+    max-width: 560px;
+    margin-bottom: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: #171a17;
+}
+
+.galeria-historia p {
+    max-width: 570px;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    color: #5b615a;
+}
+
+/* =========================================================
+   IMAGEM HISTÓRICA
+   ========================================================= */
+.galeria-historia-imagem {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.galeria-historia-imagem::before {
+    content: "";
+    position: absolute;
+    inset: 18px -18px -18px 18px;
+    z-index: -1;
+    border: 1px solid rgba(102, 122, 91, 0.35);
+}
+
+.galeria-historia-imagem img {
+    width: 100%;
+    min-height: 430px;
+    object-fit: cover;
+    transition:
+        transform 0.6s ease;
+}
+
+.galeria-historia-imagem:hover img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   BOTÃO HISTÓRIA
+   ========================================================= */
+.btn-galeria {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 48px;
+    padding: 0.8rem 1.6rem;
+    border: 1px solid #26382c;
+    border-radius: 2px;
+    background-color: #26382c;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.btn-galeria:hover {
+    background-color: transparent;
+    color: #26382c;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+.galeria-cta {
+    position: relative;
+    padding: 7rem 0;
+    background-color: #26382c;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.galeria-cta::before {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    top: -220px;
+    right: -190px;
+    border: 1px solid rgba(214, 199, 168, 0.12);
+    border-radius: 50%;
+}
+
+.galeria-cta span {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16rem;
+    color: #d6c7a8;
+}
+
+.galeria-cta h2 {
+    max-width: 700px;
+    margin: 0 auto 1.2rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600;
+}
+
+.galeria-cta p {
+    max-width: 620px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* =========================================================
+   BOTÃO CTA
+   ========================================================= */
+.btn-galeria-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.8rem 1.7rem;
+    border: 1px solid #d6c7a8;
+    border-radius: 2px;
+    background-color: #d6c7a8;
+    color: #171a17;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.btn-galeria-cta:hover {
+    background-color: transparent;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+@media (max-width: 1199px) {
+    .galeria-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 991px) {
+    .galeria-hero {
+        min-height: 380px;
+        background-attachment: scroll;
+    }
+
+    .galeria-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 220px;
+    }
+
+    .galeria-historia {
+        padding: 5rem 0;
+    }
+
+    .galeria-historia-imagem::before {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .galeria-hero {
+        min-height: 340px;
+    }
+
+    .galeria-hero-content {
+        padding: 4.5rem 0;
+    }
+
+    .galeria-hero p {
+        font-size: 0.95rem;
+    }
+
+    .galeria-intro {
+        padding: 4rem 0 3rem;
+    }
+
+    .galeria-grid-section {
+        padding-bottom: 4rem;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 320px;
+    }
+
+    /*
+     * No celular todos os itens voltam
+     * a ocupar somente uma coluna.
+     */
+    .galeria-item-grande,
+    .galeria-item-largo,
+    .galeria-item-alto {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .galeria-historia {
+        padding: 4rem 0;
+    }
+
+    .galeria-historia-imagem img {
+        min-height: 350px;
+    }
+
+    .galeria-cta {
+        padding: 5rem 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .galeria-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .galeria-grid {
+        grid-auto-rows: 280px;
+    }
+
+    .filtros-galeria {
+        justify-content: flex-start;
+    }
+
+    .filtro-btn {
+        font-size: 0.78rem;
+    }
+
+    .galeria-item figcaption {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .galeria-historia-imagem img {
+        min-height: 300px;
+    }
+}

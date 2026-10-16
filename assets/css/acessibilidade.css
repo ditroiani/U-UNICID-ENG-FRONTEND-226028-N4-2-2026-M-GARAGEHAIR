@@ -1,0 +1,586 @@
+/* =========================================================
+   GARAGE HAIR
+   Página: Acessibilidade
+   ========================================================= */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.acessibilidade-hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg,
+            rgba(23, 26, 23, 0.92) 0%,
+            rgba(23, 26, 23, 0.78) 48%,
+            rgba(23, 26, 23, 0.48) 100%),
+        url("../images/acessibilidade/hero_acessibilidade.png") center / cover no-repeat;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+@media (min-width: 992px) {
+    .acessibilidade-hero {
+        background-attachment: fixed;
+    }
+}
+
+.acessibilidade-hero-content {
+    max-width: 720px;
+    padding: 6rem 0;
+}
+
+.acessibilidade-eyebrow,
+.section-eyebrow {
+    display: inline-block;
+    margin-bottom: 0.9rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.17rem;
+    color: #667a5b;
+}
+
+.acessibilidade-hero .acessibilidade-eyebrow {
+    color: #d6c7a8;
+}
+
+.acessibilidade-hero h1 {
+    max-width: 720px;
+    margin-bottom: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 600;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.acessibilidade-hero p {
+    max-width: 620px;
+    margin-bottom: 2rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+/* =========================================================
+   BOTÃO
+   ========================================================= */
+.btn-acessibilidade {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 48px;
+    padding: 0.8rem 1.6rem;
+    border: 1px solid #d6c7a8;
+    border-radius: 2px;
+    background-color: #d6c7a8;
+    color: #171a17;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.btn-acessibilidade:hover {
+    background-color: transparent;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   INTRODUÇÃO
+   ========================================================= */
+.acessibilidade-intro {
+    padding: 6rem 0;
+    background-color: #f4f1e8;
+}
+
+.acessibilidade-intro h2 {
+    margin-bottom: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 600;
+    color: #171a17;
+}
+
+.acessibilidade-intro p {
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.85;
+    color: #555b55;
+}
+
+/* =========================================================
+   ACESSIBILIDADE NA BARBEARIA
+   ========================================================= */
+.acessibilidade-barbearia {
+    padding: 7rem 0;
+    background-color: #ffffff;
+}
+
+.acessibilidade-barbearia h2 {
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: #171a17;
+}
+
+.acessibilidade-barbearia>.container>.row>div:first-child>p {
+    max-width: 590px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    color: #5d625c;
+}
+
+/* =========================================================
+   LISTA EDITORIAL
+   ========================================================= */
+.acessibilidade-lista {
+    border-top: 1px solid rgba(23, 26, 23, 0.14);
+}
+
+.acessibilidade-item {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    gap: 1.4rem;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid rgba(23, 26, 23, 0.14);
+    transition:
+        padding-left 0.3s ease;
+}
+
+.acessibilidade-item:hover {
+    padding-left: 0.5rem;
+}
+
+.acessibilidade-item-numero {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #667a5b;
+}
+
+.acessibilidade-item h3 {
+    margin-bottom: 0.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #26382c;
+}
+
+.acessibilidade-item p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #666b65;
+}
+
+/* =========================================================
+   CARROSSEL DE ACESSIBILIDADE
+   ========================================================= */
+.acessibilidade-carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+/* Moldura decorativa */
+.acessibilidade-carousel::before {
+    content: "";
+    position: absolute;
+    inset: 18px -18px -18px 18px;
+    z-index: -1;
+    border: 1px solid rgba(102, 122, 91, 0.35);
+}
+
+/* Todas as imagens mantêm a mesma altura */
+.acessibilidade-carousel .carousel-item img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
+
+/* Fade mais suave */
+.acessibilidade-carousel.carousel-fade .carousel-item {
+    opacity: 0;
+    transition:
+        opacity 1s ease-in-out;
+}
+
+.acessibilidade-carousel.carousel-fade .carousel-item.active {
+    opacity: 1;
+}
+
+/* =========================================================
+   ACESSIBILIDADE DIGITAL
+   ========================================================= */
+.acessibilidade-digital {
+    padding: 7rem 0;
+    background-color: #26382c;
+    color: #ffffff;
+}
+
+.acessibilidade-section-header {
+    max-width: 760px;
+    margin-bottom: 3.5rem;
+}
+
+.acessibilidade-digital .section-eyebrow {
+    color: #d6c7a8;
+}
+
+.acessibilidade-section-header h2 {
+    margin-bottom: 1.2rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 600;
+}
+
+.acessibilidade-section-header p {
+    max-width: 680px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* =========================================================
+   CARDS DE RECURSOS
+   ========================================================= */
+.recurso-acessibilidade {
+    height: 100%;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.035);
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.recurso-acessibilidade:hover {
+    transform: translateY(-5px);
+    border-color: rgba(214, 199, 168, 0.35);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.recurso-acessibilidade>i {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #d6c7a8;
+}
+
+.recurso-acessibilidade h3 {
+    margin-bottom: 1rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.recurso-acessibilidade p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.68);
+}
+
+/* =========================================================
+   NAVEGAÇÃO / ATALHOS
+   ========================================================= */
+.acessibilidade-navegacao {
+    padding: 7rem 0;
+    background-color: #f4f1e8;
+}
+
+.acessibilidade-navegacao h2 {
+    margin-bottom: 1.5rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.3rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: #171a17;
+}
+
+.acessibilidade-navegacao p {
+    line-height: 1.8;
+    color: #5c625b;
+}
+
+/* =========================================================
+   LISTA DE ATALHOS
+   ========================================================= */
+.atalhos-acessibilidade {
+    border-top: 1px solid rgba(23, 26, 23, 0.14);
+}
+
+.atalho-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 1.7rem 0;
+    border-bottom: 1px solid rgba(23, 26, 23, 0.14);
+}
+
+.atalho-teclas {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.atalho-teclas kbd {
+    padding: 0.45rem 0.65rem;
+    border: 1px solid rgba(23, 26, 23, 0.16);
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #26382c;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    box-shadow:
+        0 2px 0 rgba(23, 26, 23, 0.14);
+}
+
+.atalho-teclas span {
+    font-size: 0.8rem;
+    color: #777b76;
+}
+
+.atalho-item h3 {
+    margin-bottom: 0.35rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.35rem;
+    color: #26382c;
+}
+
+.atalho-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   FERRAMENTAS DE ACESSIBILIDADE
+   ========================================================= */
+.acessibilidade-ferramentas {
+    padding: 7rem 0;
+    background-color: #171a17;
+    color: #ffffff;
+}
+
+.acessibilidade-ferramentas .section-eyebrow {
+    color: #d6c7a8;
+}
+
+.acessibilidade-ferramentas h2 {
+    margin-bottom: 1.2rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600;
+}
+
+.acessibilidade-ferramentas p {
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================================
+   LISTA DE FERRAMENTAS
+   ========================================================= */
+.ferramentas-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 2.5rem;
+}
+
+.ferramentas-lista span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(214, 199, 168, 0.22);
+    border-radius: 40px;
+    background-color: rgba(214, 199, 168, 0.06);
+    font-size: 0.88rem;
+    color: #e9e4d8;
+}
+
+.ferramentas-lista i {
+    color: #d6c7a8;
+}
+
+/* =========================================================
+   COMPROMISSO
+   ========================================================= */
+.acessibilidade-compromisso {
+    position: relative;
+    padding: 7rem 0;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.acessibilidade-compromisso::before {
+    content: "";
+    position: absolute;
+    width: 440px;
+    height: 440px;
+    right: -220px;
+    top: -220px;
+    border: 1px solid rgba(102, 122, 91, 0.14);
+    border-radius: 50%;
+}
+
+.compromisso-conteudo {
+    position: relative;
+    max-width: 760px;
+}
+
+.compromisso-conteudo h2 {
+    margin-bottom: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 600;
+    color: #171a17;
+}
+
+.compromisso-conteudo p {
+    line-height: 1.8;
+    color: #5d625c;
+}
+
+.acessibilidade-compromisso .btn-acessibilidade {
+    margin-top: 1rem;
+    background-color: #26382c;
+    border-color: #26382c;
+    color: #ffffff;
+}
+
+.acessibilidade-compromisso .btn-acessibilidade:hover {
+    background-color: #171a17;
+    border-color: #171a17;
+}
+
+/* =========================================================
+   LINK PULAR CONTEÚDO
+   ========================================================= */
+/*
+ * O link ficará fora da tela normalmente.
+ * A funcionalidade será revisada junto da etapa
+ * global de acessibilidade.
+ */
+.pular-conteudo {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.8rem 1rem;
+    background-color: #ffffff;
+    color: #171a17;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.pular-conteudo:focus {
+    top: 1rem;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+@media (max-width: 991px) {
+    .acessibilidade-hero {
+        min-height: 380px;
+        background-attachment: scroll;
+    }
+
+    .acessibilidade-barbearia,
+    .acessibilidade-digital,
+    .acessibilidade-navegacao,
+    .acessibilidade-ferramentas,
+    .acessibilidade-compromisso {
+        padding: 5rem 0;
+    }
+
+    .acessibilidade-carousel .carousel-item img {
+        height: 450px;
+    }
+
+    .acessibilidade-carousel::before {
+        display: none;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .acessibilidade-hero {
+        min-height: 340px;
+    }
+
+    .acessibilidade-hero-content {
+        padding: 4.5rem 0;
+    }
+
+    .acessibilidade-hero p {
+        font-size: 0.95rem;
+    }
+
+    .acessibilidade-intro {
+        padding: 4rem 0;
+    }
+
+    .acessibilidade-barbearia,
+    .acessibilidade-digital,
+    .acessibilidade-navegacao,
+    .acessibilidade-ferramentas,
+    .acessibilidade-compromisso {
+        padding: 4rem 0;
+    }
+
+    .acessibilidade-item {
+        grid-template-columns: 45px 1fr;
+        gap: 1rem;
+    }
+
+    .acessibilidade-carousel .carousel-item img {
+        height: 380px;
+    }
+
+    .atalho-item {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+
+    .recurso-acessibilidade {
+        padding: 1.6rem;
+    }
+
+}
+
+@media (max-width: 575px) {
+    .acessibilidade-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .acessibilidade-carousel .carousel-item img {
+        height: 320px;
+    }
+
+    .ferramentas-lista {
+        justify-content: flex-start;
+    }
+}

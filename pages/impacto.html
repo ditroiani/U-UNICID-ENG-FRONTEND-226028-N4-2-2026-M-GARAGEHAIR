@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Conheça os indicadores de impacto ambiental e social da Garage Hair.">
+
+    <!-- Bootstrap min -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap icons -->
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/icones/favicon.png">
+
+    <!-- CSS global -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- CSS específico da página -->
+    <link rel="stylesheet" href="../assets/css/impacto.css">
+
+    <!-- Título -->
+    <title>Impacto | Garage Hair</title>
+</head>
+
+<body data-root="..">
+    <!-- Header -->
+    <header id="navbar-component"></header>
+
+    <main>
+        <!-- ============================================
+             HERO
+             ============================================ -->
+        <section class="impacto-hero">
+            <div class="container">
+                <div class="impacto-hero-content">
+                    <span class="impacto-eyebrow">
+                        GARAGE HAIR
+                    </span>
+
+                    <h1>
+                        Nosso impacto em números
+                    </h1>
+
+                    <p>
+                        Acompanhe alguns dos indicadores que representam
+                        nossas ações ambientais e sociais.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             INTRODUÇÃO
+             ============================================ -->
+        <section class="impacto-intro">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <span class="section-eyebrow">
+                            RESULTADOS
+                        </span>
+
+                        <h2>
+                            Pequenas ações também geram grandes mudanças
+                        </h2>
+
+                        <p>
+                            A Garage Hair busca transformar práticas do
+                            dia a dia em ações mais conscientes,
+                            acompanhando indicadores relacionados à
+                            sustentabilidade, consumo de recursos e
+                            impacto social.
+                        </p>
+
+                        <small class="impacto-aviso">
+                            Dados simulados para fins acadêmicos.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             INDICADORES
+             ============================================ -->
+        <section class="impacto-indicadores">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Reciclagem -->
+                    <div class="col-md-6 col-xl-3">
+                        <article class="indicador-card">
+                            <i class="bi bi-recycle"></i>
+                            <span class="indicador-numero" id="total-reciclado">
+                                --
+                            </span>
+
+                            <span class="indicador-unidade">
+                                kg
+                            </span>
+
+                            <h3>
+                                Materiais reciclados
+                            </h3>
+                        </article>
+                    </div>
+
+                    <!-- Água -->
+                    <div class="col-md-6 col-xl-3">
+                        <article class="indicador-card">
+                            <i class="bi bi-droplet"></i>
+                            <span class="indicador-numero" id="reducao-agua">
+                                --
+                            </span>
+
+                            <span class="indicador-unidade">
+                                %
+                            </span>
+
+                            <h3>
+                                Redução no consumo de água
+                            </h3>
+                        </article>
+                    </div>
+
+                    <!-- Energia -->
+                    <div class="col-md-6 col-xl-3">
+                        <article class="indicador-card">
+                            <i class="bi bi-lightning-charge"></i>
+                            <span class="indicador-numero" id="reducao-energia">
+                                --
+                            </span>
+
+                            <span class="indicador-unidade">
+                                %
+                            </span>
+
+                            <h3>
+                                Redução no consumo de energia
+                            </h3>
+                        </article>
+                    </div>
+
+
+                    <!-- Social -->
+                    <div class="col-md-6 col-xl-3">
+                        <article class="indicador-card">
+                            <i class="bi bi-people"></i>
+                            <span class="indicador-numero" id="total-atendimentos">
+                                --
+                            </span>
+
+                            <h3>
+                                Atendimentos sociais
+                            </h3>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             GRÁFICOS
+             ============================================ -->
+        <section class="impacto-graficos">
+            <div class="container">
+                <div class="impacto-section-header">
+                    <span class="section-eyebrow">
+                        INDICADORES
+                    </span>
+
+                    <h2>
+                        Evolução do nosso impacto
+                    </h2>
+                </div>
+
+                <!-- Gráfico reciclagem -->
+                <div class="grafico-card grafico-card-destaque">
+                    <div class="grafico-header">
+                        <div>
+                            <span>
+                                RECICLAGEM
+                            </span>
+
+                            <h3>
+                                Materiais reciclados por mês
+                            </h3>
+                        </div>
+                        <i class="bi bi-recycle"></i>
+                    </div>
+
+                    <div class="grafico-container">
+                        <canvas id="graficoReciclagem"></canvas>
+                    </div>
+                </div>
+
+                <div class="row g-4 mt-1">
+                    <!-- Água -->
+                    <div class="col-lg-7">
+                        <div class="grafico-card">
+                            <div class="grafico-header">
+                                <div>
+                                    <span>
+                                        CONSUMO
+                                    </span>
+
+                                    <h3>
+                                        Consumo de água
+                                    </h3>
+                                </div>
+                                <i class="bi bi-droplet"></i>
+                            </div>
+
+                            <div class="grafico-container">
+                                <canvas id="graficoAgua"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resíduos -->
+                    <div class="col-lg-5">
+                        <div class="grafico-card">
+                            <div class="grafico-header">
+                                <div>
+                                    <span>
+                                        COMPOSIÇÃO
+                                    </span>
+
+                                    <h3>
+                                        Materiais reciclados
+                                    </h3>
+                                </div>
+                                <i class="bi bi-pie-chart"></i>
+                            </div>
+
+                            <div class="grafico-container grafico-container-pizza">
+                                <canvas id="graficoResiduos"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             RESUMO DOS PROJETOS
+             ============================================ -->
+        <section class="impacto-projetos">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <span class="section-eyebrow">
+                            NOSSAS INICIATIVAS
+                        </span>
+
+                        <h2>
+                            Impacto construído por diferentes ações
+                        </h2>
+
+                        <p>
+                            Os indicadores apresentados representam
+                            iniciativas relacionadas à reciclagem,
+                            consumo consciente, sustentabilidade e
+                            responsabilidade social.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="impacto-projetos-lista">
+                            <div class="impacto-projeto-item">
+                                <span>01</span>
+                                <div>
+                                    <h3>
+                                        Garage Recicla
+                                    </h3>
+
+                                    <p>
+                                        Separação e destinação adequada
+                                        de materiais recicláveis.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="impacto-projeto-item">
+                                <span>02</span>
+                                <div>
+                                    <h3>
+                                        Consumo Consciente
+                                    </h3>
+
+                                    <p>
+                                        Redução do consumo de água,
+                                        energia e embalagens.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="impacto-projeto-item">
+                                <span>03</span>
+                                <div>
+                                    <h3>
+                                        Corte Solidário
+                                    </h3>
+
+                                    <p>
+                                        Ações de cuidado e atendimento
+                                        voltadas para a comunidade.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             CTA
+             ============================================ -->
+        <section class="impacto-cta">
+            <div class="container text-center">
+                <span>
+                    CONHEÇA NOSSAS AÇÕES
+                </span>
+
+                <h2>
+                    Descubra como esses resultados começam
+                </h2>
+
+                <p>
+                    Conheça os projetos e iniciativas que fazem parte
+                    da proposta sustentável da Garage Hair.
+                </p>
+
+                <a data-link="pages/projetos.html" class="btn btn-garage">
+                    Conhecer projetos
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-component"></footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js">
+    </script>
+
+    <!-- Componentes -->
+    <script src="../assets/js/components.js"></script>
+
+    <!-- JS Dedicado -->
+    <script src="../assets/js/impacto.js"></script>
+
+    <!-- JS geral -->
+    <script src="../assets/js/script.js" defer></script>
+</body>
+
+</html>
