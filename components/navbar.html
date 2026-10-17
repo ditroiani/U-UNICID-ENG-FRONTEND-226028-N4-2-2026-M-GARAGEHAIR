@@ -1,104 +1,205 @@
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
+<!-- =========================================================
+     GARAGE HAIR - NAVBAR
+     ========================================================= -->
+<nav class="navbar navbar-expand-lg navbar-garage" aria-label="Navegação principal">
     <div class="container">
+        <!-- =====================================================
+              MARCA
+              ===================================================== -->
         <a class="navbar-brand brand-switch" data-link="index.html" aria-label="Garage Hair - Página inicial">
-
-            <!-- Nome completo -->
+            <!-- Marca completa -->
             <span class="brand-full">
-                Garage Hair
+                 <span class="brand-name">
+                     Garage Hair
+                 </span>
+
+            <span class="brand-tagline">
+                     Barbearia · Desde 1987
+                 </span>
             </span>
 
-
-            <!-- Marca compacta -->
+            <!-- Marca compacta exibida durante o scroll -->
             <span class="brand-compact">
-
-                <!-- Logo -->
-                <svg class="brand-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <!-- Letra G -->
-                    <path d="M32 17
-                   C29.8 14.8 27.2 14 24 14
-                   C18.5 14 14 18.5 14 24
-                   C14 29.5 18.5 34 24 34
-                   C27.8 34 30.8 32.3 33 29.5
-                   V24
-                   H25" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"
-                        stroke-linejoin="miter" />
-                </svg>
-
-                <!-- Nome abreviado -->
-                <span class="brand-short-name">
-                    Hair
-                </span>
+                 <svg class="brand-logo"
+                     viewBox="0 0 48 48"
+                     xmlns="http://www.w3.org/2000/svg"
+                     aria-hidden="true">
+ 
+                     <path
+                         d="M32 17
+                         C29.8 14.8 27.2 14 24 14
+                         C18.5 14 14 18.5 14 24
+                         C14 29.5 18.5 34 24 34
+                         C27.8 34 30.8 32.3 33 29.5
+                         V24
+                         H25"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="3"
+                         stroke-linecap="square"
+                         stroke-linejoin="miter" />
+                 </svg>
+ 
+                 <span class="brand-short-name">
+                     Hair
+                 </span>
             </span>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
-            aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
-            <i class="bi bi-list" aria-hidden="true"></i>
+        <!-- =====================================================
+              BOTÃO MOBILE
+              ===================================================== -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-label="Abrir menu de navegação">
+             <span>Menu</span>
+ 
+             <i class="bi bi-list"
+                 aria-hidden="true">
+             </i>
+
         </button>
 
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" data-link="index.html">
-                        Início
-                    </a>
-                </li>
+        <!-- =====================================================
+              MENU / OFFCANVAS
+              ===================================================== -->
+        <div class="offcanvas offcanvas-end offcanvas-lg" tabindex="-1" id="menuPrincipal" aria-labelledby="menuPrincipalTitulo">
+            <!-- Cabeçalho mobile -->
+            <div class="offcanvas-header">
+                <div>
+                    <span class="offcanvas-eyebrow">
+                         GARAGE HAIR
+                     </span>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-link="pages/sobre.html">
-                        Sobre
-                    </a>
-                </li>
+                    <h2 class="offcanvas-title" id="menuPrincipalTitulo">
+                        Navegação
+                    </h2>
+                </div>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-link="pages/projetos.html">
-                        Projetos
-                    </a>
-                </li>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#menuPrincipal" aria-label="Fechar menu">
+                 </button>
+            </div>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-link="pages/produtos.html">
-                        Produtos
-                    </a>
-                </li>
+            <!-- Conteúdo -->
+            <div class="offcanvas-body">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <!-- Início -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-link="index.html">
+                             Início
+                         </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-link="pages/impacto.html">
-                        Impacto
-                    </a>
-                </li>
+                    <!-- Sobre -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-link="pages/sobre.html">
+                             Sobre
+                         </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-link="pages/acessibilidade.html">
-                        Acessibilidade
-                    </a>
-                </li>
+                    <!-- =========================================
+                          EXPLORAR
+                          ========================================= -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownExplorar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Explorar
+                         </a>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-link="pages/galeria.html">
-                        Galeria
-                    </a>
-                </li>
+                        <ul class="dropdown-menu garage-dropdown" aria-labelledby="dropdownExplorar">
+                            <li>
+                                <a class="dropdown-item" data-link="pages/projetos.html">
+                                    <span class="dropdown-title">
+                                         Projetos
+                                     </span>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-link="pages/midia.html">
-                        Mídia
-                    </a>
-                </li>
+                                    <span class="dropdown-description">
+                                         Iniciativas sociais e sustentáveis
+                                     </span>
+                                </a>
+                            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-link="pages/noticias.html">
-                        Notícias
-                    </a>
-                </li>
+                            <li>
+                                <a class="dropdown-item" data-link="pages/impacto.html">
+                                    <span class="dropdown-title">
+                                         Impacto
+                                     </span>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-link="pages/contato.html">
-                        Contato
-                    </a>
-                </li>
-            </ul>
+                                    <span class="dropdown-description">
+                                         Resultados ambientais e sociais
+                                     </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" data-link="pages/galeria.html">
+                                    <span class="dropdown-title">
+                                         Galeria
+                                     </span>
+
+                                    <span class="dropdown-description">
+                                         Momentos da Garage Hair
+                                     </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" data-link="pages/midia.html">
+                                    <span class="dropdown-title">
+                                         Mídia
+                                     </span>
+
+                                    <span class="dropdown-description">
+                                         Vídeos, áudio e bastidores
+                                     </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <!-- Produtos -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-link="pages/produtos.html">
+                             Produtos
+                         </a>
+                    </li>
+
+                    <!-- Acessibilidade -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-link="pages/acessibilidade.html">
+                             Acessibilidade
+                         </a>
+                    </li>
+
+                    <!-- Notícias -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-link="pages/noticias.html">
+                             Notícias
+                         </a>
+                    </li>
+
+                    <!-- Contato -->
+                    <li class="nav-item nav-item-contato">
+                        <a class="nav-link nav-link-contato" data-link="pages/contato.html">
+                             Contato
+ 
+                             <i
+                                 class="bi bi-arrow-up-right"
+                                 aria-hidden="true">
+                             </i>
+                         </a>
+                    </li>
+                </ul>
+
+                <!-- Rodapé exclusivo mobile -->
+                <div class="mobile-menu-footer">
+                    <span>
+                         Garage Hair
+                     </span>
+
+                    <small>
+                         Barbearia sustentável e inclusiva · Desde 1987
+                     </small>
+                </div>
+            </div>
         </div>
     </div>
 </nav>

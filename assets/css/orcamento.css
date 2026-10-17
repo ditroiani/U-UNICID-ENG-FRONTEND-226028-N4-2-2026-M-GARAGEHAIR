@@ -1,0 +1,513 @@
+/* =========================================================
+   GARAGE HAIR
+   Página: Orçamento e Hospedagem
+   ========================================================= */
+
+ :root {
+    --dark: #171a17;
+    --green-dark: #26382c;
+    --green: #667a5b;
+    --beige: #d6c7a8;
+    --cream: #f4f1e8;
+    --white: #ffffff;
+    --text: #252525;
+}
+
+
+/* =========================================================
+   ELEMENTOS GERAIS
+   ========================================================= */
+
+.section-eyebrow {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16rem;
+    color: var(--green);
+}
+
+.section-header {
+    max-width: 760px;
+    margin-bottom: 3rem;
+}
+
+.section-header h2,
+.orcamento-intro h2,
+.cenario-section h2,
+.deployment-section h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
+    font-weight: 600;
+}
+
+.section-header p {
+    line-height: 1.8;
+    color: #656b65;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.orcamento-hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient( 90deg, rgba(23, 26, 23, 0.96) 0%, rgba(23, 26, 23, 0.82) 45%, rgba(23, 26, 23, 0.35) 100%), url("../images/orcamento/hero_orcamento.png") center / cover no-repeat;
+    color: var(--white);
+}
+
+.orcamento-hero-content {
+    max-width: 720px;
+    padding: 7rem 0;
+}
+
+.orcamento-hero .section-eyebrow {
+    color: var(--beige);
+}
+
+.orcamento-hero h1 {
+    margin-bottom: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(3rem, 7vw, 5.4rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.orcamento-hero p {
+    max-width: 650px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, .82);
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.orcamento-intro {
+    padding: 6rem 0;
+    background: var(--cream);
+}
+
+.orcamento-intro p {
+    line-height: 1.8;
+    color: #626861;
+}
+
+.overview-card {
+    height: 100%;
+    padding: 2rem;
+    background: var(--white);
+    border: 1px solid rgba(38, 56, 44, .1);
+    border-radius: 6px;
+    transition: .3s;
+}
+
+.overview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(23, 26, 23, .08);
+}
+
+.overview-card i {
+    display: block;
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    color: var(--green);
+}
+
+.overview-card h3 {
+    font-family: "Oswald", sans-serif;
+    color: var(--green-dark);
+}
+
+
+/* =========================================================
+   DOMÍNIOS
+   ========================================================= */
+
+.orcamento-section {
+    padding: 7rem 0;
+}
+
+.dominio-section {
+    background: var(--white);
+}
+
+.price-card {
+    position: relative;
+    height: 100%;
+    padding: 2.2rem;
+    border: 1px solid #e4e4df;
+    border-radius: 7px;
+    background: #fff;
+    transition: .3s;
+}
+
+.price-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(23, 26, 23, .09);
+}
+
+.price-card.destaque {
+    border: 2px solid var(--green);
+}
+
+.price-tag {
+    display: inline-block;
+    padding: .4rem .65rem;
+    margin-bottom: 1.4rem;
+    border-radius: 3px;
+    background: var(--green-dark);
+    color: var(--beige);
+    font-size: .67rem;
+    font-weight: 700;
+    letter-spacing: .1rem;
+}
+
+.price-tag.neutral {
+    background: #efeee9;
+    color: var(--green-dark);
+}
+
+.price-card h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.8rem;
+}
+
+.price {
+    margin: 1.3rem 0;
+}
+
+.price strong {
+    font-family: "Oswald", sans-serif;
+    font-size: 2.8rem;
+    color: var(--green-dark);
+}
+
+.price span {
+    color: #747a73;
+}
+
+.price-card p {
+    line-height: 1.7;
+    color: #656b65;
+}
+
+.price-domain {
+    margin-top: 1.7rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecece7;
+    font-family: monospace;
+    color: var(--green);
+}
+
+
+/* =========================================================
+   HOSPEDAGEM
+   ========================================================= */
+
+.hospedagem-section {
+    background: var(--dark);
+}
+
+.hospedagem-section .section-header p {
+    color: rgba(255, 255, 255, .65);
+}
+
+.hospedagem-section .section-eyebrow {
+    color: var(--beige);
+}
+
+.hosting-card {
+    height: 100%;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, .055);
+    color: white;
+    transition: .3s;
+}
+
+.hosting-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, .08);
+}
+
+.hosting-icon {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.4rem;
+    border: 1px solid rgba(214, 199, 168, .35);
+    border-radius: 50%;
+    color: var(--beige);
+    font-size: 1.4rem;
+}
+
+.hosting-card h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.8rem;
+}
+
+.hosting-price {
+    margin: 1rem 0;
+    font-family: "Oswald", sans-serif;
+    font-size: 2.4rem;
+    color: var(--beige);
+}
+
+.hosting-price span {
+    font-family: "Montserrat", sans-serif;
+    font-size: .85rem;
+    color: rgba(255, 255, 255, .55);
+}
+
+.hosting-card p,
+.hosting-card li {
+    color: rgba(255, 255, 255, .7);
+}
+
+.hosting-card ul {
+    padding-left: 1.2rem;
+}
+
+.hosting-card li {
+    margin-bottom: .5rem;
+}
+
+.pricing-note {
+    margin-top: 2rem;
+    font-size: .78rem;
+    color: rgba(255, 255, 255, .45);
+}
+
+
+/* =========================================================
+   CENÁRIO
+   ========================================================= */
+
+.cenario-section {
+    padding: 7rem 0;
+    background: var(--cream);
+}
+
+.cenario-section p {
+    line-height: 1.8;
+    color: #60665f;
+}
+
+.cenario-total {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-left: 4px solid var(--green);
+    background: white;
+}
+
+.cenario-total span {
+    display: block;
+    font-size: .8rem;
+    color: #737970;
+}
+
+.cenario-total strong {
+    display: block;
+    margin-top: .3rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 2rem;
+    color: var(--green-dark);
+}
+
+.budget-table {
+    overflow: hidden;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 15px 45px rgba(23, 26, 23, .08);
+}
+
+.budget-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    border-bottom: 1px solid #ecece7;
+}
+
+.budget-row span {
+    color: #5e645d;
+}
+
+.budget-row strong {
+    color: var(--green-dark);
+}
+
+.budget-row.total {
+    padding: 1.4rem;
+    background: var(--green-dark);
+}
+
+.budget-row.total span,
+.budget-row.total strong {
+    color: white;
+}
+
+
+/* =========================================================
+   FLUXO DE DEPLOY
+   ========================================================= */
+
+.deployment-section {
+    padding: 7rem 0;
+    background: white;
+}
+
+.deployment-section .section-header {
+    margin: 0 auto 4rem;
+}
+
+.deployment-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.flow-item {
+    min-width: 145px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border: 1px solid #e4e5df;
+    border-radius: 6px;
+}
+
+.flow-item i {
+    display: block;
+    margin-bottom: .8rem;
+    font-size: 1.7rem;
+    color: var(--green);
+}
+
+.flow-item span {
+    display: block;
+    font-size: .7rem;
+    color: #898d88;
+}
+
+.flow-item strong {
+    display: block;
+    margin-top: .2rem;
+    color: var(--green-dark);
+}
+
+.flow-arrow {
+    color: var(--beige);
+    font-size: 1.4rem;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.orcamento-cta {
+    padding: 7rem 0;
+    background: var(--green-dark);
+    color: white;
+}
+
+.orcamento-cta .section-eyebrow {
+    color: var(--beige);
+}
+
+.orcamento-cta h2 {
+    max-width: 760px;
+    margin: 0 auto 1.2rem;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+}
+
+.orcamento-cta p {
+    max-width: 650px;
+    margin: 0 auto 2rem;
+    color: rgba(255, 255, 255, .7);
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-orcamento,
+.btn-orcamento-outline {
+    padding: .85rem 1.7rem;
+    border-radius: 2px;
+    font-weight: 700;
+}
+
+.btn-orcamento {
+    background: var(--beige);
+    color: var(--dark);
+}
+
+.btn-orcamento:hover {
+    background: white;
+    color: var(--dark);
+}
+
+.btn-orcamento-outline {
+    border: 1px solid var(--beige);
+    color: var(--beige);
+}
+
+.btn-orcamento-outline:hover {
+    background: var(--beige);
+    color: var(--dark);
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 991px) {
+    .deployment-flow {
+        flex-wrap: wrap;
+    }
+    .flow-arrow {
+        display: none;
+    }
+    .flow-item {
+        flex: 1 1 30%;
+    }
+}
+
+@media (max-width: 767px) {
+    .orcamento-hero {
+        min-height: 430px;
+    }
+    .orcamento-hero-content {
+        padding: 5rem 0;
+    }
+    .orcamento-intro,
+    .orcamento-section,
+    .cenario-section,
+    .deployment-section,
+    .orcamento-cta {
+        padding: 4.5rem 0;
+    }
+    .budget-row {
+        flex-direction: column;
+        gap: .25rem;
+    }
+    .flow-item {
+        flex: 1 1 100%;
+    }
+}
