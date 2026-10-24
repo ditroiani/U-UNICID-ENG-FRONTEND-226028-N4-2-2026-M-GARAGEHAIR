@@ -112,7 +112,7 @@ Projeto desenvolvido por:
 
 O projeto está publicado e pode ser acessado através do endereço:
 
-**[Site Garage Hair](https://garage-hair.up.railway.app/)**
+**[Site Garage Hair](https://garagehairunicid.vercel.app)**
 
 A hospedagem atual do projeto é realizada através da plataforma **Railway**.
 
