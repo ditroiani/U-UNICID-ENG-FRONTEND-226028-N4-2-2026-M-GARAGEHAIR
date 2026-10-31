@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             criarGraficoReciclagem(dados);
             criarGraficoAgua(dados);
             criarGraficoResiduos(dados);
+            configurarContrasteGraficos();
         } catch (error) {
             console.error(
                 "Erro ao carregar os dados de impacto:",
@@ -524,6 +525,90 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         );
+    }
+
+    /* =========================================================
+       ALTO CONTRASTE DOS GRÁFICOS
+       Canvas não recebe as cores dos textos pelo CSS.
+       ========================================================= */
+    function configurarContrasteGraficos() {
+        const graficos = [
+            graficoReciclagemCanvas,
+            graficoAguaCanvas,
+            graficoResiduosCanvas
+        ].map(canvas => {
+            const chart = Chart.getChart(canvas);
+            const cores = [];
+
+            // Uma transição própria atualiza também as opções compartilhadas
+            // entre barras e pontos, sem animar a troca de cores.
+            chart.config.options.transitions = {
+                ...chart.config.options.transitions,
+                contrast: { animation: { duration: 0 } }
+            };
+
+            function registrar(caminho, contraste) {
+                const partes = caminho.split(".");
+                const propriedade = partes.pop();
+                const alvo = partes.reduce((objeto, chave) => objeto?.[chave], chart.config);
+
+                if (alvo) {
+                    cores.push({ partes, propriedade, original: alvo[propriedade], contraste });
+                }
+            }
+
+            registrar("options.color", "#ffffff");
+            registrar("options.plugins.legend.labels.color", "#ffffff");
+            registrar("options.plugins.tooltip.backgroundColor", "#000000");
+            registrar("options.plugins.tooltip.titleColor", "#ffffff");
+            registrar("options.plugins.tooltip.bodyColor", "#ffffff");
+            registrar("options.plugins.tooltip.borderColor", "#ffffff");
+
+            Object.keys(chart.config.options.scales || {}).forEach(eixo => {
+                registrar(`options.scales.${eixo}.ticks.color`, "#ffffff");
+                registrar(`options.scales.${eixo}.grid.color`, "#ffffff");
+            });
+
+            chart.data.datasets.forEach((dataset, indice) => {
+                const prefixo = `data.datasets.${indice}`;
+                const rosca = chart.config.type === "doughnut";
+                registrar(`${prefixo}.backgroundColor`, rosca
+                    ? ["#ffff00", "#00ffff", "#ffffff", "#ff80ff"]
+                    : "#ffff00");
+                registrar(`${prefixo}.borderColor`, rosca ? "#000000" : "#ffff00");
+                registrar(`${prefixo}.pointBackgroundColor`, "#ffff00");
+                registrar(`${prefixo}.pointBorderColor`, "#000000");
+                // A área preenchida não encobre as grades do gráfico de linha.
+                if (chart.config.type === "line") {
+                    registrar(`${prefixo}.fill`, false);
+                }
+            });
+
+            return { chart, cores };
+        });
+
+        function atualizarContrasteGraficos() {
+            const ativo = document.documentElement.classList.contains("high-contrast");
+
+            graficos.forEach(({ chart, cores }) => {
+                // Encerra a renderização anterior antes de trocar a paleta.
+                chart.stop();
+                cores.forEach(({ partes, propriedade, original, contraste }) => {
+                    const alvo = partes.reduce((objeto, chave) => objeto[chave], chart.config);
+                    if (!ativo && original === undefined) {
+                        delete alvo[propriedade];
+                    } else {
+                        alvo[propriedade] = ativo ? contraste : original;
+                    }
+                });
+                chart.update("contrast");
+            });
+        }
+
+        document.addEventListener("garagehair:contrast-change", atualizarContrasteGraficos);
+        if (document.documentElement.classList.contains("high-contrast")) {
+            atualizarContrasteGraficos();
+        }
     }
 
     /* =========================================================
