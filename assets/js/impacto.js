@@ -1,33 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-    /* =========================================================
-       ELEMENTOS DOS INDICADORES
-       ========================================================= */
+    // Elementos dos indicadores
     const totalReciclado =
-        document.querySelector("#total-reciclado");
+    document.querySelector("#total-reciclado");
     const reducaoAgua =
-        document.querySelector("#reducao-agua");
+    document.querySelector("#reducao-agua");
     const reducaoEnergia =
-        document.querySelector("#reducao-energia");
+    document.querySelector("#reducao-energia");
     const totalAtendimentos =
-        document.querySelector("#total-atendimentos");
+    document.querySelector("#total-atendimentos");
 
-    /* =========================================================
-       CANVAS DOS GRÁFICOS
-       ========================================================= */
+    // Canvas dos gráficos
     const graficoReciclagemCanvas =
-        document.querySelector("#graficoReciclagem");
+    document.querySelector("#graficoReciclagem");
     const graficoAguaCanvas =
-        document.querySelector("#graficoAgua");
+    document.querySelector("#graficoAgua");
     const graficoResiduosCanvas =
-        document.querySelector("#graficoResiduos");
+    document.querySelector("#graficoResiduos");
 
-    /* =========================================================
-       CARREGAMENTO DO CSV
-       ========================================================= */
+    // Carregamento do CSV
     async function carregarDados() {
         try {
             const response =
-                await fetch("../assets/data/impacto.csv");
+            await fetch("../assets/data/impacto.csv");
 
             if (!response.ok) {
                 throw new Error(
@@ -36,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const textoCSV =
-                await response.text();
+            await response.text();
             const dados =
-                converterCSV(textoCSV);
+            converterCSV(textoCSV);
 
             atualizarIndicadores(dados);
             criarGraficoReciclagem(dados);
@@ -53,166 +47,147 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    /* =========================================================
-       CONVERSÃO CSV → ARRAY DE OBJETOS
-       ========================================================= */
+    // Conversão CSV → array de objetos
     function converterCSV(csv) {
         /*
          * Remove espaços extras e divide
          * o arquivo em linhas.
          */
         const linhas =
-            csv.trim().split(/\r?\n/);
+        csv.trim().split(/\r?\n/);
 
         /*
          * A primeira linha representa
          * os nomes das colunas.
          */
         const cabecalho =
-            linhas[0].split(",");
+        linhas[0].split(",");
 
         /*
          * Percorremos todas as linhas
          * a partir da segunda.
          */
         return linhas
-            .slice(1)
-            .map(linha => {
-                const valores =
-                    linha.split(",");
-                const objeto = {};
+        .slice(1)
+        .map(linha => {
+            const valores =
+            linha.split(",");
+            const objeto = {};
 
-                cabecalho.forEach((campo, indice) => {
-                    objeto[campo.trim()] =
-                        valores[indice]?.trim();
-                });
-
-                /*
-                 * Converte os campos numéricos.
-                 */
-                objeto.reciclados_kg =
-                    Number(objeto.reciclados_kg);
-                objeto.agua_litros =
-                    Number(objeto.agua_litros);
-                objeto.energia_kwh =
-                    Number(objeto.energia_kwh);
-                objeto.atendimentos_sociais =
-                    Number(objeto.atendimentos_sociais);
-                objeto.papel_kg =
-                    Number(objeto.papel_kg);
-                objeto.plastico_kg =
-                    Number(objeto.plastico_kg);
-                objeto.vidro_kg =
-                    Number(objeto.vidro_kg);
-                objeto.metal_kg =
-                    Number(objeto.metal_kg);
-
-                return objeto;
+            cabecalho.forEach((campo, indice) => {
+                objeto[campo.trim()] =
+                valores[indice]?.trim();
             });
+
+            // Converte os campos numéricos.
+            objeto.reciclados_kg =
+            Number(objeto.reciclados_kg);
+            objeto.agua_litros =
+            Number(objeto.agua_litros);
+            objeto.energia_kwh =
+            Number(objeto.energia_kwh);
+            objeto.atendimentos_sociais =
+            Number(objeto.atendimentos_sociais);
+            objeto.papel_kg =
+            Number(objeto.papel_kg);
+            objeto.plastico_kg =
+            Number(objeto.plastico_kg);
+            objeto.vidro_kg =
+            Number(objeto.vidro_kg);
+            objeto.metal_kg =
+            Number(objeto.metal_kg);
+
+            return objeto;
+        });
     }
 
-
-    /* =========================================================
-       INDICADORES
-       ========================================================= */
+    // Indicadores
     function atualizarIndicadores(dados) {
         if (!dados.length) return;
-        /* -----------------------------------------
-           Total reciclado
-           ----------------------------------------- */
+        // Total reciclado
         const recicladoTotal =
-            dados.reduce(
-                (total, item) =>
-                    total + item.reciclados_kg,
-                0
-            );
+        dados.reduce(
+            (total, item) =>
+            total + item.reciclados_kg,
+            0
+        );
 
-        /* -----------------------------------------
-           Redução de água
-           ----------------------------------------- */
+        // Redução de água
         const consumoAguaInicial =
-            dados[0].agua_litros;
+        dados[0].agua_litros;
         const consumoAguaFinal =
-            dados[dados.length - 1].agua_litros;
+        dados[dados.length - 1].agua_litros;
 
         const percentualReducaoAgua =
+        (
             (
-                (
-                    consumoAguaInicial -
-                    consumoAguaFinal
-                )
-                /
-                consumoAguaInicial
+                consumoAguaInicial -
+                consumoAguaFinal
             )
-            * 100;
+            /
+            consumoAguaInicial
+        )
+        * 100;
 
-        /* -----------------------------------------
-           Redução de energia
-           ----------------------------------------- */
+        // Redução de energia
         const consumoEnergiaInicial =
-            dados[0].energia_kwh;
+        dados[0].energia_kwh;
         const consumoEnergiaFinal =
-            dados[dados.length - 1].energia_kwh;
+        dados[dados.length - 1].energia_kwh;
 
         const percentualReducaoEnergia =
+        (
             (
-                (
-                    consumoEnergiaInicial -
-                    consumoEnergiaFinal
-                )
-                /
-                consumoEnergiaInicial
+                consumoEnergiaInicial -
+                consumoEnergiaFinal
             )
-            * 100;
+            /
+            consumoEnergiaInicial
+        )
+        * 100;
 
-        /* -----------------------------------------
-           Total de atendimentos sociais
-           ----------------------------------------- */
+        // Total de atendimentos sociais
         const atendimentosTotal =
-            dados.reduce(
-                (total, item) =>
-                    total + item.atendimentos_sociais,
-                0
-            );
+        dados.reduce(
+            (total, item) =>
+            total + item.atendimentos_sociais,
+            0
+        );
 
-        /* -----------------------------------------
-           Exibição
-           ----------------------------------------- */
+        // Exibição
         totalReciclado.textContent =
-            recicladoTotal.toLocaleString("pt-BR");
+        recicladoTotal.toLocaleString("pt-BR");
 
         reducaoAgua.textContent =
-            percentualReducaoAgua
-                .toFixed(1)
-                .replace(".", ",");
+        percentualReducaoAgua
+        .toFixed(1)
+        .replace(".", ",");
 
         reducaoEnergia.textContent =
-            percentualReducaoEnergia
-                .toFixed(1)
-                .replace(".", ",");
+        percentualReducaoEnergia
+        .toFixed(1)
+        .replace(".", ",");
 
         totalAtendimentos.textContent =
-            atendimentosTotal.toLocaleString("pt-BR");
+        atendimentosTotal.toLocaleString("pt-BR");
     }
 
-    /* =========================================================
-       CONFIGURAÇÕES GERAIS DO CHART.JS
-       ========================================================= */
+    // Configurações gerais do Chart.js
     Chart.defaults.font.family =
-        "'Montserrat', sans-serif";
+    "'Montserrat', sans-serif";
     Chart.defaults.color =
-        "rgba(255, 255, 255, 0.72)";
+    "rgba(255, 255, 255, 0.72)";
 
-    /* =========================================================
-       GRÁFICO 1
-       MATERIAIS RECICLADOS
-       ========================================================= */
+    /*
+     * Gráfico 1
+     * Materiais reciclados
+     */
     function criarGraficoReciclagem(dados) {
         const meses =
-            dados.map(item => item.mes);
+        dados.map(item => item.mes);
 
         const valores =
-            dados.map(item => item.reciclados_kg);
+        dados.map(item => item.reciclados_kg);
 
         new Chart(
             graficoReciclagemCanvas,
@@ -223,21 +198,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     datasets: [
                         {
                             label:
-                                "Materiais reciclados (kg)",
+                            "Materiais reciclados (kg)",
                             data:
-                                valores,
+                            valores,
                             backgroundColor:
-                                "rgba(214, 199, 168, 0.82)",
+                            "rgba(214, 199, 168, 0.82)",
                             borderColor:
-                                "#d6c7a8",
+                            "#d6c7a8",
                             borderWidth:
-                                1,
+                            1,
                             borderRadius:
-                                8,
+                            8,
                             borderSkipped:
-                                false,
+                            false,
                             maxBarThickness:
-                                58
+                            58
                         }
                     ]
                 },
@@ -256,17 +231,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         tooltip: {
                             backgroundColor:
-                                "#171a17",
+                            "#171a17",
                             titleColor:
-                                "#ffffff",
+                            "#ffffff",
                             bodyColor:
-                                "#f4f1e8",
+                            "#f4f1e8",
                             borderColor:
-                                "rgba(214, 199, 168, 0.25)",
+                            "rgba(214, 199, 168, 0.25)",
                             borderWidth:
-                                1,
+                            1,
                             padding:
-                                12,
+                            12,
                             callbacks: {
                                 label(context) {
                                     return (
@@ -286,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             },
                             ticks: {
                                 color:
-                                    "rgba(255,255,255,0.65)"
+                                "rgba(255,255,255,0.65)"
                             }
                         },
 
@@ -297,11 +272,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             },
                             grid: {
                                 color:
-                                    "rgba(255,255,255,0.07)"
+                                "rgba(255,255,255,0.07)"
                             },
                             ticks: {
                                 color:
-                                    "rgba(255,255,255,0.55)",
+                                "rgba(255,255,255,0.55)",
                                 callback(value) {
                                     return `${value} kg`;
                                 }
@@ -313,16 +288,16 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    /* =========================================================
-       GRÁFICO 2
-       CONSUMO DE ÁGUA
-       ========================================================= */
+    /*
+     * Gráfico 2
+     * Consumo de água
+     */
     function criarGraficoAgua(dados) {
         const meses =
-            dados.map(item => item.mes);
+        dados.map(item => item.mes);
 
         const valores =
-            dados.map(item => item.agua_litros);
+        dados.map(item => item.agua_litros);
 
         new Chart(
             graficoAguaCanvas,
@@ -330,33 +305,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 type: "line",
                 data: {
                     labels:
-                        meses,
+                    meses,
                     datasets: [
                         {
                             label:
-                                "Consumo de água",
+                            "Consumo de água",
                             data:
-                                valores,
+                            valores,
                             borderColor:
-                                "#d6c7a8",
+                            "#d6c7a8",
                             backgroundColor:
-                                "rgba(214,199,168,0.12)",
+                            "rgba(214,199,168,0.12)",
                             fill:
-                                true,
+                            true,
                             tension:
-                                0.4,
+                            0.4,
                             borderWidth:
-                                3,
+                            3,
                             pointRadius:
-                                5,
+                            5,
                             pointHoverRadius:
-                                7,
+                            7,
                             pointBackgroundColor:
-                                "#d6c7a8",
+                            "#d6c7a8",
                             pointBorderColor:
-                                "#26382c",
+                            "#26382c",
                             pointBorderWidth:
-                                2
+                            2
                         }
                     ]
                 },
@@ -370,17 +345,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         tooltip: {
                             backgroundColor:
-                                "#171a17",
+                            "#171a17",
                             titleColor:
-                                "#ffffff",
+                            "#ffffff",
                             bodyColor:
-                                "#f4f1e8",
+                            "#f4f1e8",
                             borderColor:
-                                "rgba(214, 199, 168, 0.25)",
+                            "rgba(214, 199, 168, 0.25)",
                             borderWidth:
-                                1,
+                            1,
                             padding:
-                                12,
+                            12,
                             callbacks: {
                                 label(context) {
                                     return (
@@ -400,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             },
                             ticks: {
                                 color:
-                                    "rgba(255,255,255,0.65)"
+                                "rgba(255,255,255,0.65)"
                             }
                         },
                         y: {
@@ -409,11 +384,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             },
                             grid: {
                                 color:
-                                    "rgba(255,255,255,0.07)"
+                                "rgba(255,255,255,0.07)"
                             },
                             ticks: {
                                 color:
-                                    "rgba(255,255,255,0.55)",
+                                "rgba(255,255,255,0.55)",
                                 callback(value) {
                                     return (
                                         value.toLocaleString("pt-BR")
@@ -427,24 +402,23 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-
-    /* =========================================================
-       GRÁFICO 3
-       COMPOSIÇÃO DOS RESÍDUOS
-       ========================================================= */
+    /*
+     * Gráfico 3
+     * Composição dos resíduos
+     */
     function criarGraficoResiduos(dados) {
         /*
          * Soma cada tipo de material
          * ao longo dos meses.
          */
         const totalPapel =
-            somarCampo(dados, "papel_kg");
+        somarCampo(dados, "papel_kg");
         const totalPlastico =
-            somarCampo(dados, "plastico_kg");
+        somarCampo(dados, "plastico_kg");
         const totalVidro =
-            somarCampo(dados, "vidro_kg");
+        somarCampo(dados, "vidro_kg");
         const totalMetal =
-            somarCampo(dados, "metal_kg");
+        somarCampo(dados, "metal_kg");
 
         new Chart(
             graficoResiduosCanvas,
@@ -472,11 +446,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                 "#394b3e"
                             ],
                             borderColor:
-                                "#26382c",
+                            "#26382c",
                             borderWidth:
-                                4,
+                            4,
                             hoverOffset:
-                                8
+                            8
                         }
                     ]
                 },
@@ -484,35 +458,35 @@ document.addEventListener("DOMContentLoaded", () => {
                     responsive: true,
                     maintainAspectRatio: false,
                     cutout:
-                        "68%",
+                    "68%",
                     plugins: {
                         legend: {
                             position:
-                                "bottom",
+                            "bottom",
                             labels: {
                                 color:
-                                    "rgba(255,255,255,0.72)",
+                                "rgba(255,255,255,0.72)",
                                 padding:
-                                    18,
+                                18,
                                 usePointStyle:
-                                    true,
+                                true,
                                 pointStyle:
-                                    "circle"
+                                "circle"
                             }
                         },
                         tooltip: {
                             backgroundColor:
-                                "#171a17",
+                            "#171a17",
                             titleColor:
-                                "#ffffff",
+                            "#ffffff",
                             bodyColor:
-                                "#f4f1e8",
+                            "#f4f1e8",
                             borderColor:
-                                "rgba(214, 199, 168, 0.25)",
+                            "rgba(214, 199, 168, 0.25)",
                             borderWidth:
-                                1,
+                            1,
                             padding:
-                                12,
+                            12,
                             callbacks: {
                                 label(context) {
                                     return (
@@ -527,10 +501,10 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    /* =========================================================
-       ALTO CONTRASTE DOS GRÁFICOS
-       Canvas não recebe as cores dos textos pelo CSS.
-       ========================================================= */
+    /*
+     * Alto contraste dos gráficos
+     * Canvas não recebe as cores dos textos pelo CSS.
+     */
     function configurarContrasteGraficos() {
         const graficos = [
             graficoReciclagemCanvas,
@@ -565,8 +539,8 @@ document.addEventListener("DOMContentLoaded", () => {
             registrar("options.plugins.tooltip.borderColor", "#ffffff");
 
             Object.keys(chart.config.options.scales || {}).forEach(eixo => {
-                registrar(`options.scales.${eixo}.ticks.color`, "#ffffff");
-                registrar(`options.scales.${eixo}.grid.color`, "#ffffff");
+            registrar(`options.scales.${eixo}.ticks.color`, "#ffffff");
+            registrar(`options.scales.${eixo}.grid.color`, "#ffffff");
             });
 
             chart.data.datasets.forEach((dataset, indice) => {
@@ -591,17 +565,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const ativo = document.documentElement.classList.contains("high-contrast");
 
             graficos.forEach(({ chart, cores }) => {
-                // Encerra a renderização anterior antes de trocar a paleta.
-                chart.stop();
-                cores.forEach(({ partes, propriedade, original, contraste }) => {
-                    const alvo = partes.reduce((objeto, chave) => objeto[chave], chart.config);
-                    if (!ativo && original === undefined) {
-                        delete alvo[propriedade];
-                    } else {
-                        alvo[propriedade] = ativo ? contraste : original;
-                    }
-                });
-                chart.update("contrast");
+            // Encerra a renderização anterior antes de trocar a paleta.
+            chart.stop();
+            cores.forEach(({ partes, propriedade, original, contraste }) => {
+            const alvo = partes.reduce((objeto, chave) => objeto[chave], chart.config);
+            if (!ativo && original === undefined) {
+                delete alvo[propriedade];
+            } else {
+                alvo[propriedade] = ativo ? contraste : original;
+            }
+            });
+            chart.update("contrast");
             });
         }
 
@@ -611,19 +585,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    /* =========================================================
-       FUNÇÃO AUXILIAR
-       ========================================================= */
+    // Função auxiliar
     function somarCampo(dados, campo) {
         return dados.reduce(
             (total, item) =>
-                total + item[campo],
+            total + item[campo],
             0
         );
     }
 
-    /* =========================================================
-       INICIALIZAÇÃO
-       ========================================================= */
+    // Inicialização
     carregarDados();
 });

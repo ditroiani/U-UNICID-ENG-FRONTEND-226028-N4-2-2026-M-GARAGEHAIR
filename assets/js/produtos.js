@@ -1,62 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    /*
-     * =====================================================
-     * ELEMENTOS DA PÁGINA
-     * =====================================================
-     */
+    // Elementos da página
     const listaProdutos =
-        document.querySelector("#lista-produtos");
+    document.querySelector("#lista-produtos");
 
     const buscaProduto =
-        document.querySelector("#busca-produto");
+    document.querySelector("#busca-produto");
 
     const ordenarProdutos =
-        document.querySelector("#ordenar-produtos");
+    document.querySelector("#ordenar-produtos");
 
     const botoesCategoria =
-        document.querySelectorAll(".categoria-btn");
+    document.querySelectorAll(".categoria-btn");
 
     const semProdutos =
-        document.querySelector("#sem-produtos");
+    document.querySelector("#sem-produtos");
 
-    /*
-     * Guarda todos os produtos carregados do JSON.
-     */
+    // Guarda todos os produtos carregados do JSON.
     let produtos = [];
 
-    /*
-     * Categoria selecionada atualmente.
-     */
+    // Categoria selecionada atualmente.
     let categoriaAtual = "Todos";
 
-    /*
-     * =====================================================
-     * CARREGAMENTO DOS PRODUTOS
-     * =====================================================
-     */
+    // Carregamento dos produtos
     async function carregarProdutos() {
         try {
             const response =
-                await fetch("../assets/data/produtos.json");
+            await fetch("../assets/data/produtos.json");
 
-            /*
-             * Verifica se o arquivo foi encontrado.
-             */
+            // Verifica se o arquivo foi encontrado.
             if (!response.ok) {
                 throw new Error(
                     `Erro ao carregar produtos: ${response.status}`
                 );
             }
 
-            /*
-             * Converte o JSON para objetos JavaScript.
-             */
+            // Converte o JSON para objetos JavaScript.
             produtos = await response.json();
 
-            /*
-             * Exibe os produtos pela primeira vez.
-             */
+            // Exibe os produtos pela primeira vez.
             atualizarProdutos();
         } catch (error) {
             console.error(error);
@@ -70,102 +51,74 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    /*
-     * =====================================================
-     * CRIAÇÃO DOS CARDS
-     * =====================================================
-     */
+    // Criação dos cards
     function renderizarProdutos(lista) {
-        /*
-         * Limpa os produtos já existentes.
-         */
+        // Limpa os produtos já existentes.
         listaProdutos.innerHTML = "";
 
-        /*
-         * Caso nenhum produto seja encontrado.
-         */
+        // Caso nenhum produto seja encontrado.
         if (lista.length === 0) {
             semProdutos.classList.remove("d-none");
             return;
         }
 
-        /*
-         * Caso existam produtos, esconde a mensagem.
-         */
+        // Caso existam produtos, esconde a mensagem.
         semProdutos.classList.add("d-none");
 
-        /*
-         * Percorre todos os produtos.
-         */
+        // Percorre todos os produtos.
         lista.forEach(produto => {
-            /*
-             * Coluna Bootstrap.
-             */
+            // Coluna Bootstrap.
             const coluna =
-                document.createElement("div");
+            document.createElement("div");
 
             coluna.className =
-                "col-sm-6 col-xl-4";
+            "col-sm-6 col-xl-4";
 
-            /*
-             * Article do produto.
-             */
+            // Article do produto.
             const card =
-                document.createElement("article");
+            document.createElement("article");
             card.className =
-                "produto-card";
+            "produto-card";
 
-            /*
-             * Imagem.
-             */
+            // Imagem.
             const imagem =
-                document.createElement("img");
+            document.createElement("img");
             imagem.src =
-                produto.imagem;
+            produto.imagem;
             imagem.alt =
-                `${produto.nome} da linha Garage Hair`;
+            `${produto.nome} da linha Garage Hair`;
             imagem.className =
-                "produto-card-imagem";
+            "produto-card-imagem";
             imagem.loading =
-                "lazy";
+            "lazy";
 
-            /*
-             * Corpo do card.
-             */
+            // Corpo do card.
             const body =
-                document.createElement("div");
+            document.createElement("div");
             body.className =
-                "produto-card-body";
+            "produto-card-body";
 
-            /*
-             * Categoria.
-             */
+            // Categoria.
             const categoria =
-                document.createElement("span");
+            document.createElement("span");
             categoria.className =
-                "produto-categoria";
+            "produto-categoria";
             categoria.textContent =
-                produto.categoria;
+            produto.categoria;
 
-            /*
-             * Nome.
-             */
+            // Nome.
             const nome =
-                document.createElement("h3");
+            document.createElement("h3");
             nome.textContent =
-                produto.nome;
+            produto.nome;
 
-            /*
-             * Descrição.
-             */
+            // Descrição.
             const descricao =
-                document.createElement("p");
+            document.createElement("p");
             descricao.textContent =
-                produto.descricao;
+            produto.descricao;
 
-            /*
-             * Monta o card.
-             */
+            // Monta o card.
             body.append(
                 categoria,
                 nome,
@@ -182,69 +135,51 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-
-    /*
-     * =====================================================
-     * FILTROS
-     * =====================================================
-     */
+    // Filtros
     function atualizarProdutos() {
         /*
          * Cria uma cópia do array original.
-         *
          * Assim não alteramos a ordem original
          * armazenada em produtos.
          */
         let resultado =
-            [...produtos];
+        [...produtos];
 
-        /*
-         * ---------------------------------------------
-         * Categoria
-         * ---------------------------------------------
-         */
+        // Categoria
         if (categoriaAtual !== "Todos") {
             resultado =
-                resultado.filter(produto => {
-                    return produto.categoria === categoriaAtual;
-                });
+            resultado.filter(produto => {
+                return produto.categoria === categoriaAtual;
+            });
         }
 
-        /*
-         * ---------------------------------------------
-         * Busca
-         * ---------------------------------------------
-         */
+        // Busca
         const termoBusca =
-            buscaProduto.value
-                .trim()
-                .toLowerCase();
+        buscaProduto.value
+        .trim()
+        .toLowerCase();
 
         if (termoBusca !== "") {
             resultado =
-                resultado.filter(produto => {
-                    const nome =
-                        produto.nome.toLowerCase();
-                    const categoria =
-                        produto.categoria.toLowerCase();
-                    const descricao =
-                        produto.descricao.toLowerCase();
+            resultado.filter(produto => {
+                const nome =
+                produto.nome.toLowerCase();
+                const categoria =
+                produto.categoria.toLowerCase();
+                const descricao =
+                produto.descricao.toLowerCase();
 
-                    return (
-                        nome.includes(termoBusca) ||
-                        categoria.includes(termoBusca) ||
-                        descricao.includes(termoBusca)
-                    );
-                });
+                return (
+                    nome.includes(termoBusca) ||
+                    categoria.includes(termoBusca) ||
+                    descricao.includes(termoBusca)
+                );
+            });
         }
 
-        /*
-         * ---------------------------------------------
-         * Ordenação
-         * ---------------------------------------------
-         */
+        // Ordenação
         const ordenacao =
-            ordenarProdutos.value;
+        ordenarProdutos.value;
 
         if (ordenacao === "nome-asc") {
             resultado.sort((a, b) => {
@@ -264,21 +199,13 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        /*
-         * Renderiza o resultado final.
-         */
+        // Renderiza o resultado final.
         renderizarProdutos(resultado);
     }
 
-    /*
-     * =====================================================
-     * EVENTOS
-     * =====================================================
-     */
-
+    // Eventos
     /*
      * Busca.
-     *
      * "input" executa enquanto o usuário digita.
      */
     buscaProduto.addEventListener(
@@ -286,31 +213,23 @@ document.addEventListener("DOMContentLoaded", () => {
         atualizarProdutos
     );
 
-    /*
-     * Ordenação.
-     */
+    // Ordenação.
     ordenarProdutos.addEventListener(
         "change",
         atualizarProdutos
     );
 
-    /*
-     * Categorias.
-     */
+    // Categorias.
     botoesCategoria.forEach(botao => {
         botao.setAttribute("aria-pressed", botao.classList.contains("active").toString());
         botao.addEventListener("click", () => {
-            /*
-             * Remove active de todos.
-             */
+            // Remove active de todos.
             botoesCategoria.forEach(item => {
                 item.classList.remove("active");
                 item.setAttribute("aria-pressed", "false");
             });
 
-            /*
-             * Marca o botão clicado.
-             */
+            // Marca o botão clicado.
             botao.classList.add("active");
             botao.setAttribute("aria-pressed", "true");
 
@@ -319,19 +238,13 @@ document.addEventListener("DOMContentLoaded", () => {
              * no data-categoria.
              */
             categoriaAtual =
-                botao.dataset.categoria;
+            botao.dataset.categoria;
 
-            /*
-             * Atualiza a lista.
-             */
+            // Atualiza a lista.
             atualizarProdutos();
         });
     });
 
-    /*
-     * =====================================================
-     * INICIALIZAÇÃO
-     * =====================================================
-     */
+    // Inicialização
     carregarProdutos();
 });

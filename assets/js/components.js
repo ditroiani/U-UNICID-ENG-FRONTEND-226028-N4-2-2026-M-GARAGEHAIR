@@ -1,30 +1,16 @@
-document.addEventListener("DOMContentLoaded", async() => {
-
+document.addEventListener("DOMContentLoaded", async () => {
     /*
-     * =========================================================
-     * RAIZ DO PROJETO
-     * =========================================================
-     *
+     * Raiz do projeto
      * Descobre qual é o caminho até a raiz do projeto.
-     *
      * index.html:
      * <body data-root=".">
-     *
      * pages/sobre.html:
      * <body data-root="..">
      */
-
     const root = document.body.dataset.root || ".";
 
-
-    /*
-     * =========================================================
-     * CARREGAMENTO DOS COMPONENTES
-     * =========================================================
-     */
-
+    // Carregamento dos componentes
     async function loadComponent(selector, file) {
-
         const element = document.querySelector(selector);
 
         /*
@@ -36,7 +22,6 @@ document.addEventListener("DOMContentLoaded", async() => {
         }
 
         try {
-
             const response = await fetch(`${root}/${file}`);
 
             if (!response.ok) {
@@ -48,24 +33,15 @@ document.addEventListener("DOMContentLoaded", async() => {
             const html = await response.text();
 
             element.innerHTML = html;
-
         } catch (error) {
-
             console.error(
                 `Não foi possível carregar o componente "${file}".`,
                 error
             );
-
         }
     }
 
-
-    /*
-     * =========================================================
-     * CARREGA NAVBAR E FOOTER
-     * =========================================================
-     */
-
+    // Carrega navbar e footer
     await Promise.all([
         loadComponent(
             "#navbar-component",
@@ -78,65 +54,44 @@ document.addEventListener("DOMContentLoaded", async() => {
         )
     ]);
 
-
     /*
-     * =========================================================
-     * CORRIGE OS LINKS DOS COMPONENTES
-     * =========================================================
-     *
+     * Corrige os links dos componentes
      * Os componentes utilizam data-link para que funcionem
      * tanto na página inicial quanto nas páginas internas.
      */
-
     document
-        .querySelectorAll("[data-link]")
-        .forEach(link => {
+    .querySelectorAll("[data-link]")
+    .forEach(link => {
+        const destination = link.dataset.link;
 
-            const destination = link.dataset.link;
+        if (!destination) {
+            return;
+        }
 
-            if (!destination) {
-                return;
-            }
+        link.href = `${root}/${destination}`;
+    });
 
-            link.href = `${root}/${destination}`;
-
-        });
-
-
-    /*
-     * =========================================================
-     * DEFINE A PÁGINA ATUAL
-     * =========================================================
-     */
-
+    // Define a página atual
     const currentPage =
-        window.location.pathname
-        .split("/")
-        .pop() || "index.html";
-
+    window.location.pathname
+    .split("/")
+    .pop() || "index.html";
 
     /*
-     * =========================================================
-     * LINK ATIVO
-     * =========================================================
-     *
+     * Link ativo
      * Verifica:
-     *
      * - links principais da navbar;
      * - links do dropdown Explorar;
      * - links do footer.
      */
-
     const navigationLinks =
-        document.querySelectorAll(
-            "#navbar-component .nav-link[data-link], " +
-            "#navbar-component .dropdown-item[data-link], " +
-            "#footer-component [data-link]"
-        );
-
+    document.querySelectorAll(
+        "#navbar-component .nav-link[data-link], " +
+        "#navbar-component .dropdown-item[data-link], " +
+        "#footer-component [data-link]"
+    );
 
     navigationLinks.forEach(link => {
-
         const destination = link.dataset.link;
 
         if (!destination) {
@@ -144,16 +99,12 @@ document.addEventListener("DOMContentLoaded", async() => {
         }
 
         const linkPage =
-            destination
-            .split("/")
-            .pop();
+        destination
+        .split("/")
+        .pop();
 
-
-        /*
-         * Página atual encontrada.
-         */
+        // Página atual encontrada.
         if (linkPage === currentPage) {
-
             link.classList.add("active");
 
             link.setAttribute(
@@ -161,69 +112,44 @@ document.addEventListener("DOMContentLoaded", async() => {
                 "page"
             );
 
-
             /*
-             * =================================================
-             * DROPDOWN EXPLORAR
-             * =================================================
-             *
+             * Dropdown explorar
              * Caso o link ativo esteja dentro de um dropdown,
              * também destaca o botão pai.
-             *
              * Exemplo:
-             *
              * impacto.html
-             *
              * Impacto  -> ativo
              * Explorar -> ativo
              */
-
             const dropdown =
-                link.closest(".dropdown");
-
+            link.closest(".dropdown");
 
             if (dropdown) {
-
                 const dropdownToggle =
-                    dropdown.querySelector(
-                        ".dropdown-toggle"
-                    );
-
+                dropdown.querySelector(
+                    ".dropdown-toggle"
+                );
 
                 if (dropdownToggle) {
-
                     dropdownToggle.classList.add(
                         "active"
                     );
-
                 }
             }
         }
     });
 
-
     /*
-     * =========================================================
-     * FECHA O MENU MOBILE APÓS NAVEGAÇÃO
-     * =========================================================
-     *
+     * Fecha o menu mobile após navegação
      * Normalmente a nova página já fecha o offcanvas.
      * Esta rotina também cobre situações em que um link
      * seja utilizado sem recarregamento completo.
      */
-
     setupMobileNavigation();
     setupAccessibilityKeyboard();
 
-
-    /*
-     * =========================================================
-     * COMPORTAMENTO DA NAVBAR DURANTE O SCROLL
-     * =========================================================
-     */
-
+    // Comportamento da navbar durante o scroll
     setupNavbarScroll();
-
 });
 
 // O painel contém vários controles, então Tab segue a ordem natural.
@@ -248,7 +174,7 @@ function setupAccessibilityKeyboard() {
 
         window.bootstrap.Dropdown.getOrCreateInstance(toggle).show();
         const controls = [...panel.querySelectorAll("button:not(:disabled), a[href]")]
-            .filter(control => control.getClientRects().length > 0);
+        .filter(control => control.getClientRects().length > 0);
         if (!controls.length) return;
 
         event.preventDefault();
@@ -263,20 +189,12 @@ function setupAccessibilityKeyboard() {
     });
 }
 
-
-/*
- * =============================================================
- * MENU MOBILE
- * =============================================================
- */
-
+// Menu mobile
 function setupMobileNavigation() {
-
     const offcanvasElement =
-        document.querySelector(
-            "#navbar-component #menuPrincipal"
-        );
-
+    document.querySelector(
+        "#navbar-component #menuPrincipal"
+    );
 
     /*
      * Se não existir offcanvas nesta navbar,
@@ -286,17 +204,13 @@ function setupMobileNavigation() {
         return;
     }
 
-
     const links =
-        offcanvasElement.querySelectorAll(
-            "a[data-link]"
-        );
-
+    offcanvasElement.querySelectorAll(
+        "a[data-link]"
+    );
 
     links.forEach(link => {
-
         link.addEventListener("click", () => {
-
             /*
              * Bootstrap pode não estar disponível
              * em alguma página por erro de carregamento.
@@ -308,7 +222,6 @@ function setupMobileNavigation() {
                 return;
             }
 
-
             /*
              * Só precisamos fechar manualmente
              * quando estivermos no modo mobile.
@@ -317,71 +230,47 @@ function setupMobileNavigation() {
                 return;
             }
 
-
             const instance =
-                bootstrap.Offcanvas.getInstance(
-                    offcanvasElement
-                );
-
+            bootstrap.Offcanvas.getInstance(
+                offcanvasElement
+            );
 
             if (instance) {
                 instance.hide();
             }
-
         });
-
     });
-
 }
 
-/*
- * =============================================================
- * NAVBAR DURANTE O SCROLL
- * =============================================================
- */
-
+// Navbar durante o scroll
 function setupNavbarScroll() {
-
     const navbar =
-        document.querySelector(
-            "#navbar-component .navbar"
-        );
+    document.querySelector(
+        "#navbar-component .navbar"
+    );
 
-
-    /*
-     * Caso a navbar não tenha sido carregada.
-     */
+    // Caso a navbar não tenha sido carregada.
     if (!navbar) {
         return;
     }
-
 
     /*
      * Verifica a posição da página e altera
      * a apresentação da navbar.
      */
     function updateNavbar() {
-
         if (window.scrollY > 60) {
-
             navbar.classList.add(
                 "navbar-scrolled"
             );
-
         } else {
-
             navbar.classList.remove(
                 "navbar-scrolled"
             );
-
         }
-
     }
 
-
-    /*
-     * Executa durante a rolagem.
-     */
+    // Executa durante a rolagem.
     window.addEventListener(
         "scroll",
         updateNavbar, {
@@ -389,11 +278,9 @@ function setupNavbarScroll() {
         }
     );
 
-
     /*
      * Executa também assim que a navbar
      * terminar de ser carregada.
      */
     updateNavbar();
-
 }

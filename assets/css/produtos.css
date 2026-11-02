@@ -1,9 +1,5 @@
-/* =========================================================
-   PRODUTOS - GARAGE HAIR
-   ========================================================= */
-/* =========================================================
-   1. HERO
-   ========================================================= */
+/* Produtos - Garage Hair */
+/* Hero */
 .produtos-hero {
     min-height: 380px;
     display: flex;
@@ -37,7 +33,6 @@
     margin-bottom: 1.5rem;
 }
 
-
 .produtos-hero-text {
     max-width: 650px;
     color: #e2e2e2;
@@ -46,17 +41,12 @@
     margin-bottom: 0;
 }
 
-
-/* =========================================================
-   2. ÁREA DA LOJA
-   ========================================================= */
+/* Área da loja */
 .produtos-loja {
     background-color: var(--garage-light);
 }
 
-/* =========================================================
-   3. BANNER / CARROSSEL
-   ========================================================= */
+/* Banner / carrossel */
 .produtos-banner {
     position: sticky;
     top: 100px;
@@ -146,10 +136,7 @@
     margin-right: 2.5rem;
 }
 
-
-/* =========================================================
-   4. CABEÇALHO DO CATÁLOGO
-   ========================================================= */
+/* Cabeçalho do catálogo */
 .produtos-header {
     margin-bottom: 2rem;
 }
@@ -165,9 +152,7 @@
     margin-bottom: 0;
 }
 
-/* =========================================================
-   5. CONTROLES
-   ========================================================= */
+/* Controles */
 .produtos-controles {
     display: flex;
     gap: 1rem;
@@ -221,9 +206,7 @@
         0 0 0 0.2rem rgba(102, 122, 91, 0.15);
 }
 
-/* =========================================================
-   6. CATEGORIAS
-   ========================================================= */
+/* Categorias */
 .produtos-categorias {
     display: flex;
     flex-wrap: wrap;
@@ -250,9 +233,7 @@
     color: var(--garage-white);
 }
 
-/* =========================================================
-   7. CARDS DE PRODUTO
-   ========================================================= */
+/* Cards de produto */
 /*
  * Estes estilos serão usados nos elementos
  * criados dinamicamente pelo produtos.js.
@@ -312,9 +293,7 @@
     margin-bottom: 0;
 }
 
-/* =========================================================
-   8. SEM RESULTADOS
-   ========================================================= */
+/* Sem resultados */
 .sem-produtos {
     padding: 4rem 1rem;
 }
@@ -331,9 +310,7 @@
     margin-bottom: 0;
 }
 
-/* =========================================================
-   9. RESPONSIVIDADE
-   ========================================================= */
+/* Responsividade */
 @media (max-width: 991px) {
     .produtos-hero {
         min-height: 340px;
@@ -353,7 +330,6 @@
         height: 280px;
     }
 }
-
 
 @media (max-width: 767px) {
     .produtos-hero {

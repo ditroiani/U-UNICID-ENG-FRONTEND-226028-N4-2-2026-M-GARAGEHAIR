@@ -1,26 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    /* =========================================================
-       ELEMENTOS
-       ========================================================= */
+    // Elementos
     const botoesFiltro =
-        document.querySelectorAll(".filtro-btn");
+    document.querySelectorAll(".filtro-btn");
 
     const itensGaleria =
-        document.querySelectorAll(".galeria-item");
+    document.querySelectorAll(".galeria-item");
 
-    /* =========================================================
-       FILTROS DA GALERIA
-       ========================================================= */
+    // Filtros da galeria
     botoesFiltro.forEach(botao => {
         botao.setAttribute("aria-pressed", botao.classList.contains("active").toString());
         botao.addEventListener("click", () => {
             const filtroSelecionado =
-                botao.dataset.filtro;
+            botao.dataset.filtro;
 
-            /* -----------------------------------------
-               Atualiza botão ativo
-               ----------------------------------------- */
+            // Atualiza botão ativo
             botoesFiltro.forEach(item => {
                 item.classList.remove("active");
                 item.setAttribute("aria-pressed", "false");
@@ -29,27 +22,23 @@ document.addEventListener("DOMContentLoaded", () => {
             botao.classList.add("active");
             botao.setAttribute("aria-pressed", "true");
 
-            /* -----------------------------------------
-               Filtra os itens
-               ----------------------------------------- */
+            // Filtra os itens
             itensGaleria.forEach(item => {
                 const categoria =
-                    item.dataset.categoria;
+                item.dataset.categoria;
                 /*
                  * Se o filtro for "todos",
                  * exibe qualquer item.
-                 *
                  * Caso contrário, compara
                  * a categoria da imagem.
                  */
                 const deveExibir =
-                    filtroSelecionado === "todos"
-                    ||
-                    categoria === filtroSelecionado;
+                filtroSelecionado === "todos"
+                ||
+                categoria === filtroSelecionado;
 
                 if (deveExibir) {
                     item.classList.remove("oculto");
-
                 }
 
                 else {

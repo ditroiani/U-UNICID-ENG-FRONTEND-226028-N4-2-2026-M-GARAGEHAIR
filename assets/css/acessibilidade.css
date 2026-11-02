@@ -1,12 +1,8 @@
-/* =========================================================
-   GARAGE HAIR
-   Página: Acessibilidade
-   ========================================================= */
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
+/*
+ * Garage Hair
+ * Página: Acessibilidade
+ */
+/* Hero */
 .acessibilidade-hero {
     position: relative;
     min-height: 420px;
@@ -67,9 +63,7 @@
     color: rgba(255, 255, 255, 0.82);
 }
 
-/* =========================================================
-   BOTÃO
-   ========================================================= */
+/* Botão */
 .btn-acessibilidade {
     display: inline-flex;
     align-items: center;
@@ -96,9 +90,7 @@
     transform: translateY(-2px);
 }
 
-/* =========================================================
-   INTRODUÇÃO
-   ========================================================= */
+/* Introdução */
 .acessibilidade-intro {
     padding: 6rem 0;
     background-color: #f4f1e8;
@@ -119,9 +111,7 @@
     color: #555b55;
 }
 
-/* =========================================================
-   ACESSIBILIDADE NA BARBEARIA
-   ========================================================= */
+/* Acessibilidade na barbearia */
 .acessibilidade-barbearia {
     padding: 7rem 0;
     background-color: #ffffff;
@@ -144,9 +134,7 @@
     color: #5d625c;
 }
 
-/* =========================================================
-   LISTA EDITORIAL
-   ========================================================= */
+/* Lista editorial */
 .acessibilidade-lista {
     border-top: 1px solid rgba(23, 26, 23, 0.14);
 }
@@ -187,9 +175,7 @@
     color: #666b65;
 }
 
-/* =========================================================
-   CARROSSEL DE ACESSIBILIDADE
-   ========================================================= */
+/* Carrossel de acessibilidade */
 .acessibilidade-carousel {
     position: relative;
     overflow: hidden;
@@ -223,9 +209,7 @@
     opacity: 1;
 }
 
-/* =========================================================
-   ACESSIBILIDADE DIGITAL
-   ========================================================= */
+/* Acessibilidade digital */
 .acessibilidade-digital {
     padding: 7rem 0;
     background-color: #26382c;
@@ -254,9 +238,7 @@
     color: rgba(255, 255, 255, 0.72);
 }
 
-/* =========================================================
-   CARDS DE RECURSOS
-   ========================================================= */
+/* Cards de recursos */
 .recurso-acessibilidade {
     height: 100%;
     padding: 2rem;
@@ -296,9 +278,7 @@
     color: rgba(255, 255, 255, 0.68);
 }
 
-/* =========================================================
-   NAVEGAÇÃO / ATALHOS
-   ========================================================= */
+/* Navegação / atalhos */
 .acessibilidade-navegacao {
     padding: 7rem 0;
     background-color: #f4f1e8;
@@ -318,9 +298,7 @@
     color: #5c625b;
 }
 
-/* =========================================================
-   LISTA DE ATALHOS
-   ========================================================= */
+/* Lista de atalhos */
 .atalhos-acessibilidade {
     border-top: 1px solid rgba(23, 26, 23, 0.14);
 }
@@ -370,9 +348,7 @@
     line-height: 1.6;
 }
 
-/* =========================================================
-   FERRAMENTAS DE ACESSIBILIDADE
-   ========================================================= */
+/* Ferramentas de acessibilidade */
 .acessibilidade-ferramentas {
     padding: 7rem 0;
     background-color: #171a17;
@@ -397,10 +373,7 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-
-/* =========================================================
-   LISTA DE FERRAMENTAS
-   ========================================================= */
+/* Lista de ferramentas */
 .ferramentas-lista {
     display: flex;
     flex-wrap: wrap;
@@ -425,9 +398,7 @@
     color: #d6c7a8;
 }
 
-/* =========================================================
-   COMPROMISSO
-   ========================================================= */
+/* Compromisso */
 .acessibilidade-compromisso {
     position: relative;
     padding: 7rem 0;
@@ -476,9 +447,7 @@
     border-color: #171a17;
 }
 
-/* =========================================================
-   RESPONSIVIDADE
-   ========================================================= */
+/* Responsividade */
 @media (max-width: 991px) {
     .acessibilidade-hero {
         min-height: 380px;
@@ -501,7 +470,6 @@
         display: none;
     }
 }
-
 
 @media (max-width: 767px) {
     .acessibilidade-hero {
@@ -545,7 +513,6 @@
     .recurso-acessibilidade {
         padding: 1.6rem;
     }
-
 }
 
 @media (max-width: 575px) {

@@ -1,12 +1,8 @@
-/* =========================================================
-   GARAGE HAIR — PÁGINA DE NOTÍCIAS
-   Arquivo: assets/css/noticias.css
-========================================================= */
-
-
-/* =========================================================
-   VARIÁVEIS LOCAIS
-========================================================= */
+/*
+ * Garage Hair — página de notícias
+ * Arquivo: assets/css/noticias.css
+ */
+/* Variáveis locais */
 :root {
     --noticias-dark: #171A17;
     --noticias-green-dark: #26382C;
@@ -17,9 +13,7 @@
     --noticias-text: #252525;
 }
 
-/* =========================================================
-   HERO
-========================================================= */
+/* Hero */
 .noticias-hero {
     position: relative;
     min-height: 620px;
@@ -125,10 +119,7 @@
     color: var(--noticias-beige);
 }
 
-
-/* =========================================================
-   CANAL OFICIAL
-========================================================= */
+/* Canal oficial */
 .canal-comunicacao {
     position: relative;
     z-index: 5;
@@ -196,9 +187,7 @@
     gap: 0.9rem;
 }
 
-/* =========================================================
-   SEÇÃO NOTÍCIAS
-========================================================= */
+/* Seção notícias */
 .ultimas-noticias {
     background:
         linear-gradient(to bottom,
@@ -260,9 +249,7 @@
     text-transform: uppercase;
 }
 
-/* =========================================================
-   NOTÍCIA EM DESTAQUE
-========================================================= */
+/* Notícia em destaque */
 .noticia-destaque {
     overflow: hidden;
     border-radius: 5px;
@@ -343,9 +330,7 @@
     line-height: 1.8;
 }
 
-/* =========================================================
-   BOTÃO LEIA MAIS
-========================================================= */
+/* Botão leia mais */
 .btn-leia-mais {
     width: fit-content;
     display: inline-flex;
@@ -371,9 +356,7 @@
     color: var(--noticias-beige);
 }
 
-/* =========================================================
-   CARDS
-========================================================= */
+/* Cards */
 .noticia-card {
     overflow: hidden;
     background: var(--noticias-white);
@@ -469,9 +452,7 @@
     color: var(--noticias-green);
 }
 
-/* =========================================================
-   CTA
-========================================================= */
+/* CTA */
 .noticias-cta {
     padding: 5rem 0;
     background:
@@ -514,9 +495,7 @@
     font-weight: 600;
 }
 
-/* =========================================================
-   MODAL
-========================================================= */
+/* Modal */
 .noticia-modal {
     overflow: hidden;
     border: none;
@@ -589,9 +568,7 @@
     line-height: 1.85;
 }
 
-/* =========================================================
-   SCROLLBAR DO MODAL
-========================================================= */
+/* Scrollbar do modal */
 .noticia-modal .modal-body::-webkit-scrollbar {
     width: 8px;
 }
@@ -605,9 +582,7 @@
     border-radius: 10px;
 }
 
-/* =========================================================
-   RESPONSIVIDADE
-========================================================= */
+/* Responsividade */
 @media (max-width: 991.98px) {
     .noticias-hero {
         min-height: 560px;

@@ -1,13 +1,8 @@
-/* =========================================================
-   GARAGE HAIR
-   CSS GLOBAL
-   ========================================================= */
-
-
-/* =========================================================
-   1. VARIÁVEIS
-   ========================================================= */
-
+/*
+ * Garage Hair
+ * CSS global
+ */
+/* Variáveis */
 :root {
     --garage-dark: #171a17;
     --garage-green: #26382c;
@@ -20,11 +15,7 @@
     --transition-image: 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-
-/* =========================================================
-   2. CONFIGURAÇÕES GERAIS
-   ========================================================= */
-
+/* Configurações gerais */
 html {
     scroll-behavior: smooth;
     scroll-snap-type: proximity;
@@ -39,32 +30,28 @@ body {
     line-height: 1.6;
 }
 
-
 /* Links */
-
 a {
     text-decoration: none;
 }
 
-/* A transição fica no estado normal para suavizar a entrada e a saída.
-   Seletores de baixa prioridade preservam os efeitos de cada componente. */
+/*
+ * A transição fica no estado normal para suavizar a entrada e a saída.
+ * Seletores de baixa prioridade preservam os efeitos de cada componente.
+ */
 :where(a, button, input, select, textarea) {
     transition: color var(--transition), background-color var(--transition),
-        border-color var(--transition), box-shadow var(--transition),
-        opacity var(--transition), transform var(--transition);
+    border-color var(--transition), box-shadow var(--transition),
+    opacity var(--transition), transform var(--transition);
 }
 
-
 /* Imagens */
-
 img {
     max-width: 100%;
     height: auto;
 }
 
-
 /* Títulos */
-
 h1,
 h2,
 h3 {
@@ -73,11 +60,7 @@ h3 {
     line-height: 1.2;
 }
 
-
-/* =========================================================
-   3. TIPOGRAFIA
-   ========================================================= */
-
+/* Tipografia */
 h1 {
     font-size: clamp(2.8rem, 6vw, 5rem);
     text-transform: uppercase;
@@ -96,22 +79,14 @@ p {
     font-size: 1rem;
 }
 
-
-/* =========================================================
-   4. CABEÇALHO / NAVBAR
-   ========================================================= */
-
+/* Cabeçalho / navbar */
 header {
     position: sticky;
     top: 0;
     z-index: 1050;
 }
 
-
-/* =========================================================
-   NAVBAR PRINCIPAL
-   ========================================================= */
-
+/* Navbar principal */
 .navbar-garage {
     position: relative;
     min-height: 82px;
@@ -121,9 +96,7 @@ header {
     transition: min-height 0.3s ease, padding 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 /* Linha decorativa inferior */
-
 .navbar-garage::after {
     content: "";
     position: absolute;
@@ -135,11 +108,7 @@ header {
     pointer-events: none;
 }
 
-
-/* =========================================================
-   MARCA
-   ========================================================= */
-
+/* Marca */
 .navbar-brand {
     padding: 0;
     margin-right: 2rem;
@@ -183,11 +152,7 @@ header {
     color: var(--garage-beige);
 }
 
-
-/* =========================================================
-   MARCA COMPACTA - SCROLL
-   ========================================================= */
-
+/* Marca compacta - scroll */
 .brand-compact {
     display: none;
     align-items: center;
@@ -211,11 +176,7 @@ header {
     color: var(--garage-white);
 }
 
-
-/* =========================================================
-   NAVBAR APÓS SCROLL
-   ========================================================= */
-
+/* Navbar após scroll */
 .navbar.navbar-scrolled {
     min-height: 58px;
     padding-top: 0.35rem;
@@ -234,11 +195,7 @@ header {
     display: inline-flex;
 }
 
-
-/* =========================================================
-   LINKS PRINCIPAIS
-   ========================================================= */
-
+/* Links principais */
 .navbar .navbar-nav {
     gap: 0.15rem;
 }
@@ -255,9 +212,7 @@ header {
     transition: color 0.25s ease, background-color 0.25s ease;
 }
 
-
 /* Linha animada dos links */
-
 .navbar .nav-link:not(.nav-link-contato):not(.dropdown-toggle)::after {
     content: "";
     position: absolute;
@@ -279,9 +234,7 @@ header {
     width: calc(100% - 1.5rem);
 }
 
-
 /* Página atual */
-
 .navbar .nav-link.active {
     color: var(--garage-beige);
 }
@@ -290,11 +243,7 @@ header {
     width: calc(100% - 1.5rem);
 }
 
-
-/* =========================================================
-   DROPDOWN EXPLORAR
-   ========================================================= */
-
+/* Dropdown explorar */
 .navbar .dropdown-toggle::after {
     position: static;
     display: inline-block;
@@ -359,11 +308,7 @@ header {
     color: rgba(255, 255, 255, 0.58);
 }
 
-
-/* =========================================================
-   CONTATO - CTA
-   ========================================================= */
-
+/* Contato - CTA */
 .nav-item-contato {
     margin-left: 0.65rem;
 }
@@ -396,11 +341,7 @@ header {
     transform: translate(2px, -2px);
 }
 
-
-/* =========================================================
-   BOTÃO MOBILE
-   ========================================================= */
-
+/* Botão mobile */
 .navbar-toggler {
     display: inline-flex;
     align-items: center;
@@ -427,11 +368,7 @@ header {
     box-shadow: 0 0 0 0.2rem rgba(214, 199, 168, 0.2);
 }
 
-
-/* =========================================================
-   OFFCANVAS - BASE
-   ========================================================= */
-
+/* Offcanvas - base */
 .offcanvas-header {
     display: none;
 }
@@ -440,11 +377,7 @@ header {
     display: none;
 }
 
-
-/* =========================================================
-   5. BOTÕES
-   ========================================================= */
-
+/* Botões */
 .btn {
     border-radius: 2px;
     padding: 0.8rem 1.5rem;
@@ -453,12 +386,10 @@ header {
     letter-spacing: 0.5px;
     text-transform: uppercase;
     transition: color var(--transition), background-color var(--transition),
-        border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    border-color var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 
-
 /* Botão principal */
-
 .btn-primary {
     background-color: var(--garage-beige);
     border-color: var(--garage-beige);
@@ -472,9 +403,7 @@ header {
     color: var(--garage-dark);
 }
 
-
 /* Botão secundário */
-
 .btn-outline-light {
     border-color: var(--garage-white);
     color: var(--garage-white);
@@ -486,26 +415,18 @@ header {
     color: var(--garage-dark);
 }
 
-
-/* =========================================================
-   6. SEÇÕES
-   ========================================================= */
-
+/* Seções */
 .section {
     padding: 6rem 0;
 }
 
-
 /* Título das seções */
-
 .section-title {
     max-width: 800px;
     margin: 0 auto 4rem;
 }
 
-
 /* Pequeno título */
-
 .section-title>p:first-child,
 .section-subtitle {
     color: var(--garage-olive);
@@ -515,20 +436,14 @@ header {
     text-transform: uppercase;
 }
 
-
 /* Texto do título */
-
 .section-title>p:last-child {
     color: #666;
     max-width: 650px;
     margin: 1rem auto 0;
 }
 
-
-/* =========================================================
-   7. CARDS
-   ========================================================= */
-
+/* Cards */
 .card {
     background-color: var(--garage-white);
     border: none;
@@ -537,24 +452,18 @@ header {
     transition: transform var(--transition), box-shadow var(--transition);
 }
 
-
 /* Efeito hover */
-
 .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
 }
 
-
 /* Conteúdo */
-
 .card-body {
     padding: 2rem;
 }
 
-
 /* Ícones */
-
 .card i {
     display: block;
     color: var(--garage-olive);
@@ -562,27 +471,19 @@ header {
     margin-bottom: 1.5rem;
 }
 
-
 /* Títulos dos cards */
-
 .card h3 {
     color: var(--garage-dark);
     margin-bottom: 1rem;
 }
 
-
 /* Textos */
-
 .card p {
     color: #666;
     margin-bottom: 0;
 }
 
-
-/* =========================================================
-   8. CTA FINAL
-   ========================================================= */
-
+/* CTA final */
 .cta {
     background-color: var(--garage-beige);
     color: var(--garage-dark);
@@ -626,12 +527,8 @@ header {
     animation: garage-enter 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) backwards;
 }
 
-/* =========================================================
-   ACESSIBILIDADE - NAVBAR
-   ========================================================= */
-/* ---------------------------------------------------------
-   Botão principal
-   --------------------------------------------------------- */
+/* Acessibilidade - navbar */
+/* Botão principal */
 .accessibility-toggle {
     display: flex;
     align-items: center;
@@ -654,12 +551,10 @@ header {
 
 /* Gira a seta quando o dropdown está aberto */
 .accessibility-toggle[aria-expanded="true"] .accessibility-chevron {
-    transform: rotate(180deg);
+transform: rotate(180deg);
 }
 
-/* ---------------------------------------------------------
-   Dropdown
-   --------------------------------------------------------- */
+/* Dropdown */
 .accessibility-dropdown {
     width: 310px;
     margin-top: 0.8rem;
@@ -687,10 +582,7 @@ header {
     }
 }
 
-
-/* ---------------------------------------------------------
-   Cabeçalho
-   --------------------------------------------------------- */
+/* Cabeçalho */
 .accessibility-header {
     display: flex;
     align-items: center;
@@ -731,20 +623,14 @@ header {
     color: rgba(244, 241, 232, 0.65);
 }
 
-
-/* ---------------------------------------------------------
-   Divisórias
-   --------------------------------------------------------- */
+/* Divisórias */
 .accessibility-divider {
     height: 1px;
     margin: 0.45rem 0;
     background: rgba(214, 199, 168, 0.15);
 }
 
-
-/* ---------------------------------------------------------
-   Grupo: tamanho do texto
-   --------------------------------------------------------- */
+/* Grupo: tamanho do texto */
 .accessibility-group {
     padding: 0.55rem 0.4rem;
 }
@@ -786,15 +672,15 @@ header {
     display: none;
 }
 
-/* O widget oficial só aparece enquanto a preferência está ativada.
-   Sua interface mantém os estilos isolados fornecidos pelo VLibras. */
+/*
+ * O widget oficial só aparece enquanto a preferência está ativada.
+ * Sua interface mantém os estilos isolados fornecidos pelo VLibras.
+ */
 html:not(.vlibras-enabled) :is(#vlibras-access-wrapper, #vlibras-app-root) {
     display: none !important;
 }
 
-/* ---------------------------------------------------------
-   Botões
-   --------------------------------------------------------- */
+/* Botões */
 .accessibility-option {
     border: 1px solid rgba(214, 199, 168, 0.15);
     border-radius: 0.55rem;
@@ -814,14 +700,12 @@ html:not(.vlibras-enabled) :is(#vlibras-access-wrapper, #vlibras-app-root) {
     color: #D6C7A8;
 }
 
-
-/* A- / A+ */
+/* A- / a+ */
 .accessibility-font-button {
     min-height: 42px;
     font-size: 0.9rem;
     font-weight: 600;
 }
-
 
 /* Opções completas */
 .accessibility-option-full {
@@ -842,22 +726,18 @@ html:not(.vlibras-enabled) :is(#vlibras-access-wrapper, #vlibras-app-root) {
     color: #D6C7A8;
 }
 
-
-/* ---------------------------------------------------------
-   Estado ativo
-   Será utilizado depois pelo acessibilidade.js
-   --------------------------------------------------------- */
+/*
+ * Estado ativo
+ * Será utilizado depois pelo acessibilidade.js
+ */
 .accessibility-option.active,
 .accessibility-option[aria-pressed="true"] {
-    border-color: #667A5B;
-    background: #26382C;
-    color: #F4F1E8;
+border-color: #667A5B;
+background: #26382C;
+color: #F4F1E8;
 }
 
-
-/* ---------------------------------------------------------
-   Restaurar padrão
-   --------------------------------------------------------- */
+/* Restaurar padrão */
 .accessibility-reset {
     color: rgba(244, 241, 232, 0.78);
 }
@@ -866,10 +746,7 @@ html:not(.vlibras-enabled) :is(#vlibras-access-wrapper, #vlibras-app-root) {
     color: #F4F1E8;
 }
 
-
-/* ---------------------------------------------------------
-   Link para página completa
-   --------------------------------------------------------- */
+/* Link para página completa */
 .accessibility-page-link {
     display: flex;
     align-items: center;
@@ -900,11 +777,7 @@ html:not(.vlibras-enabled) :is(#vlibras-access-wrapper, #vlibras-app-root) {
     transform: translateX(3px);
 }
 
-
-/* =========================================================
-   9. RODAPÉ
-   ========================================================= */
-
+/* Rodapé compartilhado */
 footer {
     position: relative;
     padding: 5rem 0 2rem;
@@ -913,9 +786,7 @@ footer {
     color: var(--garage-white);
 }
 
-
 /* Linha decorativa superior */
-
 footer::before {
     content: "";
     position: absolute;
@@ -926,9 +797,7 @@ footer::before {
     background: linear-gradient(90deg, transparent, rgba(214, 199, 168, 0.55), transparent);
 }
 
-
 /* Elemento decorativo */
-
 footer::after {
     content: "";
     position: absolute;
@@ -941,11 +810,7 @@ footer::after {
     pointer-events: none;
 }
 
-
-/* =========================================================
-   MARCA
-   ========================================================= */
-
+/* Marca */
 .footer-brand {
     max-width: 390px;
 }
@@ -993,11 +858,7 @@ footer .footer-brand h2 {
     font-size: 0.9rem;
 }
 
-
-/* =========================================================
-   COLUNAS
-   ========================================================= */
-
+/* Colunas */
 .footer-column h3 {
     position: relative;
     margin-bottom: 1.5rem;
@@ -1010,9 +871,7 @@ footer .footer-brand h2 {
     color: var(--garage-beige);
 }
 
-
 /* Pequena linha sob os títulos */
-
 .footer-column h3::after {
     content: "";
     position: absolute;
@@ -1023,11 +882,7 @@ footer .footer-brand h2 {
     background-color: rgba(214, 199, 168, 0.55);
 }
 
-
-/* =========================================================
-   MENU
-   ========================================================= */
-
+/* Menu */
 .footer-menu {
     margin: 0;
     padding: 0;
@@ -1073,11 +928,7 @@ footer .footer-brand h2 {
     font-weight: 600;
 }
 
-
-/* =========================================================
-   CONTATO
-   ========================================================= */
-
+/* Contato */
 .footer-contact-list {
     display: flex;
     flex-direction: column;
@@ -1110,11 +961,7 @@ footer .footer-brand h2 {
     color: var(--garage-beige);
 }
 
-
-/* =========================================================
-   PROJETO ACADÊMICO
-   ========================================================= */
-
+/* Projeto acadêmico */
 .footer-project {
     display: flex;
     flex-direction: column;
@@ -1147,11 +994,7 @@ footer .footer-brand h2 {
     color: var(--garage-beige);
 }
 
-
-/* =========================================================
-   DIVISOR
-   ========================================================= */
-
+/* Divisor */
 .footer-divider {
     width: 100%;
     height: 1px;
@@ -1159,11 +1002,7 @@ footer .footer-brand h2 {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.13), transparent);
 }
 
-
-/* =========================================================
-   FOOTER BOTTOM
-   ========================================================= */
-
+/* Footer bottom */
 .footer-bottom {
     display: flex;
     align-items: center;
@@ -1181,17 +1020,11 @@ footer .footer-brand h2 {
     text-align: right;
 }
 
-
-/* =========================================================
-   10. FOCO DE ACESSIBILIDADE
-   ========================================================= */
-
-
+/* Foco de acessibilidade */
 /*
-   Mantemos um indicador visual claro para quem navega
-   utilizando teclado.
-*/
-
+ * Mantemos um indicador visual claro para quem navega
+ * utilizando teclado.
+ */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -1210,7 +1043,7 @@ iframe:focus-visible,
 }
 
 main[id] {
-    scroll-margin-top: 7rem;
+scroll-margin-top: 7rem;
 }
 
 .pular-conteudo {
@@ -1275,8 +1108,10 @@ html.reduced-motion {
     scroll-behavior: auto !important;
 }
 
-/* Remove somente deslocamentos decorativos; preserva o posicionamento
-   de dropdowns, carrosséis e componentes do Bootstrap. */
+/*
+ * Remove somente deslocamentos decorativos; preserva o posicionamento
+ * de dropdowns, carrosséis e componentes do Bootstrap.
+ */
 html.reduced-motion :is(
     .card, .produto-card, .midia-card, .noticia-card, .contato-card,
     .indicador-card, .impacto-item, .overview-card, .price-card, .hosting-card,
@@ -1311,15 +1146,15 @@ html.reduced-motion :is(section, .hero) {
     }
 
     html:not(.motion-allowed) :is(
-        .card, .produto-card, .midia-card, .noticia-card, .contato-card,
-        .indicador-card, .impacto-item, .overview-card, .price-card, .hosting-card,
-        .recurso-acessibilidade, .preferencia-card, .identidade-item, .reveal-enter,
-        .galeria-item img, .galeria-item figcaption, .galeria-historia-imagem img,
-        .midia-audio-imagem img, .midia-card-imagem img, .noticia-card-imagem img,
-        .noticia-destaque-imagem img, .sobre-image, .btn, .btn-garage,
-        .btn-enviar, .btn-acessibilidade, .btn-midia, .btn-galeria, .btn-galeria-cta,
-        .filtro-btn, .btn i, .btn-enviar i, .sobre-history-link i, .contato-arrow,
-        .footer-menu a, .nav-link-contato i, .accessibility-page-link i
+    .card, .produto-card, .midia-card, .noticia-card, .contato-card,
+    .indicador-card, .impacto-item, .overview-card, .price-card, .hosting-card,
+    .recurso-acessibilidade, .preferencia-card, .identidade-item, .reveal-enter,
+    .galeria-item img, .galeria-item figcaption, .galeria-historia-imagem img,
+    .midia-audio-imagem img, .midia-card-imagem img, .noticia-card-imagem img,
+    .noticia-destaque-imagem img, .sobre-image, .btn, .btn-garage,
+    .btn-enviar, .btn-acessibilidade, .btn-midia, .btn-galeria, .btn-galeria-cta,
+    .filtro-btn, .btn i, .btn-enviar i, .sobre-history-link i, .contato-arrow,
+    .footer-menu a, .nav-link-contato i, .accessibility-page-link i
     ) {
         transform: none !important;
     }
@@ -1333,11 +1168,10 @@ html.reduced-motion :is(section, .hero) {
     }
 }
 
-/* =========================================================
-   GARAGE HAIR - ALTO CONTRASTE
-   As regras ficam restritas a html.high-contrast.
-   ========================================================= */
-
+/*
+ * Garage Hair - alto contraste
+ * As regras ficam restritas a html.high-contrast.
+ */
 html.high-contrast {
     --contrast-bg: #000000;
     --contrast-text: #ffffff;
@@ -1348,16 +1182,20 @@ html.high-contrast {
     color-scheme: dark;
 }
 
-/* As cores dos textos internos acompanham o componente. Assim, um
-   span dentro de um botão amarelo também recebe o texto preto. */
+/*
+ * As cores dos textos internos acompanham o componente. Assim, um
+ * span dentro de um botão amarelo também recebe o texto preto.
+ */
 html.high-contrast body * {
     color: inherit !important;
     text-shadow: none !important;
     box-shadow: none !important;
 }
 
-/* Fundos sólidos também nas seções e nos cards próprios de cada página.
-   Fotos, vídeos, iframes e imagens de produtos mantêm suas cores. */
+/*
+ * Fundos sólidos também nas seções e nos cards próprios de cada página.
+ * Fotos, vídeos, iframes e imagens de produtos mantêm suas cores.
+ */
 html.high-contrast :is(
     body, main, section, article, footer, .navbar, .navbar .offcanvas,
     .dropdown-menu, .modal-content, .modal-header, .modal-body, .modal-footer,
@@ -1385,8 +1223,10 @@ html.high-contrast section::after {
     background: none !important;
 }
 
-/* O carrossel mantém as fotos; somente a área do texto tem fundo sólido.
-   A faixa superior deixa a imagem visível também nas telas menores. */
+/*
+ * O carrossel mantém as fotos; somente a área do texto tem fundo sólido.
+ * A faixa superior deixa a imagem visível também nas telas menores.
+ */
 html.high-contrast .banner-slide {
     padding-top: 10rem;
 }
@@ -1427,8 +1267,10 @@ html.high-contrast footer {
     border-top: 2px solid var(--contrast-text) !important;
 }
 
-/* Links e controles. Os estados selecionado, hover e foco continuam
-   legíveis porque o conteúdo interno herda a cor do controle. */
+/*
+ * Links e controles. Os estados selecionado, hover e foco continuam
+ * legíveis porque o conteúdo interno herda a cor do controle.
+ */
 html.high-contrast a {
     color: var(--contrast-accent) !important;
     text-decoration: underline !important;
@@ -1502,8 +1344,10 @@ html.high-contrast :is(input, textarea)::placeholder {
     opacity: 1;
 }
 
-/* O label flutuante já identifica o campo vazio; o placeholder fica
-   transparente para não se sobrepor a ele. */
+/*
+ * O label flutuante já identifica o campo vazio; o placeholder fica
+ * transparente para não se sobrepor a ele.
+ */
 html.high-contrast .form-floating > :is(input, textarea)::placeholder {
     color: transparent !important;
 }
@@ -1588,21 +1432,10 @@ html.high-contrast ::selection {
     color: var(--contrast-bg);
 }
 
-
-/* =========================================================
-   11. RESPONSIVIDADE
-   ========================================================= */
-
-
-/* =========================================================
-   TABLETS / MENU MOBILE
-   ========================================================= */
-
+/* Responsividade */
+/* Tablets / menu mobile */
 @media (max-width: 991.98px) {
-
-    /* -----------------------------------------------------
-       OFFCANVAS
-       ----------------------------------------------------- */
+    /* Offcanvas */
     .navbar .offcanvas {
         width: min(88vw, 380px);
         background: linear-gradient(180deg, #171a17 0%, #202b23 100%);
@@ -1635,9 +1468,7 @@ html.high-contrast ::selection {
         color: var(--garage-white);
     }
 
-    /* -----------------------------------------------------
-       ÁREA COM ROLAGEM
-       ----------------------------------------------------- */
+    /* Área com rolagem */
     .offcanvas-body {
         display: flex;
         flex-direction: column;
@@ -1659,9 +1490,7 @@ html.high-contrast ::selection {
         border-radius: 20px;
     }
 
-    /* -----------------------------------------------------
-       LINKS MOBILE
-       ----------------------------------------------------- */
+    /* Links mobile */
     .navbar .navbar-nav {
         width: 100%;
         gap: 0;
@@ -1683,9 +1512,7 @@ html.high-contrast ::selection {
         display: none;
     }
 
-    /* -----------------------------------------------------
-       DROPDOWN MOBILE
-       ----------------------------------------------------- */
+    /* Dropdown mobile */
     .garage-dropdown {
         position: static !important;
         transform: none !important;
@@ -1715,9 +1542,7 @@ html.high-contrast ::selection {
         font-size: 0.68rem;
     }
 
-    /* -----------------------------------------------------
-       CONTATO MOBILE
-       ----------------------------------------------------- */
+    /* Contato mobile */
     .nav-item-contato {
         margin: 1.5rem 0 0;
     }
@@ -1729,9 +1554,7 @@ html.high-contrast ::selection {
         text-align: center;
     }
 
-    /* -----------------------------------------------------
-       RODAPÉ DO MENU MOBILE
-       ----------------------------------------------------- */
+    /* Rodapé do menu mobile */
     .mobile-menu-footer {
         display: flex;
         flex-direction: column;
@@ -1753,9 +1576,7 @@ html.high-contrast ::selection {
         color: rgba(255, 255, 255, 0.45);
     }
 
-    /* -----------------------------------------------------
-       MARCA
-       ----------------------------------------------------- */
+    /* Marca */
     .brand-name {
         font-size: 1.5rem;
     }
@@ -1764,9 +1585,7 @@ html.high-contrast ::selection {
         display: none;
     }
 
-    /*
-       ACESSIBILIDADE
-    */
+    /* Acessibilidade */
     .accessibility-dropdown {
         width: 100%;
         margin-top: 0.4rem;
@@ -1783,11 +1602,7 @@ html.high-contrast ::selection {
     }
 }
 
-
-/* =========================================================
-   CELULARES
-   ========================================================= */
-
+/* Celulares */
 @media (max-width: 767px) {
     .section {
         padding: 4rem 0;
@@ -1797,7 +1612,7 @@ html.high-contrast ::selection {
         margin-bottom: 3rem;
     }
 
-    /* Footer */
+    /* Rodapé compartilhado */
     footer {
         padding: 4rem 0 1.8rem;
     }
@@ -1825,11 +1640,7 @@ html.high-contrast ::selection {
     }
 }
 
-
-/* =========================================================
-   CELULARES PEQUENOS
-   ========================================================= */
-
+/* Celulares pequenos */
 @media (max-width: 575.98px) {
     .navbar-garage {
         min-height: 68px;
@@ -1849,11 +1660,7 @@ html.high-contrast ::selection {
     }
 }
 
-
-/* =========================================================
-   CELULARES MUITO PEQUENOS
-   ========================================================= */
-
+/* Celulares muito pequenos */
 @media (max-width: 480px) {
     h2 {
         font-size: 2rem;
@@ -1880,7 +1687,7 @@ html.high-contrast ::selection {
         padding-right: 0.3rem;
     }
 
-    /* Footer */
+    /* Rodapé compartilhado */
     footer {
         padding-top: 3.5rem;
     }

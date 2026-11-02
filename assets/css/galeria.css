@@ -1,13 +1,8 @@
-/* =========================================================
-   GARAGE HAIR
-   Página: Galeria
-   ========================================================= */
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
+/*
+ * Garage Hair
+ * Página: Galeria
+ */
+/* Hero */
 .galeria-hero {
     position: relative;
     min-height: 420px;
@@ -68,9 +63,7 @@
     color: rgba(255, 255, 255, 0.82);
 }
 
-/* =========================================================
-   INTRODUÇÃO
-   ========================================================= */
+/* Introdução */
 .galeria-intro {
     padding: 6rem 0 4rem;
     background-color: #f4f1e8;
@@ -91,9 +84,7 @@
     color: #595f58;
 }
 
-/* =========================================================
-   FILTROS
-   ========================================================= */
+/* Filtros */
 .galeria-filtros {
     padding: 0 0 3rem;
     background-color: #f4f1e8;
@@ -131,17 +122,13 @@
     transform: translateY(-2px);
 }
 
-/* =========================================================
-   ÁREA DA GALERIA
-   ========================================================= */
+/* Área da galeria */
 .galeria-grid-section {
     padding: 1rem 0 7rem;
     background-color: #f4f1e8;
 }
 
-/* =========================================================
-   GRID / MOSAICO
-   ========================================================= */
+/* Grid / mosaico */
 .galeria-grid {
     display: grid;
     grid-template-columns:
@@ -151,9 +138,7 @@
     grid-auto-flow: dense;
 }
 
-/* =========================================================
-   ITEM PADRÃO
-   ========================================================= */
+/* Item padrão */
 .galeria-item {
     position: relative;
     margin: 0;
@@ -177,39 +162,33 @@
     filter: brightness(0.82);
 }
 
-/* =========================================================
-   TAMANHOS DO MOSAICO
-   ========================================================= */
+/* Tamanhos do mosaico */
 /*
  * Item grande:
- * ocupa 2 colunas e 2 linhas.
- */
-.galeria-item-grande {
-    grid-column: span 2;
+     * ocupa 2 colunas e 2 linhas.
+     */
+    .galeria-item-grande {
+        grid-column: span 2;
     grid-row: span 2;
 }
 
-
 /*
  * Item largo:
- * ocupa 2 colunas.
- */
-.galeria-item-largo {
-    grid-column: span 2;
+     * ocupa 2 colunas.
+     */
+    .galeria-item-largo {
+        grid-column: span 2;
 }
 
 /*
  * Item alto:
- * ocupa 2 linhas.
- */
-.galeria-item-alto {
-    grid-row: span 2;
+     * ocupa 2 linhas.
+     */
+    .galeria-item-alto {
+        grid-row: span 2;
 }
 
-
-/* =========================================================
-   OVERLAY / LEGENDA
-   ========================================================= */
+/* Overlay / legenda */
 .galeria-item::after {
     content: "";
     position: absolute;
@@ -269,17 +248,15 @@
     font-size: 1.65rem;
 }
 
-/* =========================================================
-   FILTRAGEM
-   Será controlada pelo galeria.js
-   ========================================================= */
+/*
+ * Filtragem
+ * Será controlada pelo galeria.js
+ */
 .galeria-item.oculto {
     display: none;
 }
 
-/* =========================================================
-   BLOCO HISTÓRICO
-   ========================================================= */
+/* Bloco histórico */
 .galeria-historia {
     padding: 7rem 0;
     background-color: #ffffff;
@@ -302,9 +279,7 @@
     color: #5b615a;
 }
 
-/* =========================================================
-   IMAGEM HISTÓRICA
-   ========================================================= */
+/* Imagem histórica */
 .galeria-historia-imagem {
     position: relative;
     margin: 0;
@@ -332,10 +307,7 @@
     transform: scale(1.025);
 }
 
-
-/* =========================================================
-   BOTÃO HISTÓRIA
-   ========================================================= */
+/* Botão história */
 .btn-galeria {
     display: inline-flex;
     align-items: center;
@@ -361,9 +333,7 @@
     transform: translateY(-2px);
 }
 
-/* =========================================================
-   CTA
-   ========================================================= */
+/* CTA */
 .galeria-cta {
     position: relative;
     padding: 7rem 0;
@@ -407,9 +377,7 @@
     color: rgba(255, 255, 255, 0.75);
 }
 
-/* =========================================================
-   BOTÃO CTA
-   ========================================================= */
+/* Botão CTA */
 .btn-galeria-cta {
     display: inline-flex;
     align-items: center;
@@ -434,9 +402,7 @@
     transform: translateY(-2px);
 }
 
-/* =========================================================
-   RESPONSIVIDADE
-   ========================================================= */
+/* Responsividade */
 @media (max-width: 1199px) {
     .galeria-grid {
         grid-template-columns:

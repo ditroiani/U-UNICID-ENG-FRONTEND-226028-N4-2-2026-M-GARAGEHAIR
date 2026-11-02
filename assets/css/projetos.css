@@ -1,10 +1,5 @@
-/* =========================================================
-   PROJETOS - GARAGE HAIR
-   ========================================================= */
-
-/* =========================================================
-   1. HERO
-   ========================================================= */
+/* Projetos - Garage Hair */
+/* Hero */
 .projetos-hero {
     min-height: 430px;
     display: flex;
@@ -46,9 +41,7 @@
     margin-bottom: 0;
 }
 
-/* =========================================================
-   2. INTRODUÇÃO
-   ========================================================= */
+/* Introdução */
 .projetos-intro {
     background-color: var(--garage-white);
 }
@@ -66,9 +59,7 @@
     line-height: 1.8;
 }
 
-/* =========================================================
-   3. PROJETOS
-   ========================================================= */
+/* Projetos */
 .projeto-claro {
     background-color: var(--garage-light);
 }
@@ -104,9 +95,7 @@
     color: var(--garage-beige);
 }
 
-/* =========================================================
-   4. IMAGENS DOS PROJETOS
-   ========================================================= */
+/* Imagens dos projetos */
 .projeto-image-wrapper {
     position: relative;
 }
@@ -117,7 +106,6 @@
     object-fit: cover;
     border-radius: 4px;
 }
-
 
 /* Número */
 .projeto-numero {
@@ -132,9 +120,7 @@
     z-index: 2;
 }
 
-/* =========================================================
-   5. DESTAQUES
-   ========================================================= */
+/* Destaques */
 .projeto-destaques {
     display: flex;
     flex-direction: column;
@@ -163,9 +149,7 @@
     font-weight: 600;
 }
 
-/* =========================================================
-   6. CORTE SOLIDÁRIO
-   ========================================================= */
+/* Corte solidário */
 .corte-solidario {
     min-height: 650px;
     background:
@@ -215,9 +199,7 @@
     color: rgba(214, 199, 168, 0.45);
 }
 
-/* =========================================================
-   7. RESPONSIVIDADE
-   ========================================================= */
+/* Responsividade */
 @media (max-width: 991px) {
     .projetos-hero {
         min-height: 380px;
@@ -276,7 +258,6 @@
         min-height: 500px;
     }
 }
-
 
 /* Celulares menores */
 @media (max-width: 480px) {

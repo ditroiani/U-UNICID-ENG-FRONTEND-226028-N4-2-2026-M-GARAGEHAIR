@@ -1,13 +1,6 @@
-// =========================================================
-// GARAGE HAIR - ACESSIBILIDADE
+// Garage Hair | Acessibilidade
 // Controle global dos recursos de acessibilidade do site
-// =========================================================
-
-
-// =========================================================
-// CONFIGURAÇÕES
-// =========================================================
-
+// Configurações
 // Chave utilizada para salvar a preferência no navegador
 const ACCESSIBILITY_STORAGE_KEY = "garageHairAccessibility";
 
@@ -22,11 +15,7 @@ const VLIBRAS_SCRIPT_URL = "https://vlibras.gov.br/app/vlibras-plugin.js";
 const VLIBRAS_LOAD_TIMEOUT = 20000;
 const systemMotionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-
-// =========================================================
-// ESTADO PADRÃO
-// =========================================================
-
+// Estado padrão
 const defaultAccessibilitySettings = {
     fontScale: 100,
     highContrast: false,
@@ -35,15 +24,9 @@ const defaultAccessibilitySettings = {
     librasEnabled: false
 };
 
-
-// =========================================================
-// CARREGAR CONFIGURAÇÕES
-// =========================================================
-
+// Carregar configurações
 function loadAccessibilitySettings() {
-
     try {
-
         const savedSettings = localStorage.getItem(
             ACCESSIBILITY_STORAGE_KEY
         );
@@ -61,9 +44,9 @@ function loadAccessibilitySettings() {
             ...defaultAccessibilitySettings,
             ...parsedSettings,
             fontScale: Number.isFinite(savedScale)
-                ? Math.min(MAX_FONT_SCALE, Math.max(MIN_FONT_SCALE,
-                    Math.round(savedScale / FONT_STEP) * FONT_STEP))
-                : defaultAccessibilitySettings.fontScale,
+            ? Math.min(MAX_FONT_SCALE, Math.max(MIN_FONT_SCALE,
+                Math.round(savedScale / FONT_STEP) * FONT_STEP))
+            : defaultAccessibilitySettings.fontScale,
             // Preferências antigas podem não conter o campo de contraste.
             highContrast: parsedSettings?.highContrast === true,
             reducedMotion: parsedSettings?.reducedMotion === true,
@@ -79,16 +62,13 @@ function loadAccessibilitySettings() {
     }
 }
 
-// =========================================================
-// SALVAR CONFIGURAÇÕES
-// =========================================================
+// Salvar configurações
 function saveAccessibilitySettings() {
     try {
         localStorage.setItem(
             ACCESSIBILITY_STORAGE_KEY,
             JSON.stringify(accessibilitySettings)
         );
-
     } catch (error) {
         console.warn(
             "Não foi possível salvar as preferências de acessibilidade.",
@@ -97,9 +77,7 @@ function saveAccessibilitySettings() {
     }
 }
 
-// =========================================================
-// ESTADO ATUAL
-// =========================================================
+// Estado atual
 let accessibilitySettings = loadAccessibilitySettings();
 let vlibrasLoadPromise = null;
 let vlibrasStatus = "idle";
@@ -109,7 +87,7 @@ let vlibrasRequestId = 0;
 function applyReducedMotion() {
     const followsSystem = accessibilitySettings.followSystemMotion;
     const enabled = accessibilitySettings.reducedMotion ||
-        (followsSystem && systemMotionPreference.matches);
+    (followsSystem && systemMotionPreference.matches);
     document.documentElement.classList.toggle("reduced-motion", enabled);
     // Só uma escolha explícita do usuário permite movimentos contra a preferência do sistema.
     document.documentElement.classList.toggle("motion-allowed", !followsSystem && !enabled);
@@ -121,10 +99,10 @@ function applyReducedMotion() {
 
     const status = document.querySelector("#motion-status");
     const message = enabled
-        ? followsSystem && systemMotionPreference.matches && !accessibilitySettings.reducedMotion
-            ? "Movimentos reduzidos pela preferência do dispositivo. Desative esta opção para usar transições suaves neste site."
-            : "Movimentos reduzidos neste site."
-        : "Transições suaves ativadas neste site.";
+    ? followsSystem && systemMotionPreference.matches && !accessibilitySettings.reducedMotion
+    ? "Movimentos reduzidos pela preferência do dispositivo. Desative esta opção para usar transições suaves neste site."
+    : "Movimentos reduzidos neste site."
+    : "Transições suaves ativadas neste site.";
     if (status && status.textContent !== message) {
         status.textContent = message;
     }
@@ -146,35 +124,27 @@ function resetAccessibilitySettings() {
     }
 }
 
-// =========================================================
-// APLICAR TAMANHO DO TEXTO
-// =========================================================
-
+// Aplicar tamanho do texto
 function applyFontScale() {
     const scale = accessibilitySettings.fontScale;
     /*
-        Alteramos o font-size do elemento <html>.
-
-        Como boa parte do site utiliza rem,
-        os textos e componentes baseados nessa unidade
-        acompanham proporcionalmente a alteração.
-    */
+     * Alteramos o font-size do elemento <html>.
+     * Como boa parte do site utiliza rem,
+     * os textos e componentes baseados nessa unidade
+     * acompanham proporcionalmente a alteração.
+     */
     document.documentElement.style.fontSize = `${scale}%`;
     updateFontButtons();
 }
 
-// =========================================================
-// ALTO CONTRASTE
-// =========================================================
-
+// Alto contraste
 function applyHighContrast() {
     const isActive = accessibilitySettings.highContrast;
     /*
-        Adiciona ou remove a classe no elemento <html>.
-
-        Isso permite que o CSS altere o visual
-        de todas as páginas do site.
-    */
+     * Adiciona ou remove a classe no elemento <html>.
+     * Isso permite que o CSS altere o visual
+     * de todas as páginas do site.
+     */
     document.documentElement.classList.toggle(
         "high-contrast",
         isActive
@@ -188,12 +158,8 @@ function applyHighContrast() {
     }));
 }
 
-
-// =========================================================
-// ATUALIZAR ESTADO DOS BOTÕES
-// =========================================================
+// Atualizar estado dos botões
 function updateFontButtons() {
-
     const fontValue = document.querySelector("[data-font-scale]");
     const percentage = `${accessibilitySettings.fontScale}%`;
 
@@ -214,7 +180,7 @@ function updateFontButtons() {
     // Botão A-
     if (decreaseButton) {
         const reachedMinimum =
-            accessibilitySettings.fontScale <= MIN_FONT_SCALE;
+        accessibilitySettings.fontScale <= MIN_FONT_SCALE;
         decreaseButton.disabled = reachedMinimum;
         decreaseButton.setAttribute(
             "aria-disabled",
@@ -225,7 +191,7 @@ function updateFontButtons() {
     // Botão A+
     if (increaseButton) {
         const reachedMaximum =
-            accessibilitySettings.fontScale >= MAX_FONT_SCALE;
+        accessibilitySettings.fontScale >= MAX_FONT_SCALE;
         increaseButton.disabled = reachedMaximum;
         increaseButton.setAttribute(
             "aria-disabled",
@@ -234,10 +200,7 @@ function updateFontButtons() {
     }
 }
 
-// =========================================================
-// ESTADO DO BOTÃO DE CONTRASTE
-// =========================================================
-
+// Estado do botão de contraste
 function updateContrastButton() {
     const contrastButton = document.querySelector(
         '[data-accessibility="toggle-contrast"]'
@@ -248,30 +211,25 @@ function updateContrastButton() {
     }
 
     const isActive =
-        accessibilitySettings.highContrast;
+    accessibilitySettings.highContrast;
 
     /*
-        aria-pressed informa para tecnologias assistivas
-        se o botão está ativado ou não.
-    */
+     * aria-pressed informa para tecnologias assistivas
+     * se o botão está ativado ou não.
+     */
     contrastButton.setAttribute(
         "aria-pressed",
         isActive.toString()
     );
 
-    /*
-        Classe utilizada também para destaque visual.
-    */
+    // Classe utilizada também para destaque visual.
     contrastButton.classList.toggle(
         "active",
         isActive
     );
 }
 
-
-// =========================================================
-// AUMENTAR TEXTO
-// =========================================================
+// Aumentar texto
 function increaseFontSize() {
     if (
         accessibilitySettings.fontScale >=
@@ -285,9 +243,7 @@ function increaseFontSize() {
     saveAccessibilitySettings();
 }
 
-// =========================================================
-// DIMINUIR TEXTO
-// =========================================================
+// Diminuir texto
 function decreaseFontSize() {
     if (
         accessibilitySettings.fontScale <=
@@ -300,21 +256,15 @@ function decreaseFontSize() {
     saveAccessibilitySettings();
 }
 
-
-// =========================================================
-// EVENTOS
-// =========================================================
-
+// Eventos
 /*
-    Utilizamos delegação de eventos.
-
-    Isso é importante neste projeto porque a navbar
-    é carregada posteriormente pelo components.js.
-
-    Dessa forma, mesmo que o botão ainda não exista
-    quando acessibilidade.js for executado,
-    o clique continuará funcionando.
-*/
+ * Utilizamos delegação de eventos.
+ * Isso é importante neste projeto porque a navbar
+ * é carregada posteriormente pelo components.js.
+ * Dessa forma, mesmo que o botão ainda não exista
+ * quando acessibilidade.js for executado,
+ * o clique continuará funcionando.
+ */
 document.addEventListener("click", function (event) {
     const accessibilityButton = event.target.closest(
         "[data-accessibility]"
@@ -325,7 +275,7 @@ document.addEventListener("click", function (event) {
     }
 
     const action =
-        accessibilityButton.dataset.accessibility;
+    accessibilityButton.dataset.accessibility;
 
     const status = document.querySelector("#accessibility-status");
     if (status) {
@@ -333,49 +283,42 @@ document.addEventListener("click", function (event) {
     }
 
     switch (action) {
-
         case "increase-text":
-            increaseFontSize();
-            break;
+        increaseFontSize();
+        break;
         case "decrease-text":
-            decreaseFontSize();
-            break;
+        decreaseFontSize();
+        break;
         case "toggle-contrast":
-            toggleHighContrast();
-            break;
+        toggleHighContrast();
+        break;
         case "toggle-libras":
-            toggleVLibras();
-            break;
+        toggleVLibras();
+        break;
         case "toggle-motion":
-            accessibilitySettings.reducedMotion =
-                !document.documentElement.classList.contains("reduced-motion");
-            accessibilitySettings.followSystemMotion = false;
-            applyReducedMotion();
-            saveAccessibilitySettings();
-            break;
+        accessibilitySettings.reducedMotion =
+        !document.documentElement.classList.contains("reduced-motion");
+        accessibilitySettings.followSystemMotion = false;
+        applyReducedMotion();
+        saveAccessibilitySettings();
+        break;
         case "reset":
-            resetAccessibilitySettings();
-            break;
-
+        resetAccessibilitySettings();
+        break;
     }
-
 });
 
-// =========================================================
-// ATIVAR / DESATIVAR ALTO CONTRASTE
-// =========================================================
+// Ativar / desativar alto contraste
 function toggleHighContrast() {
     accessibilitySettings.highContrast =
-        !accessibilitySettings.highContrast;
+    !accessibilitySettings.highContrast;
 
     applyHighContrast();
 
     saveAccessibilitySettings();
 }
 
-// =========================================================
-// VLIBRAS - CARREGAMENTO SOB DEMANDA
-// =========================================================
+// VLibras - carregamento sob demanda
 function positionVLibrasButton() {
     // O botão está no shadow DOM oficial; seu contêiner não recebe o CSS do site.
     const access = window.VLibrasWidget?.initBtn?.parentElement;
@@ -526,9 +469,7 @@ function disableVLibras() {
     updateLibrasButton();
 }
 
-// =========================================================
-// INICIALIZAÇÃO
-// =========================================================
+// Inicialização
 function initializeAccessibility() {
     // Aplica imediatamente a preferência salva.
     applyFontScale();
@@ -548,28 +489,23 @@ if (document.readyState === "loading") {
         initializeAccessibility
     );
 } else {
-
     initializeAccessibility();
 }
 
-// =========================================================
-// OBSERVAÇÃO DA NAVBAR
-// =========================================================
-
+// Observação da navbar
 /*
-    Como a navbar é inserida dinamicamente pelo components.js,
-    observamos alterações no DOM.
-
-    Assim que os botões A- e A+ forem adicionados,
-    atualizamos automaticamente seus estados.
-*/
+ * Como a navbar é inserida dinamicamente pelo components.js,
+ * observamos alterações no DOM.
+ * Assim que os botões A- e A+ forem adicionados,
+ * atualizamos automaticamente seus estados.
+ */
 const accessibilityObserver =
-    new MutationObserver(function () {
-        updateFontButtons();
-        updateContrastButton();
-        updateLibrasButton();
-        applyReducedMotion();
-    });
+new MutationObserver(function () {
+    updateFontButtons();
+    updateContrastButton();
+    updateLibrasButton();
+    applyReducedMotion();
+});
 
 const accessibilityNavbar = document.querySelector("#navbar-component");
 if (accessibilityNavbar) {

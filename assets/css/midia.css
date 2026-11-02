@@ -1,12 +1,8 @@
-/* =========================================================
-   GARAGE HAIR
-   Página: Mídia
-   ========================================================= */
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
+/*
+ * Garage Hair
+ * Página: Mídia
+ */
+/* Hero */
 .midia-hero {
     position: relative;
     min-height: 420px;
@@ -66,9 +62,7 @@
     color: rgba(255, 255, 255, 0.82);
 }
 
-/* =========================================================
-   INTRODUÇÃO
-   ========================================================= */
+/* Introdução */
 .midia-intro {
     padding: 6rem 0;
     background-color: #f4f1e8;
@@ -89,9 +83,7 @@
     color: #595f58;
 }
 
-/* =========================================================
-   VÍDEO PRINCIPAL
-   ========================================================= */
+/* Vídeo principal */
 .midia-video {
     padding: 7rem 0;
     background-color: #ffffff;
@@ -119,9 +111,7 @@
     color: #70756f !important;
 }
 
-/* =========================================================
-   PLAYER DE VÍDEO
-   ========================================================= */
+/* Player de vídeo */
 .video-container {
     position: relative;
     overflow: hidden;
@@ -149,9 +139,7 @@
     pointer-events: none;
 }
 
-/* =========================================================
-   ÁUDIO
-   ========================================================= */
+/* Áudio */
 .midia-audio {
     padding: 7rem 0;
     background-color: #f4f1e8;
@@ -170,9 +158,7 @@
     color: #5b615a;
 }
 
-/* =========================================================
-   IMAGEM ÁUDIO
-   ========================================================= */
+/* Imagem áudio */
 .midia-audio-imagem {
     position: relative;
     margin: 0;
@@ -200,9 +186,7 @@
     transform: scale(1.025);
 }
 
-/* =========================================================
-   PLAYER DE ÁUDIO
-   ========================================================= */
+/* Player de áudio */
 .audio-player {
     margin-top: 2rem;
     padding: 1.8rem;
@@ -255,9 +239,75 @@
     width: 100%;
 }
 
-/* =========================================================
-   IFRAME
-   ========================================================= */
+/* Disclosure nativo: mantém marcador, foco e funcionamento por teclado. */
+.audio-transcricao {
+    margin-top: 1.4rem;
+    border-top: 1px solid var(--garage-beige);
+    color: var(--garage-text);
+}
+
+.audio-transcricao summary {
+    min-height: 48px;
+    padding: 1rem 0.35rem;
+    border-radius: 3px;
+    color: var(--garage-green);
+    font-weight: 700;
+    cursor: pointer;
+    transition: color var(--transition), background-color var(--transition);
+}
+
+.audio-transcricao summary::marker {
+    color: var(--garage-olive);
+}
+
+.audio-transcricao summary:is(:hover, :focus-visible) {
+    background-color: var(--garage-light);
+}
+
+.audio-transcricao summary:focus-visible {
+    outline: 3px solid var(--garage-olive);
+    outline-offset: 3px;
+}
+
+.audio-transcricao[open] summary {
+border-bottom: 1px solid var(--garage-beige);
+}
+
+.audio-transcricao-conteudo {
+    padding-top: 1.25rem;
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+}
+
+.audio-transcricao-conteudo h3 {
+    margin-bottom: 1.25rem;
+    color: var(--garage-green);
+    font-size: 1.25rem;
+}
+
+.audio-transcricao-conteudo p {
+    margin-bottom: 1rem;
+}
+
+.audio-transcricao-conteudo p:last-child {
+    margin-bottom: 0;
+}
+
+html.high-contrast .audio-transcricao,
+html.high-contrast .audio-transcricao[open] summary {
+border-color: var(--contrast-text) !important;
+}
+
+html.high-contrast .audio-transcricao summary {
+    background-color: var(--contrast-bg) !important;
+    color: var(--contrast-accent) !important;
+}
+
+html.high-contrast .audio-transcricao summary::marker {
+    color: var(--contrast-accent);
+}
+
+/* Iframe */
 .midia-iframe {
     padding: 7rem 0;
     background-color: #171a17;
@@ -286,9 +336,7 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* =========================================================
-   CONTAINER RESPONSIVO PARA IFRAME
-   ========================================================= */
+/* Container responsivo para iframe */
 .iframe-container {
     position: relative;
     width: 100%;
@@ -306,9 +354,7 @@
     border: 0;
 }
 
-/* =========================================================
-   BASTIDORES
-   ========================================================= */
+/* Bastidores */
 .midia-bastidores {
     padding: 7rem 0;
     background-color: #f4f1e8;
@@ -322,9 +368,7 @@
     color: #5b615a;
 }
 
-/* =========================================================
-   CARDS
-   ========================================================= */
+/* Cards */
 .midia-card {
     height: 100%;
     overflow: hidden;
@@ -388,9 +432,7 @@
     color: #626861;
 }
 
-/* =========================================================
-   CTA
-   ========================================================= */
+/* CTA */
 .midia-cta {
     position: relative;
     padding: 7rem 0;
@@ -434,9 +476,7 @@
     color: rgba(255, 255, 255, 0.75);
 }
 
-/* =========================================================
-   BOTÃO CTA
-   ========================================================= */
+/* Botão CTA */
 .btn-midia {
     display: inline-flex;
     align-items: center;
@@ -461,9 +501,7 @@
     transform: translateY(-2px);
 }
 
-/* =========================================================
-   RESPONSIVIDADE
-   ========================================================= */
+/* Responsividade */
 @media (max-width: 991px) {
     .midia-hero {
         min-height: 380px;

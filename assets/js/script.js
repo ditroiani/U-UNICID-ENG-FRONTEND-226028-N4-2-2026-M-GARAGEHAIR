@@ -4,7 +4,7 @@
     const root = document.documentElement;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const reducedMotion = () => root.classList.contains("reduced-motion") ||
-        (preference.matches && !root.classList.contains("motion-allowed"));
+    (preference.matches && !root.classList.contains("motion-allowed"));
     const updates = [];
 
     document.querySelectorAll("[data-carousel-pause]").forEach(button => {
@@ -50,7 +50,7 @@
     const root = document.documentElement;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const reducedMotion = () => root.classList.contains("reduced-motion") ||
-        (preference.matches && !root.classList.contains("motion-allowed"));
+    (preference.matches && !root.classList.contains("motion-allowed"));
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;

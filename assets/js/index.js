@@ -6,7 +6,7 @@
     const root = document.documentElement;
     const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const reduceMotion = () => root.classList.contains("reduced-motion") ||
-        (motionPreference.matches && !root.classList.contains("motion-allowed"));
+    (motionPreference.matches && !root.classList.contains("motion-allowed"));
     const counters = [...home.querySelectorAll("[data-counter]")];
     const formatter = new Intl.NumberFormat("pt-BR");
     let frame = null;

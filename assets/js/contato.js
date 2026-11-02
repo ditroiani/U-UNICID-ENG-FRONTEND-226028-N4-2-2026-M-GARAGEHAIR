@@ -23,7 +23,7 @@
         "31 32 33 34 35 37 38 41 42 43 44 45 46 47 48 49 " +
         "51 53 54 55 61 62 63 64 65 66 67 68 69 " +
         "71 73 74 75 77 79 81 82 83 84 85 86 87 88 89 91 92 93 94 95 96 97 98 99"
-    ).split(" "));
+        ).split(" "));
 
     function phoneDigits(value) {
         const raw = value.trim();
@@ -69,7 +69,7 @@
             if (telefone.required) phoneError = "Informe seu telefone com DDD para esta forma de retorno.";
         } else if (!validDDDs.has(phone.slice(0, 2)) ||
             !(/^[2-5]\d{7}$/.test(phone.slice(2)) || /^9\d{8}$/.test(phone.slice(2)))) {
-            phoneError = "Informe um telefone brasileiro com DDD: (11) 3456-7890 ou (11) 91234-5678.";
+        phoneError = "Informe um telefone brasileiro com DDD: (11) 3456-7890 ou (11) 91234-5678.";
         } else if (selected === "whatsapp" && phone.length !== 11) {
             phoneError = "Para retorno por WhatsApp, informe um celular com DDD e 9 dígitos.";
         }
@@ -103,7 +103,7 @@
         if (!fields.includes(event.target)) return;
         touched.add(event.target);
         if ([nome, sobrenome, email, telefone].includes(event.target)) {
-            event.target.value = event.target.value.trim();
+        event.target.value = event.target.value.trim();
         }
         validate();
     });

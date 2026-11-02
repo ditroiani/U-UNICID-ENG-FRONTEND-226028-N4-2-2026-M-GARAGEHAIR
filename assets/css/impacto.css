@@ -1,11 +1,8 @@
-/* =========================================================
-   GARAGE HAIR
-   Página: Impacto
-   ========================================================= */
-
-/* =========================================================
-   HERO
-   ========================================================= */
+/*
+ * Garage Hair
+ * Página: Impacto
+ */
+/* Hero */
 .impacto-hero {
     position: relative;
     min-height: 380px;
@@ -65,9 +62,7 @@
     color: rgba(255, 255, 255, 0.84);
 }
 
-/* =========================================================
-   INTRODUÇÃO
-   ========================================================= */
+/* Introdução */
 .impacto-intro {
     padding: 6rem 0 4rem;
     background-color: #f4f1e8;
@@ -101,10 +96,7 @@
     color: #667a5b;
 }
 
-
-/* =========================================================
-   INDICADORES / KPIs
-   ========================================================= */
+/* INDICADORES / KPIs */
 .impacto-indicadores {
     padding: 0 0 6rem;
     background-color: #f4f1e8;
@@ -177,9 +169,7 @@
     color: #555b55;
 }
 
-/* =========================================================
-   ÁREA DOS GRÁFICOS
-   ========================================================= */
+/* Área dos gráficos */
 .impacto-graficos {
     padding: 6rem 0;
     background:
@@ -205,9 +195,7 @@
     color: #ffffff;
 }
 
-/* =========================================================
-   CARDS DOS GRÁFICOS
-   ========================================================= */
+/* Cards dos gráficos */
 .grafico-card {
     height: 100%;
     padding: 2rem;
@@ -266,9 +254,7 @@
     color: #d6c7a8;
 }
 
-/* =========================================================
-   CANVAS / CHART.JS
-   ========================================================= */
+/* Canvas / Chart.js */
 .grafico-container {
     position: relative;
     width: 100%;
@@ -285,9 +271,7 @@
     height: 350px;
 }
 
-/* =========================================================
-   PROJETOS / AÇÕES
-   ========================================================= */
+/* Projetos / ações */
 .impacto-projetos {
     padding: 7rem 0;
     background-color: #f4f1e8;
@@ -309,9 +293,7 @@
     color: #555b55;
 }
 
-/* =========================================================
-   LISTA DE PROJETOS
-   ========================================================= */
+/* Lista de projetos */
 .impacto-projetos-lista {
     border-top: 1px solid rgba(23, 26, 23, 0.15);
 }
@@ -352,9 +334,7 @@
     color: #666c66;
 }
 
-/* =========================================================
-   CTA
-   ========================================================= */
+/* CTA */
 .impacto-cta {
     position: relative;
     padding: 7rem 0;
@@ -423,9 +403,7 @@
     transform: translateY(-2px);
 }
 
-/* =========================================================
-   RESPONSIVIDADE
-   ========================================================= */
+/* Responsividade */
 @media (max-width: 991px) {
     .impacto-hero {
         min-height: 340px;
@@ -525,7 +503,6 @@
 }
 
 @media (max-width: 575px) {
-
     .grafico-container,
     .grafico-card-destaque .grafico-container {
         height: 260px;
