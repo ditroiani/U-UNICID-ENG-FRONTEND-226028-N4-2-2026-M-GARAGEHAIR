@@ -372,29 +372,33 @@
                             </div>
 
                             <p class="formulario-subtitle">
-                                Preencha os campos abaixo.
-                                Retornaremos assim que possível.
+                                Campos com * são obrigatórios. A mensagem deve ter entre 10 e 1.000 caracteres.
+                                Este formulário é demonstrativo: os dados não são enviados.
                             </p>
 
-                            <!-- Mensagem de sucesso -->
-                            <div id="mensagemSucesso" class="alert alert-success d-none" role="alert">
-                                <i class="bi bi-check-circle-fill me-2"></i>
-                                Mensagem enviada com sucesso!
+                            <!-- Confirmação de validação, sem simular um envio real. -->
+                            <div id="mensagemSucesso" class="alert alert-success d-none" role="status" tabindex="-1">
+                                Dados validados. A mensagem não foi enviada, pois este formulário é demonstrativo.
                             </div>
+                            <div id="errosFormulario" class="alert alert-danger d-none" role="alert"></div>
+                            <noscript>
+                                <p>Ative o JavaScript para utilizar a validação deste formulário demonstrativo.</p>
+                            </noscript>
 
-                            <form id="formContato" class="needs-validation" novalidate>
+                            <form id="formContato" class="needs-validation">
                                 <!-- Nome + Sobrenome -->
                                 <div class="row g-4">
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="nome" name="nome"
-                                                placeholder="Seu nome" autocomplete="given-name" required>
+                                                placeholder="Seu nome" autocomplete="given-name" maxlength="80"
+                                                aria-describedby="erro-nome" required>
                                             <label for="nome">
                                                 <i class="bi bi-person me-1"></i>
-                                                Nome
+                                                Nome <span aria-hidden="true">*</span>
                                             </label>
 
-                                            <div class="invalid-feedback">
+                                            <div class="invalid-feedback" id="erro-nome">
                                                 Informe seu nome.
                                             </div>
                                         </div>
@@ -403,13 +407,14 @@
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="sobrenome" name="sobrenome"
-                                                placeholder="Seu sobrenome" autocomplete="family-name" required>
+                                                placeholder="Seu sobrenome" autocomplete="family-name" maxlength="80"
+                                                aria-describedby="erro-sobrenome" required>
                                             <label for="sobrenome">
                                                 <i class="bi bi-person me-1"></i>
-                                                Sobrenome
+                                                Sobrenome <span aria-hidden="true">*</span>
                                             </label>
 
-                                            <div class="invalid-feedback">
+                                            <div class="invalid-feedback" id="erro-sobrenome">
                                                 Informe seu sobrenome.
                                             </div>
                                         </div>
@@ -421,13 +426,14 @@
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <input type="email" class="form-control" id="email" name="email"
-                                                placeholder="nome@exemplo.com" autocomplete="email" required>
+                                                placeholder="nome@exemplo.com" autocomplete="email" maxlength="254"
+                                                aria-describedby="erro-email" required>
                                             <label for="email">
                                                 <i class="bi bi-envelope me-1"></i>
-                                                E-mail
+                                                E-mail <span aria-hidden="true">*</span>
                                             </label>
 
-                                            <div class="invalid-feedback">
+                                            <div class="invalid-feedback" id="erro-email">
                                                 Informe um e-mail válido.
                                             </div>
                                         </div>
@@ -436,18 +442,23 @@
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <input type="tel" class="form-control" id="telefone" name="telefone"
-                                                placeholder="(11) 99999-9999" autocomplete="tel" inputmode="tel">
+                                                placeholder="(11) 99999-9999" autocomplete="tel" inputmode="tel" maxlength="30"
+                                                aria-describedby="ajuda-telefone erro-telefone">
                                             <label for="telefone">
                                                 <i class="bi bi-phone me-1"></i>
-                                                Telefone
+                                                Telefone <span id="telefone-obrigatorio" aria-hidden="true" hidden>*</span>
                                             </label>
+                                            <div class="invalid-feedback" id="erro-telefone"></div>
                                         </div>
+                                        <small id="ajuda-telefone" class="form-text">
+                                            Informe DDD e número. Opcional para retorno por e-mail; obrigatório para telefone ou WhatsApp.
+                                        </small>
                                     </div>
                                 </div>
 
                                 <!-- Assunto -->
                                 <div class="form-floating mt-4">
-                                    <select class="form-select" id="assunto" name="assunto" required>
+                                    <select class="form-select" id="assunto" name="assunto" aria-describedby="erro-assunto" required>
                                         <option value="" selected disabled>
                                             Selecione uma opção
                                         </option>
@@ -483,10 +494,10 @@
 
                                     <label for="assunto">
                                         <i class="bi bi-chat-square-text me-1"></i>
-                                        Assunto
+                                        Assunto <span aria-hidden="true">*</span>
                                     </label>
 
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback" id="erro-assunto">
                                         Escolha um assunto.
                                     </div>
                                 </div>
@@ -499,7 +510,7 @@
 
                                     <div class="preferencia-opcoes">
                                         <input type="radio" class="btn-check" name="preferencia" id="retornoEmail"
-                                            value="email" checked>
+                                            value="email" aria-describedby="erro-preferencia" required checked>
 
                                         <label class="preferencia-card" for="retornoEmail">
                                             <i class="bi bi-envelope"></i>
@@ -510,7 +521,7 @@
                                         </label>
 
                                         <input type="radio" class="btn-check" name="preferencia" id="retornoWhatsapp"
-                                            value="whatsapp">
+                                            value="whatsapp" aria-describedby="erro-preferencia">
 
                                         <label class="preferencia-card" for="retornoWhatsapp">
                                             <i class="bi bi-whatsapp"></i>
@@ -520,7 +531,7 @@
                                         </label>
 
                                         <input type="radio" class="btn-check" name="preferencia" id="retornoTelefone"
-                                            value="telefone">
+                                            value="telefone" aria-describedby="erro-preferencia">
 
                                         <label class="preferencia-card" for="retornoTelefone">
                                             <i class="bi bi-telephone"></i>
@@ -530,55 +541,58 @@
                                             </span>
                                         </label>
                                     </div>
+                                    <p class="invalid-feedback" id="erro-preferencia"></p>
                                 </fieldset>
 
                                 <!-- Mensagem -->
                                 <div class="form-floating mt-4">
                                     <textarea class="form-control mensagem-textarea" id="mensagem" name="mensagem"
-                                        placeholder="Digite sua mensagem" maxlength="1000" required></textarea>
+                                        placeholder="Digite sua mensagem" minlength="10" maxlength="1000"
+                                        aria-describedby="ajuda-mensagem erro-mensagem contador-caracteres" required></textarea>
 
                                     <label for="mensagem">
                                         <i class="bi bi-pencil me-1"></i>
-                                        Sua mensagem
+                                        Sua mensagem <span aria-hidden="true">*</span>
                                     </label>
 
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback" id="erro-mensagem">
                                         Escreva sua mensagem.
                                     </div>
 
                                     <div class="contador-wrapper">
-                                        <small>
-                                            Conte um pouco sobre como podemos ajudar.
+                                        <small id="ajuda-mensagem">
+                                            Escreva de 10 a 1.000 caracteres, sem contar espaços no início e no fim para o mínimo.
                                         </small>
 
-                                        <small>
+                                        <small id="contador-caracteres">
                                             <span id="contadorMensagem">
                                                 0
                                             </span>
-                                            / 1000
+                                            / 1000 caracteres
                                         </small>
                                     </div>
                                 </div>
 
                                 <!-- LGPD -->
                                 <div class="form-check contato-privacidade mt-4">
-                                    <input class="form-check-input" type="checkbox" id="privacidade" required>
+                                    <input class="form-check-input" type="checkbox" id="privacidade" name="privacidade"
+                                        value="aceito" aria-describedby="erro-privacidade" required>
 
                                     <label class="form-check-label" for="privacidade">
 
                                         Concordo com o uso das informações
                                         fornecidas exclusivamente para
-                                        retorno deste contato.
+                                        retorno deste contato. <span aria-hidden="true">*</span>
                                     </label>
 
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback" id="erro-privacidade">
                                         É necessário aceitar antes de enviar.
                                     </div>
                                 </div>
 
                                 <!-- Enviar -->
                                 <div class="form-footer mt-4">
-                                    <button type="submit" class="btn btn-enviar">
+                                    <button type="submit" class="btn btn-enviar" id="validar-contato" disabled>
                                         <span>
                                             Enviar mensagem
                                         </span>
@@ -730,6 +744,7 @@
 
     <!-- JS geral -->
     <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/contato.js" defer></script>
 </body>
 
 </html>

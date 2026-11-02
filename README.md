@@ -76,18 +76,6 @@ O menu de acessibilidade reúne os seguintes recursos:
 - Restauração das configurações padrão.
 - Preferências salvas no navegador para as próximas páginas e visitas.
 
-A navegação também inclui foco visível, atalho para pular ao conteúdo principal e controles para pausar os carrosséis.
-
-| Tecla | Ação |
-| --- | --- |
-| **Tab / Shift + Tab** | Avançar e voltar entre controles. |
-| **Enter** | Abrir links e ativar botões. |
-| **Espaço** | Ativar botões e marcar opções. |
-| **↑ / ↓** | Percorrer opções dos menus. |
-| **Home / End** | Ir ao primeiro ou último controle do painel de acessibilidade. |
-| **Esc** | Fechar menus e janelas modais. |
-
-> A implementação está em revisão. A presença desses recursos não representa uma certificação de acessibilidade ou uma validação completa de conformidade.
 
 ## 🎨 Identidade visual
 
@@ -153,15 +141,6 @@ O contexto acadêmico e os objetivos estão em [`docs/plano-contexto.md`](docs/p
 2. Inicie um servidor HTTP local. Se utilizar a extensão **Live Server**, abra o `index.html` com **Open with Live Server**.
 3. Acesse o endereço local informado pelo servidor.
 
-Como alternativa, com Python instalado, execute na pasta que contém o `index.html`:
-
-```bash
-python -m http.server 5500
-```
-
-Depois, abra **http://localhost:5500** no navegador. Para encerrar o servidor no terminal, pressione **Ctrl + C**.
-
-Use um servidor HTTP para que o carregamento de componentes e dados via `fetch` funcione corretamente. Bootstrap, fontes, ícones, Chart.js, VLibras e conteúdos incorporados utilizam serviços externos e precisam de conexão com a internet.
 
 ## 🌐 Publicação
 
@@ -171,14 +150,6 @@ O projeto está hospedado na **Vercel**:
 
 Os arquivos são organizados como um site estático, com `index.html` na raiz e as demais páginas em `pages/`.
 
-## 🔎 Em revisão
-
-O projeto permanece em desenvolvimento. As próximas verificações incluem:
-
-- [ ] Validação formal do HTML e do CSS e revisão da semântica e do uso de ARIA.
-- [ ] Conferência no navegador da navegação por teclado, do contraste e da responsividade.
-- [ ] Alternativas textuais para os gráficos e revisão do fluxo do formulário de contato.
-- [ ] Inclusão do vídeo institucional e revisão dos links provisórios de contato.
 
 ## 🤝 Equipe
 
