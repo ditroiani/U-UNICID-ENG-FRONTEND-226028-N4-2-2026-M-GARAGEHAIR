@@ -85,6 +85,7 @@
     text-decoration: none;
     transition:
         background-color 0.3s ease,
+        border-color var(--transition),
         color 0.3s ease,
         transform 0.3s ease;
 }
@@ -473,30 +474,6 @@
 .acessibilidade-compromisso .btn-acessibilidade:hover {
     background-color: #171a17;
     border-color: #171a17;
-}
-
-/* =========================================================
-   LINK PULAR CONTEÚDO
-   ========================================================= */
-/*
- * O link ficará fora da tela normalmente.
- * A funcionalidade será revisada junto da etapa
- * global de acessibilidade.
- */
-.pular-conteudo {
-    position: absolute;
-    top: -100px;
-    left: 1rem;
-    z-index: 9999;
-    padding: 0.8rem 1rem;
-    background-color: #ffffff;
-    color: #171a17;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.pular-conteudo:focus {
-    top: 1rem;
 }
 
 /* =========================================================

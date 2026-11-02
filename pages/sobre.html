@@ -35,12 +35,13 @@
     <title>Sobre Nós | Garage Hair</title>
 </head>
 
-<body data-root="..">
+<body data-root=".." class="sobre-page">
+    <a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
     <!-- Header -->
     <header id="navbar-component"></header>
 
     <!-- Conteúdo Principal -->
-    <main>
+    <main id="conteudo-principal" tabindex="-1">
         <!-- Hero -->
         <section class="sobre-hero">
             <div class="container">
@@ -50,23 +51,33 @@
                     </p>
 
                     <h1>
-                        Sobre nÓS
+                        Sobre nós
                     </h1>
 
                     <p class="sobre-hero-text">
                         Conheça nossa história e o que nos move.
                     </p>
+
+                    <div class="sobre-hero-signature">
+                        <i class="bi bi-scissors" aria-hidden="true"></i>
+                        <span>Tradição e cuidado desde 1987</span>
+                    </div>
+
+                    <a class="sobre-history-link" href="#nossa-historia">
+                        Nossa história
+                        <i class="bi bi-arrow-down" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
 
         <!-- Nossa História-->
-        <section class="section historia">
+        <section class="section historia" id="nossa-historia">
             <div class="container">
                 <div class="row align-items-center g-5">
                     <!-- Texto -->
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-reveal>
                         <p class="section-subtitle">
                             NOSSA HISTÓRIA
                         </p>
@@ -111,8 +122,13 @@
 
                     <!-- Imagem -->
                     <div class="col-lg-6">
-                        <img src="../assets/images/sobre/nossa_historia.png" class="img-fluid sobre-image"
-                            alt="Família reunida durante a inauguração da Garage Hair em São Paulo, em 2007">
+                        <figure class="historia-retrato" data-reveal>
+                            <div class="historia-retrato-imagem">
+                                <img src="../assets/images/sobre/nossa_historia.png" class="img-fluid sobre-image"
+                                    alt="Registro inspirado nas origens familiares da Garage Hair" loading="lazy">
+                            </div>
+                            <figcaption>Raízes familiares. Cuidado que atravessa gerações.</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -122,7 +138,8 @@
         <section class="section proposito">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-9 text-center">
+                    <div class="col-lg-9 text-center" data-reveal>
+                        <i class="bi bi-scissors proposito-icon" aria-hidden="true"></i>
                         <p class="section-subtitle">
                             NOSSO PROPÓSITO
                         </p>
@@ -157,7 +174,7 @@
                 </div>
 
                 <!-- Missão -->
-                <article class="identidade-item">
+                <article class="identidade-item" data-reveal>
                     <div class="row align-items-start">
                         <div class="col-md-2">
                             <span class="identidade-numero">
@@ -182,7 +199,7 @@
                 </article>
 
                 <!-- Visão -->
-                <article class="identidade-item">
+                <article class="identidade-item" data-reveal>
                     <div class="row align-items-start">
                         <div class="col-md-2">
                             <span class="identidade-numero">
@@ -208,7 +225,7 @@
 
 
                 <!-- Valores -->
-                <article class="identidade-item">
+                <article class="identidade-item" data-reveal>
                     <div class="row align-items-start">
                         <div class="col-md-2">
                             <span class="identidade-numero">
@@ -258,6 +275,7 @@
                 <a href="projetos.html" class="btn btn-primary">
 
                     Ver nossos projetos
+                    <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
                 </a>
             </div>
         </section>

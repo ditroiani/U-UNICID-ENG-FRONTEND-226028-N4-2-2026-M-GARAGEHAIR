@@ -37,12 +37,13 @@
     <title>Bem-vindo | Garage Hair</title>
 </head>
 
-<body data-root=".">
+<body data-root="." class="home-page">
+    <a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
     <!-- Header -->
     <header id="navbar-component"></header>
 
     <!-- Conteúdo Principal -->
-    <main>
+    <main id="conteudo-principal" tabindex="-1">
         <!-- Hero -->
         <section id="hero" class="hero">
             <div class="container">
@@ -63,18 +64,17 @@
                             Uma barbearia que une cuidado, sustentabilidade e inclusão para transformar pequenas
                             escolhas em grandes impactos.
                         </p>
-                    </div>
+                        <!-- Conheça mais sobre nós-->
+                        <div class="hero-buttons">
+                            <a href="pages/sobre.html" class="btn btn-primary">
+                                Conheça nossa proposta
+                                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                            </a>
 
-                    <!-- Conheça mais sobre nós-->
-                    <div class="hero-buttons">
-
-                        <a href="pages/sobre.html" class="btn btn-primary">
-                            Conheça nossa proposta
-                        </a>
-
-                        <a href="pages/projetos.html" class="btn btn-outline-light">
-                            Nossas iniciativas
-                        </a>
+                            <a href="pages/projetos.html" class="btn btn-outline-light">
+                                Nossas iniciativas
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -213,7 +213,8 @@
                             <i class="bi bi-recycle" aria-hidden="true"></i>
 
                             <strong>
-                                350+
+                                <span class="visually-hidden">350+</span>
+                                <span data-counter="350" data-suffix="+" aria-hidden="true">350+</span>
                             </strong>
 
                             <span>
@@ -229,7 +230,8 @@
                             <i class="bi bi-droplet" aria-hidden="true"></i>
 
                             <strong>
-                                1.850 L
+                                <span class="visually-hidden">1.850 litros</span>
+                                <span data-counter="1850" data-suffix=" L" aria-hidden="true">1.850 L</span>
                             </strong>
 
                             <span>
@@ -245,7 +247,8 @@
                             <i class="bi bi-scissors" aria-hidden="true"></i>
 
                             <strong>
-                                55
+                                <span class="visually-hidden">55</span>
+                                <span data-counter="55" aria-hidden="true">55</span>
                             </strong>
 
                             <span>
@@ -261,7 +264,8 @@
                             <i class="bi bi-people" aria-hidden="true"></i>
 
                             <strong>
-                                67
+                                <span class="visually-hidden">67</span>
+                                <span data-counter="67" aria-hidden="true">67</span>
                             </strong>
 
                             <span>
@@ -275,6 +279,7 @@
                 <div class="text-center mt-4">
                     <a href="pages/impacto.html" class="btn btn-outline-light">
                         Veja nossos indicadores
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -437,6 +442,7 @@
 
                 <a href="pages/contato.html" class="btn btn-primary">
                     Entre em contato
+                    <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
                 </a>
             </div>
         </section>
@@ -458,6 +464,7 @@
 
     <!-- JS Dedicado -->
     <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/index.js" defer></script>
 </body>
 
 </html>

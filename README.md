@@ -1,119 +1,199 @@
-<div align="center">
-
-<img src="assets/images/icones/favicon.png" alt="Logo Garage Hair" width="90">
-
-# 💈 Garage Hair 💈
-
-### Estilo que transforma. Impacto que permanece.
-
-**Projeto acadêmico de Desenvolvimento Web**
-
-![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-667A5B?style=for-the-badge)
-![Projeto](https://img.shields.io/badge/Projeto-Acadêmico-D6C7A8?style=for-the-badge&labelColor=171A17)
-![Acessível](https://img.shields.io/badge/Acessibilidade-Sim-4C6B5A?style=for-the-badge)
-
+﻿<div align="center">
+  <img src="assets/images/icones/favicon.png" alt="Logo Garage Hair" width="90">
+  <h1>💈 Garage Hair</h1>
+  <p><strong>Estilo que transforma. Impacto que permanece.</strong></p>
+  <p>Tradição desde 1987 · Sustentabilidade · Inclusão</p>
+  <p>
+    <img src="https://img.shields.io/badge/Status-Em_desenvolvimento-667A5B?style=for-the-badge&amp;labelColor=171A17" alt="Status: em desenvolvimento">
+    <img src="https://img.shields.io/badge/Projeto-Acad%C3%AAmico-D6C7A8?style=for-the-badge&amp;labelColor=171A17" alt="Projeto acadêmico">
+    <img src="https://img.shields.io/badge/Hospedagem-Vercel-26382C?style=for-the-badge&amp;labelColor=171A17" alt="Hospedagem: Vercel">
+  </p>
+  <p><a href="https://garagehairunicid.vercel.app"><strong>Acessar o site ↗</strong></a></p>
 </div>
 
-## 📖 Sobre o projeto
+---
 
-O **Garage Hair** é um projeto acadêmico desenvolvido para a disciplina de **Desenvolvimento Web**, com a proposta de criar um site completo para uma **barbearia sustentável e inclusiva**.
+## 🌿 Sobre o projeto
 
-O projeto busca unir tecnologia, identidade visual e experiência do usuário com temas relacionados à:
+O **Garage Hair** é um website institucional desenvolvido para a disciplina de **Desenvolvimento Front-End para Web**, do curso de **Engenharia de Software da UNICID**.
 
-- 🌿 Sustentabilidade
-- ♻️ Consumo consciente
-- ♿ Acessibilidade
-- 🤝 Inclusão e impacto social
-- 💈 Cuidado pessoal e bem-estar
+A proposta apresenta uma barbearia fictícia fundada em **1987**, com raízes familiares e uma visão de cuidado que une tradição, sustentabilidade, inclusão e responsabilidade social. O projeto explora HTML5, CSS3 e JavaScript em uma experiência com páginas institucionais, produtos, notícias e indicadores de impacto.
 
-> **Observação:** este projeto possui finalidade acadêmica. Algumas informações, indicadores, iniciativas e dados apresentados podem ser fictícios ou simulados.
+> Projeto com finalidade acadêmica. A empresa, os contatos e parte dos conteúdos, preços e indicadores são fictícios ou simulados.
 
+**Explore:** [Páginas](#-páginas-do-site) · [Tecnologias](#-tecnologias) · [Acessibilidade](#-acessibilidade) · [Execução local](#-como-executar) · [Equipe](#-equipe)
 
-## 🎯 Objetivo do projeto
+## ✨ Recursos do site
 
-O objetivo do projeto é desenvolver um **site completo, responsivo e acessível**, utilizando tecnologias Front-End e boas práticas de desenvolvimento Web.
-Além dos aspectos técnicos, o projeto propõe a criação de uma barbearia que incorpore conceitos de **sustentabilidade, responsabilidade social e inclusão** em sua identidade e em seus serviços.
-Entre os principais objetivos estão:
+- **Identidade visual própria:** verde escuro, bege, madeira e referências à barbearia tradicional.
+- **Navegação compartilhada:** navbar e rodapé carregados dinamicamente em todas as páginas.
+- **Catálogo de produtos:** busca, filtros por categoria e ordenação, com conteúdo em JSON.
+- **Indicadores de impacto:** dados simulados em CSV apresentados com gráficos do Chart.js.
+- **Galeria e notícias:** filtros de imagens e leitura de notícias em janelas modais.
+- **Conteúdo multimídia:** áudio sobre a história da marca e vídeo incorporado do YouTube.
+- **Interações suaves:** efeitos nos cartões, entradas ao rolar e contagem animada na página inicial.
+- **Layout responsivo:** estilos para desktop, tablet e celular, com menu lateral em telas menores.
 
-- Desenvolver páginas utilizando **HTML5 semântico**;
-- Criar uma identidade visual consistente utilizando **CSS3**;
-- Garantir uma experiência adequada em computadores, tablets e smartphones;
-- Aplicar boas práticas de **acessibilidade Web**;
-- Utilizar formulários com validação HTML5;
-- Incorporar conteúdos multimídia;
-- Desenvolver uma navegação clara e consistente entre as páginas;
-- Abordar sustentabilidade e impacto social ao longo do site.
+## 🧭 Páginas do site
 
-## 🚀 Tecnologias utilizadas
+| Página | Conteúdo |
+| --- | --- |
+| [Início](index.html) | Apresentação da marca, proposta e resultados simulados. |
+| [Sobre nós](pages/sobre.html) | História, propósito, missão, visão e valores. |
+| [Projetos](pages/projetos.html) | Iniciativas ambientais e sociais. |
+| [Produtos](pages/produtos.html) | Catálogo com busca, categorias e ordenação. |
+| [Impacto](pages/impacto.html) | Indicadores e gráficos baseados em dados CSV. |
+| [Galeria](pages/galeria.html) | Imagens organizadas por tema. |
+| [Mídia](pages/midia.html) | História em áudio e conteúdos em vídeo. |
+| [Notícias](pages/noticias.html) | Novidades, comunicados e ações da Garage Hair. |
+| [Acessibilidade](pages/acessibilidade.html) | Inclusão no atendimento e recursos de navegação. |
+| [Contato](pages/contato.html) | Canais de atendimento, formulário e localização. |
+| [Orçamento e hospedagem](pages/orcamento.html) | Planejamento técnico e estimativas de custos. |
 
-<div align="center">
+## 🛠️ Tecnologias
 
-[![Tecnologias](https://skillicons.dev/icons?i=html,css,bootstrap,js)](https://skillicons.dev)
+| Tecnologia | Uso no projeto |
+| --- | --- |
+| **HTML5** | Estrutura das páginas e organização do conteúdo. |
+| **CSS3** | Identidade visual, responsividade, transições e animações. |
+| **JavaScript** | Componentes compartilhados, filtros e preferências de acessibilidade. |
+| **Bootstrap 5** | Grid, menu mobile, dropdowns, carrosséis e modais. |
+| **Bootstrap Icons** | Ícones da interface. |
+| **Chart.js** | Visualização dos indicadores ambientais e sociais. |
+| **JSON e CSV** | Dados dos produtos e dos indicadores de impacto. |
+| **VLibras** | Tradução de conteúdo para Libras, com carregamento sob demanda. |
 
-</div>
+O desenvolvimento utiliza **Git**, **GitHub** e **Visual Studio Code**. O site é estático e não exige instalação de dependências ou etapa de build.
 
-## 🧩 Estrutura do projeto
+## ♿ Acessibilidade
+
+O menu de acessibilidade reúne os seguintes recursos:
+
+- Ajuste do tamanho do texto entre **90% e 140%**.
+- Modo de **alto contraste**.
+- Controle de **redução de movimentos**, considerando a preferência do dispositivo e a escolha do usuário.
+- Ativação e desativação do **VLibras**.
+- Restauração das configurações padrão.
+- Preferências salvas no navegador para as próximas páginas e visitas.
+
+A navegação também inclui foco visível, atalho para pular ao conteúdo principal e controles para pausar os carrosséis.
+
+| Tecla | Ação |
+| --- | --- |
+| **Tab / Shift + Tab** | Avançar e voltar entre controles. |
+| **Enter** | Abrir links e ativar botões. |
+| **Espaço** | Ativar botões e marcar opções. |
+| **↑ / ↓** | Percorrer opções dos menus. |
+| **Home / End** | Ir ao primeiro ou último controle do painel de acessibilidade. |
+| **Esc** | Fechar menus e janelas modais. |
+
+> A implementação está em revisão. A presença desses recursos não representa uma certificação de acessibilidade ou uma validação completa de conformidade.
+
+## 🎨 Identidade visual
+
+| Elemento | Referência |
+| --- | --- |
+| Verde escuro | `#26382C` — tradição e natureza. |
+| Bege | `#D6C7A8` — acolhimento e detalhes da marca. |
+| Fundo escuro | `#171A17` — contraste e ambientação. |
+| Títulos | **Oswald**. |
+| Textos e interface | **Montserrat**. |
+
+As imagens seguem uma linguagem de iluminação quente, madeira, plantas e cadeiras de barbeiro vintage.
+
+## 📁 Estrutura do projeto
 
 ```text
-garage-hair/
-│
+.
 ├── index.html
 ├── README.md
-│
-├── pages/
-│   ├── acessibilidade.html
-│   ├── sobre.html
-│   ├── projetos.html
-│   ├── produtos.html
-│   ├── impacto.html
-│   ├── acessibilidade.html
-│   ├── galeria.html
-│   ├── midia.html
-│   ├── noticias.html
-│   ├── contato.html
-│   ├── orcamento_hospedagem.html
-│   └── index.html
-│
+├── AGENTS.md
+├── .gitignore
 ├── assets/
-│   ├── css/
-│   │   ├── style.css
-│   │   ├── index.css
-│   │   └── ...
-│   │
+│   ├── css/                   # Estilos globais e específicos de cada página
+│   ├── data/
+│   │   ├── impacto.csv
+│   │   └── produtos.json
+│   ├── images/                # Imagens organizadas por página e tema
 │   ├── js/
+│   │   ├── acessibilidade.js
+│   │   ├── components.js
+│   │   ├── galeria.js
+│   │   ├── impacto.js
+│   │   ├── index.js
+│   │   ├── produtos.js
 │   │   └── script.js
-│   │
-│   └── images/
-│       ├── hero/
-│       ├── projetos/
-│       └── icones/
-│
-└── docs/
+│   └── media/
+│       └── audio/
+│           └── historia_garage_hair.MP3
+├── components/
+│   ├── navbar.html
+│   └── footer.html
+├── docs/                      # Contexto e documentação acadêmica
+└── pages/
+    ├── acessibilidade.html
+    ├── contato.html
+    ├── galeria.html
+    ├── impacto.html
+    ├── midia.html
+    ├── noticias.html
+    ├── orcamento.html
+    ├── produtos.html
+    ├── projetos.html
+    └── sobre.html
 ```
 
+O arquivo [`assets/js/components.js`](assets/js/components.js) carrega a navbar e o rodapé e resolve os links compartilhados. A página inicial utiliza `data-root="."`; as páginas em `pages/` utilizam `data-root=".."`.
+
+O contexto acadêmico e os objetivos estão em [`docs/plano-contexto.md`](docs/plano-contexto.md). As orientações para manutenção por agentes estão em [`AGENTS.md`](AGENTS.md).
+
+## 💻 Como executar
+
+1. Abra a pasta do projeto no **Visual Studio Code**.
+2. Inicie um servidor HTTP local. Se utilizar a extensão **Live Server**, abra o `index.html` com **Open with Live Server**.
+3. Acesse o endereço local informado pelo servidor.
+
+Como alternativa, com Python instalado, execute na pasta que contém o `index.html`:
+
+```bash
+python -m http.server 5500
+```
+
+Depois, abra **http://localhost:5500** no navegador. Para encerrar o servidor no terminal, pressione **Ctrl + C**.
+
+Use um servidor HTTP para que o carregamento de componentes e dados via `fetch` funcione corretamente. Bootstrap, fontes, ícones, Chart.js, VLibras e conteúdos incorporados utilizam serviços externos e precisam de conexão com a internet.
+
+## 🌐 Publicação
+
+O projeto está hospedado na **Vercel**:
+
+**[garagehairunicid.vercel.app ↗](https://garagehairunicid.vercel.app)**
+
+Os arquivos são organizados como um site estático, com `index.html` na raiz e as demais páginas em `pages/`.
+
+## 🔎 Em revisão
+
+O projeto permanece em desenvolvimento. As próximas verificações incluem:
+
+- [ ] Validação formal do HTML e do CSS e revisão da semântica e do uso de ARIA.
+- [ ] Conferência no navegador da navegação por teclado, do contraste e da responsividade.
+- [ ] Alternativas textuais para os gráficos e revisão do fluxo do formulário de contato.
+- [ ] Inclusão do vídeo institucional e revisão dos links provisórios de contato.
+
+## 🤝 Equipe
+
+| Integrantes |
+| --- |
+| Diego Troiani Rodrigues |
+| Joao Vitor Pereira de Paula |
+| Danilo Felipe de Oliveira Silva |
+| Joao Pedro Rodrigues Batista |
+| Gustavo Miguel Moraes Lisboa |
+| Alessandro Rodrigo Oliveira Souza |
+
+---
+
 <div align="center">
-Equipe
-
-Projeto desenvolvido por:
-
-| Integrante |
-|---|
-| **Diego Troiani Rodrigues** |
-| **Joao Vitor Pereira de Paula** |
-| **Danilo Felipe de Oliveira Silva** |
-| **Joao Pedro Rodrigues Batista** |
-| **Gustavo Miguel Moraes Lisboa** |
-| **Alessandro Rodrigo Oliveira Souza** |
-
----
+  <p><strong>Garage Hair · Desde 1987</strong></p>
+  <p>Projeto acadêmico fictício · Engenharia de Software · UNICID · 2026</p>
 </div>
-
-## 🌐 Hospedagem
-
-O projeto está publicado e pode ser acessado através do endereço:
-
-**[Site Garage Hair](https://garagehairunicid.vercel.app)**
-
-A hospedagem atual do projeto é realizada através da plataforma **Railway**.
-
----

@@ -93,12 +93,12 @@
                           EXPLORAR
                           ========================================= -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownExplorar" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="nav-link dropdown-toggle" type="button" id="dropdownExplorar"
+                            data-bs-toggle="dropdown" aria-expanded="false" aria-controls="menuExplorar">
                             Explorar
-                        </a>
+                        </button>
 
-                        <ul class="dropdown-menu garage-dropdown" aria-labelledby="dropdownExplorar">
+                        <ul class="dropdown-menu garage-dropdown" id="menuExplorar" aria-labelledby="dropdownExplorar">
                             <li>
                                 <a class="dropdown-item" data-link="pages/projetos.html">
                                     <span class="dropdown-title">
@@ -179,6 +179,7 @@
                         <!-- Botão principal -->
                         <button class="nav-link accessibility-toggle" type="button" id="dropdownAcessibilidade"
                             data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"
+                            aria-controls="menuAcessibilidade"
                             aria-label="Abrir opções de acessibilidade" title="Opções de acessibilidade">
 
                             <i class="bi bi-universal-access" aria-hidden="true">
@@ -195,6 +196,7 @@
 
                         <!-- Menu -->
                         <div class="dropdown-menu dropdown-menu-end garage-dropdown accessibility-dropdown"
+                            id="menuAcessibilidade"
                             aria-labelledby="dropdownAcessibilidade">
 
                             <!-- Cabeçalho -->
@@ -270,7 +272,7 @@
                             REDUZIR MOVIMENTOS
                             ===================================== -->
                             <button type="button" class="accessibility-option accessibility-option-full"
-                                data-accessibility="toggle-motion" aria-pressed="false">
+                                data-accessibility="toggle-motion" aria-pressed="false" aria-describedby="motion-status">
 
                                 <i class="bi bi-person-walking" aria-hidden="true">
                                 </i>
@@ -279,6 +281,8 @@
                                     Reduzir movimentos
                                 </span>
                             </button>
+
+                            <p class="accessibility-status" id="motion-status" role="status"></p>
 
 
                             <!-- =====================================
@@ -316,6 +320,8 @@
                                     Restaurar padrão
                                 </span>
                             </button>
+
+                            <p class="accessibility-status" id="accessibility-status" role="status"></p>
 
 
                             <!-- =====================================

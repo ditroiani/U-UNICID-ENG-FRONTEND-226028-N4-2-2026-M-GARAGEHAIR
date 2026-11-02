@@ -54,7 +54,7 @@
     <!-- =====================================================
          CONTEÚDO PRINCIPAL
          ===================================================== -->
-    <main id="conteudo-principal">
+    <main id="conteudo-principal" tabindex="-1">
         <!-- =================================================
              HERO
              ================================================= -->
@@ -180,7 +180,19 @@
 
                     <!-- Imagem -->
                     <div class="col-lg-6">
-                        <div id="carouselAcessibilidade" class="carousel slide carousel-fade acessibilidade-carousel" data-bs-ride="carousel" data-bs-interval="4500" data-bs-pause="false">
+                        <div id="carouselAcessibilidade" class="carousel slide carousel-fade acessibilidade-carousel" data-bs-ride="carousel" data-bs-interval="4500" data-bs-pause="false"
+                            role="region" aria-label="Atendimento inclusivo na Garage Hair" aria-roledescription="carrossel">
+                            <button type="button" class="carousel-pause" data-carousel-pause aria-controls="carouselAcessibilidade">
+                                Pausar slides
+                            </button>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAcessibilidade" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Imagem anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselAcessibilidade" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Próxima imagem</span>
+                            </button>
                             <div class="carousel-inner">
                                 <!-- Imagem 1 -->
                                 <div class="carousel-item active">
@@ -329,7 +341,7 @@
                         </h2>
 
                         <p>
-                            Além das ferramentas que iremos disponibilizar no site, navegadores e sistemas operacionais já oferecem diversos recursos de acessibilidade.
+                            Use Tab e Shift + Tab para percorrer os controles. No primeiro Tab, o atalho “Pular para o conteúdo principal” permite ir direto ao conteúdo com Enter. Nos menus, use também as setas para cima e para baixo.
                         </p>
                     </div>
 
@@ -376,6 +388,24 @@
                                 </div>
                             </div>
 
+                            <div class="atalho-item">
+                                <div class="atalho-teclas">
+                                    <kbd>Enter</kbd><span>ou</span><kbd>Espaço</kbd>
+                                </div>
+                                <div>
+                                    <h3>Ativar controles</h3>
+                                    <p>Enter abre links. Enter ou Espaço ativa botões, incluindo filtros e opções de acessibilidade.</p>
+                                </div>
+                            </div>
+
+                            <div class="atalho-item">
+                                <div class="atalho-teclas"><kbd>Esc</kbd></div>
+                                <div>
+                                    <h3>Fechar menus e janelas</h3>
+                                    <p>Fecha menus e janelas de notícias, devolvendo o foco ao botão que os abriu.</p>
+                                </div>
+                            </div>
+
                             <!-- ZOOM -->
                             <div class="atalho-item">
                                 <div class="atalho-teclas">
@@ -418,7 +448,7 @@
                         </h2>
 
                         <p>
-                            O site Garage Hair terá ferramentas que permitirão adaptar alguns aspectos da experiência de navegação.
+                            O menu de acessibilidade permite ajustar o tamanho do texto, o contraste, os movimentos e o VLibras. Os controles também podem ser acionados pelo teclado.
                         </p>
 
                         <div class="ferramentas-lista">

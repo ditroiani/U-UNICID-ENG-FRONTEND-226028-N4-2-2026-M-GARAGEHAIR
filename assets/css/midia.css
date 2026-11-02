@@ -333,12 +333,12 @@
     box-shadow:
         0 10px 35px rgba(23, 26, 23, 0.06);
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .midia-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow:
         0 18px 45px rgba(23, 26, 23, 0.1);
 }
@@ -353,11 +353,11 @@
     height: 100%;
     object-fit: cover;
     transition:
-        transform 0.5s ease;
+        transform var(--transition-image);
 }
 
 .midia-card:hover .midia-card-imagem img {
-    transform: scale(1.045);
+    transform: scale(1.035);
 }
 
 .midia-card-conteudo {

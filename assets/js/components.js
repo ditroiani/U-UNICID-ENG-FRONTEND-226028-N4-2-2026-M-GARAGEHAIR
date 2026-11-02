@@ -213,6 +213,7 @@ document.addEventListener("DOMContentLoaded", async() => {
      */
 
     setupMobileNavigation();
+    setupAccessibilityKeyboard();
 
 
     /*
@@ -224,6 +225,43 @@ document.addEventListener("DOMContentLoaded", async() => {
     setupNavbarScroll();
 
 });
+
+// O painel contém vários controles, então Tab segue a ordem natural.
+// As setas são um complemento; Esc continua sob responsabilidade do Bootstrap.
+function setupAccessibilityKeyboard() {
+    const menu = document.querySelector("#navbar-component .accessibility-menu");
+    if (!menu) return;
+
+    const toggle = menu.querySelector("#dropdownAcessibilidade");
+    const panel = menu.querySelector(".accessibility-dropdown");
+    if (!toggle || !panel) return;
+
+    menu.addEventListener("keydown", event => {
+        if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+        if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) return;
+        if (event.target.matches("input, textarea, select, [contenteditable='true']")) return;
+
+        const onToggle = event.target === toggle;
+        if (onToggle && !["ArrowDown", "ArrowUp"].includes(event.key)) return;
+        if (!onToggle && !panel.contains(event.target)) return;
+        if (!window.bootstrap?.Dropdown) return;
+
+        window.bootstrap.Dropdown.getOrCreateInstance(toggle).show();
+        const controls = [...panel.querySelectorAll("button:not(:disabled), a[href]")]
+            .filter(control => control.getClientRects().length > 0);
+        if (!controls.length) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        const current = controls.indexOf(document.activeElement);
+        let next;
+        if (event.key === "Home") next = 0;
+        else if (event.key === "End") next = controls.length - 1;
+        else if (onToggle || current < 0) next = event.key === "ArrowUp" ? controls.length - 1 : 0;
+        else next = (current + (event.key === "ArrowDown" ? 1 : -1) + controls.length) % controls.length;
+        controls[next].focus();
+    });
+}
 
 
 /*

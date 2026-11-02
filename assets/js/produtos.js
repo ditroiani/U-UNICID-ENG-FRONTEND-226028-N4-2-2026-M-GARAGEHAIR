@@ -298,18 +298,21 @@ document.addEventListener("DOMContentLoaded", () => {
      * Categorias.
      */
     botoesCategoria.forEach(botao => {
+        botao.setAttribute("aria-pressed", botao.classList.contains("active").toString());
         botao.addEventListener("click", () => {
             /*
              * Remove active de todos.
              */
             botoesCategoria.forEach(item => {
                 item.classList.remove("active");
+                item.setAttribute("aria-pressed", "false");
             });
 
             /*
              * Marca o botão clicado.
              */
             botao.classList.add("active");
+            botao.setAttribute("aria-pressed", "true");
 
             /*
              * Pega a categoria armazenada

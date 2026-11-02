@@ -38,10 +38,11 @@
 </head>
 
 <body data-root="..">
+    <a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo principal</a>
     <!-- Header -->
     <header id="navbar-component"></header>
 
-    <main>
+    <main id="conteudo-principal" tabindex="-1">
         <!-- =================================================
              HERO
              ================================================= -->
@@ -75,7 +76,11 @@
                          ===================================== -->
                     <aside class="col-lg-4">
                         <div class="produtos-banner">
-                            <div id="carouselProdutos" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div id="carouselProdutos" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false"
+                                role="region" aria-label="Destaques dos produtos" aria-roledescription="carrossel">
+                                <button type="button" class="carousel-pause" data-carousel-pause aria-controls="carouselProdutos">
+                                    Pausar slides
+                                </button>
                                 <!-- Indicadores -->
                                 <div class="carousel-indicators">
 

@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
        FILTROS DA GALERIA
        ========================================================= */
     botoesFiltro.forEach(botao => {
+        botao.setAttribute("aria-pressed", botao.classList.contains("active").toString());
         botao.addEventListener("click", () => {
             const filtroSelecionado =
                 botao.dataset.filtro;
@@ -22,9 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
                ----------------------------------------- */
             botoesFiltro.forEach(item => {
                 item.classList.remove("active");
+                item.setAttribute("aria-pressed", "false");
             });
 
             botao.classList.add("active");
+            botao.setAttribute("aria-pressed", "true");
 
             /* -----------------------------------------
                Filtra os itens

@@ -3,14 +3,16 @@
    ========================================================= */
 .sobre-hero {
     position: relative;
-    min-height: 390px;
+    min-height: 500px;
+    padding: 5rem 0;
     display: flex;
     align-items: center;
     background:
         linear-gradient(90deg,
             rgba(23, 26, 23, 0.92) 0%,
             rgba(23, 26, 23, 0.76) 50%,
-            rgba(23, 26, 23, 0.42) 100%);
+            rgba(23, 26, 23, 0.42) 100%),
+        url("../images/sobre/hero_sobre.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,6 +22,47 @@
 
 .sobre-hero-content {
     max-width: 700px;
+    padding-left: clamp(1.25rem, 3vw, 2.5rem);
+    border-left: 2px solid var(--garage-beige);
+}
+
+.sobre-hero-signature {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 2rem;
+    color: var(--garage-beige);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+}
+
+.sobre-hero-signature i {
+    font-size: 1.4rem;
+}
+
+.sobre-history-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-height: 48px;
+    margin-top: 1.25rem;
+    color: var(--garage-white);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.sobre-history-link i {
+    transition: transform var(--transition);
+}
+
+.sobre-history-link:is(:hover, :focus-visible) {
+    color: var(--garage-beige);
+}
+
+.sobre-history-link:is(:hover, :focus-visible) i {
+    transform: translateY(3px);
 }
 
 .sobre-hero-subtitle {
@@ -47,6 +90,7 @@
    ========================================================= */
 .historia {
     background-color: var(--garage-light);
+    scroll-margin-top: 7rem;
 }
 
 .historia h2 {
@@ -64,6 +108,33 @@
     min-height: 450px;
     object-fit: cover;
     border-radius: 4px;
+    transition: transform var(--transition-image), filter var(--transition-image);
+}
+
+.historia-retrato {
+    margin: 0;
+    padding: 0.8rem;
+    border: 1px solid var(--garage-beige);
+    background-color: var(--garage-white);
+    box-shadow: 0 18px 45px rgba(23, 26, 23, 0.09);
+}
+
+.historia-retrato-imagem {
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.historia-retrato:hover .sobre-image {
+    transform: scale(1.025);
+    filter: sepia(0.12);
+}
+
+.historia-retrato figcaption {
+    padding: 1rem 0.5rem 0.3rem;
+    color: var(--garage-green);
+    font-size: 0.78rem;
+    line-height: 1.7;
+    text-align: center;
 }
 
 /* Destaque do ano */
@@ -72,6 +143,9 @@
     align-items: center;
     gap: 1rem;
     margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--garage-olive);
+    background-color: var(--garage-white);
 }
 
 .historia-ano {
@@ -96,9 +170,47 @@
    3. PROPÓSITO
    ========================================================= */
 .proposito {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     background-color: var(--garage-green);
 
     color: var(--garage-white);
+}
+
+.proposito::before,
+.proposito::after {
+    content: "";
+    position: absolute;
+    width: 20rem;
+    aspect-ratio: 1;
+    border: 1px solid rgba(214, 199, 168, 0.13);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.proposito::before {
+    top: -10rem;
+    left: -10rem;
+}
+
+.proposito::after {
+    right: -10rem;
+    bottom: -10rem;
+}
+
+.proposito-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--garage-beige);
+    border-radius: 50%;
+    color: var(--garage-beige);
+    font-size: 1.5rem;
 }
 
 .proposito .section-subtitle {
@@ -145,9 +257,22 @@
 
 /* Item */
 .identidade-item {
+    position: relative;
     padding: 2.5rem 0;
 
     border-top: 1px solid #dddddd;
+    transition: background-color var(--transition), border-color var(--transition),
+        transform var(--transition);
+}
+
+.identidade-item:hover {
+    background-color: var(--garage-light);
+    border-top-color: var(--garage-olive);
+    transform: translateX(4px);
+}
+
+.identidade-item:hover .identidade-numero {
+    color: var(--garage-olive);
 }
 
 .identidade-item:last-child {
@@ -163,6 +288,7 @@
     font-size: 2.2rem;
     font-weight: 600;
     line-height: 1;
+    transition: color var(--transition);
 }
 
 /* Título */
@@ -208,6 +334,33 @@
 
 .cta p {
     line-height: 1.8;
+}
+
+.sobre-page .cta .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 48px;
+    max-width: 100%;
+    white-space: normal;
+}
+
+.sobre-page .cta .btn i {
+    transition: transform var(--transition);
+}
+
+.sobre-page .cta .btn:is(:hover, :focus-visible) i {
+    transform: translate(2px, -2px);
+}
+
+html.high-contrast .sobre-page :is(.historia-retrato, .historia-destaque) {
+    background: var(--contrast-bg);
+    border-color: var(--contrast-text);
+}
+
+html.high-contrast .sobre-page .identidade-item:hover {
+    background: var(--contrast-bg);
 }
 
 /* =========================================================
@@ -263,7 +416,7 @@
     }
 
     .identidade-item {
-        padding: 2rem 0;
+        padding: 2rem 0.5rem;
     }
 
     .identidade-numero {
@@ -297,5 +450,9 @@
     .historia-local {
         padding-left: 0;
         border-left: none;
+    }
+
+    .sobre-hero-signature {
+        align-items: flex-start;
     }
 }

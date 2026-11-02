@@ -4,8 +4,7 @@
 
 .hero {
     position: relative;
-    height: 100vh;
-    min-height: 100vh;
+    min-height: calc(100svh - 82px);
     display: flex;
     align-items: center;
     background-image: url("../images/hero/hero.png");
@@ -128,7 +127,12 @@
 /* Indicadores */
 
 .impacto-item {
+    height: 100%;
     padding: 2rem 1rem;
+    border: 1px solid rgba(214, 199, 168, 0.25);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.035);
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
 
@@ -156,10 +160,118 @@
 
 /* Descrição */
 
-.impacto-item span {
+.impacto-item > span {
     display: block;
     color: #d9d9d9;
     font-size: 0.9rem;
+}
+
+.impacto-item strong {
+    font-variant-numeric: tabular-nums;
+}
+
+.impacto-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--garage-beige);
+    background: rgba(214, 199, 168, 0.08);
+}
+
+/* Acabamentos exclusivos da página inicial. */
+.home-page main .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 48px;
+    max-width: 100%;
+    white-space: normal;
+    --bs-btn-active-bg: var(--garage-olive);
+    --bs-btn-active-border-color: var(--garage-olive);
+    --bs-btn-active-color: var(--garage-white);
+}
+
+.home-page main .btn i {
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.home-page main .btn:is(:hover, :focus-visible) i {
+    transform: translateX(3px);
+}
+
+.home-page :is(#produtos, #acessibilidade, #cta) .btn-primary {
+    background-color: var(--garage-green);
+    border-color: var(--garage-green);
+    color: var(--garage-white);
+}
+
+.home-page :is(#produtos, #acessibilidade, #cta) .btn-primary:is(:hover, :focus-visible) {
+    background-color: var(--garage-dark);
+    border-color: var(--garage-dark);
+}
+
+.home-page :is(#produtos, #acessibilidade, #cta) .btn:focus-visible {
+    outline-color: var(--garage-dark);
+}
+
+.home-page :is(#produtos, #acessibilidade) .row {
+    --bs-gutter-x: 3rem;
+    row-gap: 2rem;
+}
+
+.home-page :is(#produtos, #acessibilidade) img {
+    aspect-ratio: 1 / 1;
+    box-shadow: 14px 14px 0 var(--garage-light);
+}
+
+.home-page #proposta .card,
+.home-page .iniciativa-card {
+    border-top: 2px solid var(--garage-beige);
+}
+
+.home-page .iniciativa-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.home-page .iniciativa-card a {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.home-page .iniciativa-card p {
+    margin-bottom: 1rem;
+}
+
+/* O conteúdo permanece visível mesmo sem JavaScript. */
+@keyframes home-enter {
+    from { opacity: 0.5; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.home-reveal {
+    animation: home-enter 0.65s ease backwards;
+}
+
+html.reduced-motion .home-page :is(.home-reveal, .btn i, .impacto-item, .card),
+html.reduced-motion .home-page .hero {
+    animation: none !important;
+    transform: none !important;
+    background-attachment: scroll;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:not(.motion-allowed) .home-page :is(.home-reveal, .btn i, .impacto-item, .card) {
+        animation: none !important;
+        transform: none !important;
+    }
+
+    html:not(.motion-allowed) .home-page .hero {
+        background-attachment: scroll;
+    }
 }
 
 
@@ -224,7 +336,7 @@
 
 @media (max-width: 991px) {
     .hero {
-        min-height: auto;
+        min-height: calc(100svh - 82px);
         padding: 5rem 0;
         background-attachment: scroll;
         background-position: center;
@@ -246,7 +358,8 @@
     }
 
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: clamp(2rem, 7vw, 2.8rem);
+        overflow-wrap: anywhere;
     }
 
     .hero-text {
@@ -269,6 +382,19 @@
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 2.3rem;
+        font-size: clamp(1.8rem, 8vw, 2.3rem);
+    }
+
+    .impacto-item {
+        padding: 1.5rem 0.65rem;
+    }
+
+    .impacto-item strong {
+        font-size: clamp(1.65rem, 7vw, 2.5rem);
+    }
+
+    .impacto-item > span {
+        font-size: 0.8rem;
+        overflow-wrap: anywhere;
     }
 }

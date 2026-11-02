@@ -20,6 +20,7 @@ const FONT_STEP = 10;
 
 const VLIBRAS_SCRIPT_URL = "https://vlibras.gov.br/app/vlibras-plugin.js";
 const VLIBRAS_LOAD_TIMEOUT = 20000;
+const systemMotionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 
 // =========================================================
@@ -29,6 +30,8 @@ const VLIBRAS_LOAD_TIMEOUT = 20000;
 const defaultAccessibilitySettings = {
     fontScale: 100,
     highContrast: false,
+    reducedMotion: false,
+    followSystemMotion: true,
     librasEnabled: false
 };
 
@@ -63,6 +66,8 @@ function loadAccessibilitySettings() {
                 : defaultAccessibilitySettings.fontScale,
             // Preferências antigas podem não conter o campo de contraste.
             highContrast: parsedSettings?.highContrast === true,
+            reducedMotion: parsedSettings?.reducedMotion === true,
+            followSystemMotion: parsedSettings?.followSystemMotion !== false,
             librasEnabled: parsedSettings?.librasEnabled === true
         };
     } catch (error) {
@@ -99,6 +104,47 @@ let accessibilitySettings = loadAccessibilitySettings();
 let vlibrasLoadPromise = null;
 let vlibrasStatus = "idle";
 let vlibrasMessage = "";
+let vlibrasRequestId = 0;
+
+function applyReducedMotion() {
+    const followsSystem = accessibilitySettings.followSystemMotion;
+    const enabled = accessibilitySettings.reducedMotion ||
+        (followsSystem && systemMotionPreference.matches);
+    document.documentElement.classList.toggle("reduced-motion", enabled);
+    // Só uma escolha explícita do usuário permite movimentos contra a preferência do sistema.
+    document.documentElement.classList.toggle("motion-allowed", !followsSystem && !enabled);
+    const button = document.querySelector('[data-accessibility="toggle-motion"]');
+    if (button) {
+        button.setAttribute("aria-pressed", enabled.toString());
+        button.classList.toggle("active", enabled);
+    }
+
+    const status = document.querySelector("#motion-status");
+    const message = enabled
+        ? followsSystem && systemMotionPreference.matches && !accessibilitySettings.reducedMotion
+            ? "Movimentos reduzidos pela preferência do dispositivo. Desative esta opção para usar transições suaves neste site."
+            : "Movimentos reduzidos neste site."
+        : "Transições suaves ativadas neste site.";
+    if (status && status.textContent !== message) {
+        status.textContent = message;
+    }
+}
+
+systemMotionPreference.addEventListener("change", applyReducedMotion);
+
+function resetAccessibilitySettings() {
+    accessibilitySettings = { ...defaultAccessibilitySettings };
+    disableVLibras();
+    applyFontScale();
+    applyHighContrast();
+    applyReducedMotion();
+    saveAccessibilitySettings();
+
+    const status = document.querySelector("#accessibility-status");
+    if (status) {
+        status.textContent = "Configurações restauradas: texto em 100%, alto contraste e VLibras desativados. Movimentos seguem a preferência do dispositivo.";
+    }
+}
 
 // =========================================================
 // APLICAR TAMANHO DO TEXTO
@@ -281,6 +327,11 @@ document.addEventListener("click", function (event) {
     const action =
         accessibilityButton.dataset.accessibility;
 
+    const status = document.querySelector("#accessibility-status");
+    if (status) {
+        status.textContent = "";
+    }
+
     switch (action) {
 
         case "increase-text":
@@ -294,6 +345,16 @@ document.addEventListener("click", function (event) {
             break;
         case "toggle-libras":
             toggleVLibras();
+            break;
+        case "toggle-motion":
+            accessibilitySettings.reducedMotion =
+                !document.documentElement.classList.contains("reduced-motion");
+            accessibilitySettings.followSystemMotion = false;
+            applyReducedMotion();
+            saveAccessibilitySettings();
+            break;
+        case "reset":
+            resetAccessibilitySettings();
             break;
 
     }
@@ -405,17 +466,25 @@ function updateLibrasButton() {
 }
 
 async function enableVLibras() {
+    const requestId = ++vlibrasRequestId;
     vlibrasStatus = "loading";
     vlibrasMessage = "Carregando VLibras…";
     updateLibrasButton();
 
     try {
         await loadVLibras();
+        // Restaurar ou desativar invalida uma ativação ainda em andamento.
+        if (requestId !== vlibrasRequestId) {
+            return;
+        }
         accessibilitySettings.librasEnabled = true;
         document.documentElement.classList.add("vlibras-enabled");
         vlibrasStatus = "ready";
         vlibrasMessage = "VLibras ativado. Abra o tradutor pelo botão flutuante à direita.";
     } catch (error) {
+        if (requestId !== vlibrasRequestId) {
+            return;
+        }
         accessibilitySettings.librasEnabled = false;
         document.documentElement.classList.remove("vlibras-enabled");
         vlibrasStatus = "error";
@@ -437,7 +506,14 @@ function toggleVLibras() {
         return;
     }
 
+    disableVLibras();
+    saveAccessibilitySettings();
+}
+
+function disableVLibras() {
+    ++vlibrasRequestId;
     accessibilitySettings.librasEnabled = false;
+    vlibrasStatus = "idle";
     document.documentElement.classList.remove("vlibras-enabled");
 
     // O widget oficial observa esse atributo para desativar o painel.
@@ -447,7 +523,6 @@ function toggleVLibras() {
     }
 
     vlibrasMessage = "VLibras desativado.";
-    saveAccessibilitySettings();
     updateLibrasButton();
 }
 
@@ -458,6 +533,7 @@ function initializeAccessibility() {
     // Aplica imediatamente a preferência salva.
     applyFontScale();
     applyHighContrast();
+    applyReducedMotion();
     if (accessibilitySettings.librasEnabled) {
         enableVLibras();
     } else {
@@ -492,6 +568,7 @@ const accessibilityObserver =
         updateFontButtons();
         updateContrastButton();
         updateLibrasButton();
+        applyReducedMotion();
     });
 
 const accessibilityNavbar = document.querySelector("#navbar-component");
