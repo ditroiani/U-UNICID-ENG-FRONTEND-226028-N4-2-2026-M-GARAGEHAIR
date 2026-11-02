@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/Projeto-Acad%C3%AAmico-D6C7A8?style=for-the-badge&amp;labelColor=171A17" alt="Projeto acadêmico">
     <img src="https://img.shields.io/badge/Hospedagem-Vercel-26382C?style=for-the-badge&amp;labelColor=171A17" alt="Hospedagem: Vercel">
   </p>
-  <p><a href="https://garagehairunicid.vercel.app"><strong>Acessar o site ↗</strong></a></p>
+  <p><a href="https://garagehairunicid.vercel.app/index.html"><strong>Acessar o site ↗</strong></a></p>
 </div>
 
 ---
@@ -38,17 +38,17 @@ A proposta apresenta uma barbearia fictícia fundada em **1987**, com raízes fa
 
 | Página | Conteúdo |
 | --- | --- |
-| [Início](index.html) | Apresentação da marca, proposta e resultados simulados. |
-| [Sobre nós](pages/sobre.html) | História, propósito, missão, visão e valores. |
-| [Projetos](pages/projetos.html) | Iniciativas ambientais e sociais. |
-| [Produtos](pages/produtos.html) | Catálogo com busca, categorias e ordenação. |
-| [Impacto](pages/impacto.html) | Indicadores e gráficos baseados em dados CSV. |
-| [Galeria](pages/galeria.html) | Imagens organizadas por tema. |
-| [Mídia](pages/midia.html) | História em áudio e conteúdos em vídeo. |
-| [Notícias](pages/noticias.html) | Novidades, comunicados e ações da Garage Hair. |
-| [Acessibilidade](pages/acessibilidade.html) | Inclusão no atendimento e recursos de navegação. |
-| [Contato](pages/contato.html) | Canais de atendimento, formulário e localização. |
-| [Orçamento e hospedagem](pages/orcamento.html) | Planejamento técnico e estimativas de custos. |
+| [Início](https://garagehairunicid.vercel.app/index.html) | Apresentação da marca, proposta e resultados simulados. |
+| [Sobre nós](https://garagehairunicid.vercel.app/pages/sobre.html) | História, propósito, missão, visão e valores. |
+| [Projetos](https://garagehairunicid.vercel.app/pages/projetos.html) | Iniciativas ambientais e sociais. |
+| [Produtos](https://garagehairunicid.vercel.app/pages/produtos.html) | Catálogo com busca, categorias e ordenação. |
+| [Impacto](https://garagehairunicid.vercel.app/pages/impacto.html) | Indicadores e gráficos baseados em dados CSV. |
+| [Galeria](https://garagehairunicid.vercel.app/pages/galeria.html) | Imagens organizadas por tema. |
+| [Mídia](https://garagehairunicid.vercel.app/pages/midia.html) | História em áudio e conteúdos em vídeo. |
+| [Notícias](https://garagehairunicid.vercel.app/pages/noticias.html) | Novidades, comunicados e ações da Garage Hair. |
+| [Acessibilidade](https://garagehairunicid.vercel.app/pages/acessibilidade.html) | Inclusão no atendimento e recursos de navegação. |
+| [Contato](https://garagehairunicid.vercel.app/pages/contato.html) | Canais de atendimento, formulário e localização. |
+| [Orçamento e hospedagem](https://garagehairunicid.vercgit el.app/pages/orcamento.html) | Planejamento técnico e estimativas de custos. |
 
 ## 🛠️ Tecnologias
 
@@ -146,7 +146,7 @@ O contexto acadêmico e os objetivos estão em [`docs/plano-contexto.md`](docs/p
 
 O projeto está hospedado na **Vercel**:
 
-**[garagehairunicid.vercel.app ↗](https://garagehairunicid.vercel.app)**
+**[garagehairunicid.vercel.app ↗](https://garagehairunicid.vercel.app/index.html)**
 
 Os arquivos são organizados como um site estático, com `index.html` na raiz e as demais páginas em `pages/`.
 
