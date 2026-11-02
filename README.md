@@ -48,7 +48,7 @@ A proposta apresenta uma barbearia fictícia fundada em **1987**, com raízes fa
 | [Notícias](https://garagehairunicid.vercel.app/pages/noticias.html) | Novidades, comunicados e ações da Garage Hair. |
 | [Acessibilidade](https://garagehairunicid.vercel.app/pages/acessibilidade.html) | Inclusão no atendimento e recursos de navegação. |
 | [Contato](https://garagehairunicid.vercel.app/pages/contato.html) | Canais de atendimento, formulário e localização. |
-| [Orçamento e hospedagem](https://garagehairunicid.vercgit el.app/pages/orcamento.html) | Planejamento técnico e estimativas de custos. |
+| [Orçamento e hospedagem](https://garagehairunicid.vercel.app/pages/orcamento.html) | Planejamento técnico e estimativas de custos. |
 
 ## 🛠️ Tecnologias
 
